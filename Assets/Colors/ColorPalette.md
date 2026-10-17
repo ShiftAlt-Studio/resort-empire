@@ -1,0 +1,47 @@
+## Text Colors
+
+- DARK BROWN:
+#451A03
+rgba(69, 26, 3, 1)
+- RED: 
+#EF4444
+rgba(239, 68, 68, 1)
+- GRAY:
+#7F7F7F
+rgba(127, 127, 127, 1)
+
+- PURPLE:
+#7C3AED
+rgba(124, 58, 237, 1)
+
+- CHECK MARKS, PERCENTS, AVAILABLE STATUS, ROOMS SLIDER(GREEN):
+#10B981
+rgba(16, 185, 129, 1)
+
+- COINS
+#06AA00
+rgba(6, 170, 0, 1)
+
+- ENERGY:
+#1BB4D3
+rgba(27, 180, 211, 1)
+
+- GOLD:
+#FBBF24
+rgba(251, 191, 36, 1)
+
+- ATTENTION:
+#F59E0B
+rgba(245, 158, 11, 1)
+
+- SATISFACTION SLIDER(LINEAR GRADIENT):
+rgba(245, 158, 11, 1)
+rgba(251, 191, 36, 1)
+
+- FOOD SLIDER(RED):
+#EF4444
+rgba(239, 68, 68, 1)
+
+- DRINK SLIDER(GOLD):
+#F59E0B
+rgba(245, 158, 11, 1)

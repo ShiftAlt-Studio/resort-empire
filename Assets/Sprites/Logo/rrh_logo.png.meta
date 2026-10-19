@@ -53,9 +53,6 @@ TextureImporter:
   - first:
       213: -26685524084840151
     second: rrh_logo_16
-  - first:
-      213: -3013069887167127735
-    second: rrh_logo_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +94,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -195,10 +192,10 @@ TextureImporter:
       name: rrh_logo_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 0
-        width: 52
-        height: 47
+        x: 13
+        y: 11
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +214,10 @@ TextureImporter:
       name: rrh_logo_1
       rect:
         serializedVersion: 2
-        x: 75
+        x: 41
         y: 11
-        width: 27
-        height: 27
+        width: 22
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,9 +236,9 @@ TextureImporter:
       name: rrh_logo_2
       rect:
         serializedVersion: 2
-        x: 103
+        x: 63
         y: 11
-        width: 22
+        width: 24
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -261,10 +258,10 @@ TextureImporter:
       name: rrh_logo_3
       rect:
         serializedVersion: 2
-        x: 125
+        x: 98
         y: 11
-        width: 24
-        height: 23
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +280,10 @@ TextureImporter:
       name: rrh_logo_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 125
         y: 11
-        width: 27
-        height: 27
+        width: 12
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,9 +302,9 @@ TextureImporter:
       name: rrh_logo_5
       rect:
         serializedVersion: 2
-        x: 187
+        x: 138
         y: 11
-        width: 12
+        width: 25
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -327,9 +324,9 @@ TextureImporter:
       name: rrh_logo_6
       rect:
         serializedVersion: 2
-        x: 200
+        x: 163
         y: 11
-        width: 25
+        width: 12
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -349,9 +346,9 @@ TextureImporter:
       name: rrh_logo_7
       rect:
         serializedVersion: 2
-        x: 225
+        x: 175
         y: 11
-        width: 12
+        width: 26
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -371,9 +368,9 @@ TextureImporter:
       name: rrh_logo_8
       rect:
         serializedVersion: 2
-        x: 237
+        x: 199
         y: 11
-        width: 26
+        width: 25
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -393,10 +390,10 @@ TextureImporter:
       name: rrh_logo_9
       rect:
         serializedVersion: 2
-        x: 261
+        x: 234
         y: 11
-        width: 25
-        height: 23
+        width: 31
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,10 +412,10 @@ TextureImporter:
       name: rrh_logo_10
       rect:
         serializedVersion: 2
-        x: 296
+        x: 265
         y: 11
-        width: 31
-        height: 27
+        width: 26
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,9 +434,9 @@ TextureImporter:
       name: rrh_logo_11
       rect:
         serializedVersion: 2
-        x: 327
+        x: 291
         y: 11
-        width: 26
+        width: 27
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -459,9 +456,9 @@ TextureImporter:
       name: rrh_logo_12
       rect:
         serializedVersion: 2
-        x: 353
+        x: 318
         y: 11
-        width: 27
+        width: 24
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -481,10 +478,10 @@ TextureImporter:
       name: rrh_logo_13
       rect:
         serializedVersion: 2
-        x: 380
+        x: 353
         y: 11
-        width: 24
-        height: 23
+        width: 29
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +500,10 @@ TextureImporter:
       name: rrh_logo_14
       rect:
         serializedVersion: 2
-        x: 415
+        x: 379
         y: 11
-        width: 29
-        height: 27
+        width: 57
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,9 +522,9 @@ TextureImporter:
       name: rrh_logo_15
       rect:
         serializedVersion: 2
-        x: 441
+        x: 436
         y: 11
-        width: 57
+        width: 22
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -547,9 +544,9 @@ TextureImporter:
       name: rrh_logo_16
       rect:
         serializedVersion: 2
-        x: 498
+        x: 458
         y: 11
-        width: 22
+        width: 17
         height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -565,33 +562,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: rrh_logo_17
-      rect:
-        serializedVersion: 2
-        x: 520
-        y: 11
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94f1afbc6ec6f26d0800000000000000
-      internalID: -3013069887167127735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -610,7 +585,6 @@ TextureImporter:
       rrh_logo_14: -503806223054700804
       rrh_logo_15: 6764634708250523512
       rrh_logo_16: -26685524084840151
-      rrh_logo_17: -3013069887167127735
       rrh_logo_2: -1619681460130753804
       rrh_logo_3: 7972159167860602057
       rrh_logo_4: 7130791151683226454

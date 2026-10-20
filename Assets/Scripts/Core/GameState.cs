@@ -52,6 +52,12 @@ namespace ResortEmpire.Core
             return true;
         }
 
+        public void FinishArrival()
+        {
+            if (CurrentState == ResortState.WAVE_INCOMING)
+                SetState(ResortState.WAVE_ACTIVE);
+        }
+
         private void SetState(ResortState newState)
         {
             CurrentState = newState;

@@ -2,5 +2,7 @@ public enum GuestNeedType
 {
     Rooms,
     Food,
-    Drinks
+    Drinks,
+    Relax,
+    OceanView
 }

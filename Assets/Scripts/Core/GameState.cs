@@ -58,6 +58,15 @@ namespace ResortEmpire.Core
                 SetState(ResortState.WAVE_ACTIVE);
         }
 
+        public void CompleteWave()
+        {
+            if (CurrentState != ResortState.WAVE_ACTIVE)
+                return;
+
+            SetState(ResortState.WAVE_RESOLVING);
+            SetState(ResortState.WAVE_COMPLETE);
+        }
+
         private void SetState(ResortState newState)
         {
             CurrentState = newState;

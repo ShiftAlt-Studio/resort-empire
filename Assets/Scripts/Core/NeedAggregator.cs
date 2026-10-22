@@ -16,6 +16,8 @@ namespace ResortEmpire.Core
         private readonly int[] inService = new int[NeedCount];
         private readonly int[] served = new int[NeedCount];
 
+        public bool IsDemandClosed { get; private set; }
+
         public int GetArrived(GuestNeedType need) => arrived[(int)need];
         public int GetInService(GuestNeedType need) => inService[(int)need];
         public int GetServed(GuestNeedType need) => served[(int)need];
@@ -40,6 +42,7 @@ namespace ResortEmpire.Core
             if (arrivalPhase != null)
             {
                 arrivalPhase.DemandAdded += HandleDemandAdded;
+                arrivalPhase.ArrivalFinished += HandleArrivalFinished;
                 Debug.Log("[NeedAggregator] Ready, subscribed to ArrivalPhase.");
             }
             else
@@ -52,7 +55,10 @@ namespace ResortEmpire.Core
         private void OnDestroy()
         {
             if (arrivalPhase != null)
+            {
                 arrivalPhase.DemandAdded -= HandleDemandAdded;
+                arrivalPhase.ArrivalFinished -= HandleArrivalFinished;
+            }
 
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged -= HandleStateChanged;
@@ -64,16 +70,22 @@ namespace ResortEmpire.Core
                 ResetAll();
         }
 
+        private void HandleArrivalFinished()
+        {
+            IsDemandClosed = true;
+            if (logChanges)
+                Debug.Log("[NeedAggregator] Arrival phase ended. New demand is no longer accepted.");
+        }
+
         private void HandleDemandAdded(GuestNeedType need, int units)
         {
-            if (units <= 0) return;
+            if (IsDemandClosed || units <= 0) return;
 
             arrived[(int)need] += units;
             if (logChanges)
                 Debug.Log($"[NeedAggregator] {need}: arrived {GetArrived(need)}, backlog {GetBacklog(need)}");
             NeedChanged?.Invoke(need);
         }
-
 
         public int TryBeginService(GuestNeedType need, int requested)
         {
@@ -96,11 +108,14 @@ namespace ResortEmpire.Core
 
             inService[(int)need] -= done;
             served[(int)need] += done;
+            if (logChanges)
+                Debug.Log($"[NeedAggregator] {need}: served {GetServed(need)}/{GetArrived(need)}, backlog {GetBacklog(need)}");
             NeedChanged?.Invoke(need);
         }
 
         public void ResetAll()
         {
+            IsDemandClosed = false;
             Array.Clear(arrived, 0, NeedCount);
             Array.Clear(inService, 0, NeedCount);
             Array.Clear(served, 0, NeedCount);

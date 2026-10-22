@@ -12,6 +12,7 @@ namespace ResortEmpire.Core
         public event Action ArrivalFinished;
 
         public bool IsRunning { get; private set; }
+        public bool IsFinished { get; private set; }
 
         private float elapsed;
         private List<NeedDemand> forecast;
@@ -19,7 +20,8 @@ namespace ResortEmpire.Core
 
         private void Start()
         {
-            GameState.Instance.OnStateChanged += HandleStateChanged;
+            if (GameState.Instance != null)
+                GameState.Instance.OnStateChanged += HandleStateChanged;
         }
 
         private void OnDestroy()
@@ -39,13 +41,14 @@ namespace ResortEmpire.Core
             forecast = GameState.Instance.GetForecast();
             added = new int[forecast.Count];
             elapsed = 0f;
+            IsFinished = false;
             IsRunning = true;
             Debug.Log("Arrival phase started");
         }
 
         private void Update()
         {
-            if (!IsRunning) return;
+            if (!IsRunning || IsFinished) return;
 
             elapsed += Time.deltaTime;
             float progress = Mathf.Clamp01(elapsed / duration);
@@ -63,11 +66,21 @@ namespace ResortEmpire.Core
 
             if (progress >= 1f)
             {
-                IsRunning = false;
-                Debug.Log("Arrival phase finished");
-                ArrivalFinished?.Invoke();
-                GameState.Instance.FinishArrival();
+                StopDemandGeneration();
             }
+        }
+
+        private void StopDemandGeneration()
+        {
+            if (IsFinished) return;
+
+            IsRunning = false;
+            IsFinished = true;
+            Debug.Log("Arrival phase finished — demand generation stopped");
+            ArrivalFinished?.Invoke();
+
+            if (GameState.Instance != null)
+                GameState.Instance.FinishArrival();
         }
     }
 }

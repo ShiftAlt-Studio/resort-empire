@@ -1,0 +1,137 @@
+{
+  "asset": "island_base",
+  "width_px": 4536,
+  "height_px": 2752,
+  "px_per_meter": 50,
+  "water_level_m": 0.1,
+  "island_centre_px_from_top_left": [
+    2219.1,
+    1350.7
+  ],
+  "unity_pivot_normalized": [
+    0.4892,
+    0.5092
+  ],
+  "slots": [
+    {
+      "name": "hotel",
+      "pad_radius_m": 4.6,
+      "world_m": [
+        0.0,
+        6.0
+      ],
+      "px_from_top_left": [
+        2369.1,
+        1156.9
+      ],
+      "unity_normalized": [
+        0.5223,
+        0.5796
+      ],
+      "unity_local_units": [
+        2.022,
+        4.382
+      ]
+    },
+    {
+      "name": "restaurant",
+      "pad_radius_m": 4.8,
+      "world_m": [
+        -8.0,
+        1.0
+      ],
+      "px_from_top_left": [
+        1897.7,
+        1167.5
+      ],
+      "unity_normalized": [
+        0.4184,
+        0.5758
+      ],
+      "unity_local_units": [
+        -7.406,
+        4.17
+      ]
+    },
+    {
+      "name": "beachbar",
+      "pad_radius_m": 3.9,
+      "world_m": [
+        7.0,
+        -2.0
+      ],
+      "px_from_top_left": [
+        2472.2,
+        1492.1
+      ],
+      "unity_normalized": [
+        0.545,
+        0.4578
+      ],
+      "unity_local_units": [
+        4.084,
+        -2.321
+      ]
+    },
+    {
+      "name": "slot_1",
+      "pad_radius_m": 3.2,
+      "world_m": [
+        -1.0,
+        -7.5
+      ],
+      "px_from_top_left": [
+        1988.3,
+        1516.6
+      ],
+      "unity_normalized": [
+        0.4383,
+        0.4489
+      ],
+      "unity_local_units": [
+        -5.594,
+        -2.812
+      ]
+    },
+    {
+      "name": "slot_2",
+      "pad_radius_m": 3.2,
+      "world_m": [
+        8.5,
+        5.5
+      ],
+      "px_from_top_left": [
+        2724.7,
+        1307.4
+      ],
+      "unity_normalized": [
+        0.6007,
+        0.5249
+      ],
+      "unity_local_units": [
+        9.133,
+        1.372
+      ]
+    },
+    {
+      "name": "slot_3",
+      "pad_radius_m": 3.2,
+      "world_m": [
+        -7.5,
+        -6.0
+      ],
+      "px_from_top_left": [
+        1744.3,
+        1370.4
+      ],
+      "unity_normalized": [
+        0.3846,
+        0.502
+      ],
+      "unity_local_units": [
+        -10.473,
+        0.112
+      ]
+    }
+  ]
+}

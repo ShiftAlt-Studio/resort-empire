@@ -44,7 +44,7 @@ namespace ResortEmpire.UI
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)
         {
             if (resortValueText != null) resortValueText.text = $"Resort Value: {resortVal}";
-            if (coinsText != null) coinsText.text = $"$ {coinsVal:N0}";
+            if (coinsText != null) coinsText.text = $" {coinsVal:N0}";
             if (energyText != null) energyText.text = $"{energyVal}/50";
         }
 

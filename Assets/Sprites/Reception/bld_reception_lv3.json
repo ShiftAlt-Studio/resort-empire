@@ -1,0 +1,15 @@
+{
+  "asset": "bld_reception_lv3",
+  "width_px": 1176,
+  "height_px": 1020,
+  "px_per_meter": 50,
+  "service_places": 7,
+  "pivot_px_from_top_left": [
+    544.6,
+    742.1
+  ],
+  "unity_pivot_normalized": [
+    0.4631,
+    0.2725
+  ]
+}

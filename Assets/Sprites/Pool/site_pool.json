@@ -1,0 +1,14 @@
+{
+  "asset": "site_pool",
+  "width_px": 684,
+  "height_px": 480,
+  "px_per_meter": 50,
+  "pivot_px_from_top_left": [
+    352.9,
+    282.6
+  ],
+  "unity_pivot_normalized": [
+    0.5159,
+    0.4113
+  ]
+}

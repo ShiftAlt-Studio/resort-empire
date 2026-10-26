@@ -1,0 +1,15 @@
+{
+  "asset": "bld_restaurant_lv1",
+  "width_px": 864,
+  "height_px": 568,
+  "px_per_meter": 50,
+  "tables": 3,
+  "pivot_px_from_top_left": [
+    458.2,
+    401.5
+  ],
+  "unity_pivot_normalized": [
+    0.5303,
+    0.2931
+  ]
+}

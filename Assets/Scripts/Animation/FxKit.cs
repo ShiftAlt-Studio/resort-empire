@@ -208,6 +208,7 @@ namespace ResortEmpire.Fx
         {
             if (delay > 0f) yield return Wait(delay);
             var sr = Sprite2D(Ring, ground, c, layer, order, new Vector3(width * 0.3f, width * 0.15f, 1f));
+            sr.gameObject.AddComponent<FxAutoKill>().life = dur + 1f;
             yield return Tween(dur, t =>
             {
                 float k = OutQuad(t);
@@ -222,6 +223,7 @@ namespace ResortEmpire.Fx
         public static IEnumerator Glow(Vector3 pos, float size, Color c, int layer, int order, float dur)
         {
             var sr = Sprite2D(Soft, pos, c, layer, order, Vector3.one * size * 0.4f);
+            sr.gameObject.AddComponent<FxAutoKill>().life = dur + 1f;
             yield return Tween(dur, t =>
             {
                 float s = size * Mathf.Lerp(0.4f, 1f, OutQuad(t));

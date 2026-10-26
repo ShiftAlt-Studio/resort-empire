@@ -22,12 +22,34 @@ namespace ResortEmpire.Fx
         public UnityEvent onFinished;
 
         Vector3 _bs;
+        Vector3 _siteScale, _sitePos;
+        Color _siteCol;
         bool _running;
 
         void Awake()
         {
             _bs = building.transform.localScale;
             if (hideBuildingOnStart) building.enabled = false;
+        }
+
+        void OnDisable()
+        {
+            if (!_running) return;
+            StopAllCoroutines();
+            if (site != null)
+            {
+                site.transform.localScale = _siteScale;
+                site.transform.localPosition = _sitePos;
+                site.color = _siteCol;
+                site.enabled = false;
+            }
+            if (building != null)
+            {
+                building.transform.localScale = _bs;
+                building.enabled = true;
+                FxKit.SetAlpha(building, 1f);
+            }
+            _running = false;
         }
 
         [ContextMenu("Test Play")]
@@ -43,8 +65,9 @@ namespace ResortEmpire.Fx
         {
             _running = true;
             var st = site.transform;
-            Vector3 siteScale = st.localScale, sitePos = st.localPosition;
-            Color siteCol = site.color;
+            _siteScale = st.localScale; _sitePos = st.localPosition; _siteCol = site.color;
+            Vector3 siteScale = _siteScale, sitePos = _sitePos;
+            Color siteCol = _siteCol;
             var bt = building.transform;
             Vector3 ground = groundPoint ? groundPoint.position : bt.position;
             int layer = building.sortingLayerID, order = building.sortingOrder;

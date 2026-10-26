@@ -21,6 +21,15 @@ namespace ResortEmpire.Fx
 
         void Awake() { _bs = building.transform.localScale; }
 
+
+        void OnDisable()
+        {
+            if (!_running) return;
+            StopAllCoroutines();
+            if (building != null) building.transform.localScale = _bs;
+            _running = false;
+        }
+
         [ContextMenu("Test Play")]
         void TestPlay() { Play(building.sprite, 2); }
 
@@ -73,7 +82,6 @@ namespace ResortEmpire.Fx
             StartCoroutine(Pips(ground + Vector3.up * (h + 0.8f), level, layer, order + 7));
             onPeak?.Invoke();
 
-            // 4) land with an elastic bounce
             yield return FxKit.Tween(0.55f, t =>
             {
                 float k = FxKit.OutElastic(t);
@@ -87,11 +95,11 @@ namespace ResortEmpire.Fx
             done?.Invoke();
         }
 
-        // vertical light beam
         IEnumerator Beam(Vector3 ground, float h, int layer, int order)
         {
             var sr = FxKit.Sprite2D(FxKit.Soft, ground + Vector3.up * h * 0.6f, new Color(accent.r, accent.g, accent.b, 0.55f),
                 layer, order - 2, new Vector3(groundWidth * 0.4f, h * 2.2f, 1f));
+            sr.gameObject.AddComponent<FxAutoKill>().life = 0.6f + 1f;
             yield return FxKit.Tween(0.6f, t =>
             {
                 sr.transform.localScale = new Vector3(groundWidth * Mathf.Lerp(0.5f, 0.15f, t), h * 2.2f, 1f);
@@ -109,6 +117,7 @@ namespace ResortEmpire.Fx
                 float x = (i - (level - 1) * 0.5f) * 0.75f;
                 var sr = FxKit.Sprite2D(FxKit.Star, top + new Vector3(x, 0f, 0f), accent, layer, order, Vector3.zero);
                 list.Add(sr);
+                sr.gameObject.AddComponent<FxAutoKill>().life = 0.12f * level + 2.6f;
                 StartCoroutine(Pop(sr, i * 0.12f));
             }
             yield return FxKit.Wait(0.12f * level + 0.3f + 1.0f);

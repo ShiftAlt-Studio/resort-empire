@@ -302,6 +302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingType: 0
   servedNeed: 0
+  level: 1
+  seatsByLevel: 030000000500000007000000i
+  upgradeCosts: f4010000b0040000i
 --- !u!1 &80250653
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingType: 1
   servedNeed: 1
+  level: 1
+  seatsByLevel: 030000000500000007000000i
+  upgradeCosts: f4010000b0040000i
 --- !u!1 &332969490
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.ServiceQueueProcessor
   needAggregator: {fileID: 378912370}
   arrivalPhase: {fileID: 378912368}
+  buildingRegistry: {fileID: 2147341636}
   seatsPerBuilding: 3
   serviceTime: 12
   staffedUtilization: 1
@@ -2571,6 +2578,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingType: 2
   servedNeed: 2
+  level: 1
+  seatsByLevel: 030000000500000007000000i
+  upgradeCosts: f4010000b0040000i
 --- !u!4 &1504189358
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,6 +2824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1777466690}
   - component: {fileID: 1777466691}
+  - component: {fileID: 1777466692}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -2849,6 +2860,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.GameState
   startingWorkers: 2
+  startingCoins: 1000
+--- !u!114 &1777466692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777466689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca05dd2ec0c57b498cae4ca7ebacfc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.BuildingUpgradeService
 --- !u!1 &1810766012
 GameObject:
   m_ObjectHideFlags: 0

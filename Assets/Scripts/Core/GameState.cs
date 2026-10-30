@@ -9,12 +9,15 @@ namespace ResortEmpire.Core
         public static GameState Instance { get; private set; }
 
         [SerializeField] private int startingWorkers = 2;
+        [SerializeField] private int startingCoins = 1000;
 
         public ResortState CurrentState { get; private set; }
         public int AvailableWorkers { get; private set; }
         public int CurrentWaveNumber { get; private set; } = 1;
+        public int Coins { get; private set; }
 
         public event Action<ResortState> OnStateChanged;
+        public event Action<int> CoinsChanged;
 
         private readonly HashSet<GuestNeedType> unlockedNeeds = new HashSet<GuestNeedType>
         {
@@ -34,6 +37,7 @@ namespace ResortEmpire.Core
 
             CurrentState = ResortState.AWAITING_WAVE;
             AvailableWorkers = startingWorkers;
+            Coins = startingCoins;
 
             Debug.Log($"GameState: {CurrentState}, workers: {AvailableWorkers}");
         }
@@ -65,6 +69,21 @@ namespace ResortEmpire.Core
 
             SetState(ResortState.WAVE_RESOLVING);
             SetState(ResortState.WAVE_COMPLETE);
+        }
+
+        public void AddCoins(int amount)
+        {
+            if (amount <= 0) return;
+            Coins += amount;
+            CoinsChanged?.Invoke(Coins);
+        }
+
+        public bool TrySpendCoins(int amount)
+        {
+            if (amount < 0 || Coins < amount) return false;
+            Coins -= amount;
+            CoinsChanged?.Invoke(Coins);
+            return true;
         }
 
         private void SetState(ResortState newState)

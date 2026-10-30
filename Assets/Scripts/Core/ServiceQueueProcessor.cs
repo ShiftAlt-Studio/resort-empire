@@ -8,6 +8,7 @@ namespace ResortEmpire.Core
     {
         [SerializeField] private NeedAggregator needAggregator;
         [SerializeField] private ArrivalPhase arrivalPhase;
+        [SerializeField] private BuildingRegistry buildingRegistry;
 
         [Header("(Build Doc §4.8)")]
         [SerializeField] private int seatsPerBuilding = 3;
@@ -20,6 +21,7 @@ namespace ResortEmpire.Core
 
         private readonly List<float>[] activeSeats = new List<float>[AllNeeds.Length];
         private readonly bool[] hasWorker = new bool[AllNeeds.Length];
+        private readonly int[] seatsPerNeed = new int[AllNeeds.Length];
 
         private void Awake()
         {
@@ -39,6 +41,11 @@ namespace ResortEmpire.Core
             if (arrivalPhase == null)
                 arrivalPhase = GetComponent<ArrivalPhase>() ?? FindAnyObjectByType<ArrivalPhase>();
 
+            if (buildingRegistry == null)
+                buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
+
+            RefreshSeats();
+
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
         }
@@ -55,11 +62,22 @@ namespace ResortEmpire.Core
             {
                 for (int i = 0; i < activeSeats.Length; i++)
                     activeSeats[i].Clear();
+
+                RefreshSeats();
             }
             else if (state == ResortState.WAVE_ACTIVE)
             {
                 Debug.Log("[ServiceQueueProcessor] Drain phase (dobeh) started — processing remaining queues.");
                 EvaluateWaveCompletion();
+            }
+        }
+
+        private void RefreshSeats()
+        {
+            for (int i = 0; i < AllNeeds.Length; i++)
+            {
+                Building b = buildingRegistry != null ? buildingRegistry.GetBuildingForNeed(AllNeeds[i]) : null;
+                seatsPerNeed[i] = b != null ? b.Capacity : seatsPerBuilding;
             }
         }
 
@@ -90,7 +108,7 @@ namespace ResortEmpire.Core
                 GuestNeedType need = AllNeeds[i];
                 List<float> seats = activeSeats[i];
 
-                int freeSeats = seatsPerBuilding - seats.Count;
+                int freeSeats = seatsPerNeed[i] - seats.Count;
                 if (freeSeats > 0)
                 {
                     int started = needAggregator.TryBeginService(need, freeSeats);
@@ -119,7 +137,7 @@ namespace ResortEmpire.Core
                 {
                     needAggregator.CompleteService(need, completedCount);
 
-                    int newlyFree = seatsPerBuilding - seats.Count;
+                    int newlyFree = seatsPerNeed[i] - seats.Count;
                     if (newlyFree > 0)
                     {
                         int started = needAggregator.TryBeginService(need, newlyFree);

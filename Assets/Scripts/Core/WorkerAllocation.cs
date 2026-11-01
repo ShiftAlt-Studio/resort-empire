@@ -58,6 +58,54 @@ namespace ResortEmpire.Core
             if (GameState.Instance != null && GameState.Instance.AvailableWorkers != StaffedCount)
                 Debug.LogWarning($"[WorkerAllocation] startingWorkers = {GameState.Instance.AvailableWorkers}, " +
                                  $"ale initiallyStaffed ma {StaffedCount}.");
+
+            ValidateDeficit();
+        }
+
+        public int ActiveBuildingCount
+        {
+            get
+            {
+                if (buildingRegistry == null) return 0;
+                int n = 0;
+                for (int i = 0; i < AllNeeds.Length; i++)
+                    if (buildingRegistry.GetBuildingForNeed(AllNeeds[i]) != null) n++;
+                return n;
+            }
+        }
+
+        public int AssignedWorkerCount
+        {
+            get
+            {
+                if (buildingRegistry == null) return 0;
+                int n = 0;
+                for (int i = 0; i < AllNeeds.Length; i++)
+                    if (staffed[i] && buildingRegistry.GetBuildingForNeed(AllNeeds[i]) != null) n++;
+                return n;
+            }
+        }
+
+        public int EmptyBuildingCount => ActiveBuildingCount - AssignedWorkerCount;
+
+        public bool HasDeficit => EmptyBuildingCount >= 1;
+
+        private void ValidateDeficit()
+        {
+            if (buildingRegistry == null) return;
+
+            for (int i = 0; i < AllNeeds.Length; i++)
+            {
+                if (staffed[i] && buildingRegistry.GetBuildingForNeed(AllNeeds[i]) == null)
+                    Debug.LogWarning($"[WorkerAllocation] Worker je v '{AllNeeds[i]}', ale na scene nie je budova.");
+            }
+
+            if (!HasDeficit)
+                Debug.LogError($"[WorkerAllocation] Workerov ({AssignedWorkerCount}) nie je mensie nez aktivnych budov " +
+                               $"({ActiveBuildingCount}). Aspon jedna budova musi byt bez Workera.");
+            else
+                Debug.Log($"[WorkerAllocation] Workers {AssignedWorkerCount} / budovy {ActiveBuildingCount}, " +
+                          $"prazdnych budov: {EmptyBuildingCount}.");
         }
 
         public bool IsStaffed(GuestNeedType need) => staffed[(int)need];
@@ -94,7 +142,6 @@ namespace ResortEmpire.Core
             }
             return MoveResult.NoEmptyBuilding;
         }
-
         public MoveResult TryMoveWorkerTo(GuestNeedType to)
         {
             for (int i = 0; i < AllNeeds.Length; i++)

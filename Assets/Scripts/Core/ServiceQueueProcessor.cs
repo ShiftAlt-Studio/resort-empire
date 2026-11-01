@@ -9,6 +9,7 @@ namespace ResortEmpire.Core
         [SerializeField] private NeedAggregator needAggregator;
         [SerializeField] private ArrivalPhase arrivalPhase;
         [SerializeField] private BuildingRegistry buildingRegistry;
+        [SerializeField] private WorkerAllocation workerAllocation;
 
         [Header("(Build Doc §4.8)")]
         [SerializeField] private int seatsPerBuilding = 3;
@@ -20,17 +21,12 @@ namespace ResortEmpire.Core
             (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
 
         private readonly List<float>[] activeSeats = new List<float>[AllNeeds.Length];
-        private readonly bool[] hasWorker = new bool[AllNeeds.Length];
         private readonly int[] seatsPerNeed = new int[AllNeeds.Length];
 
         private void Awake()
         {
             for (int i = 0; i < AllNeeds.Length; i++)
                 activeSeats[i] = new List<float>(seatsPerBuilding);
-
-            hasWorker[(int)GuestNeedType.Rooms] = true;
-            hasWorker[(int)GuestNeedType.Drinks] = true;
-            hasWorker[(int)GuestNeedType.Food] = false;
         }
 
         private void Start()
@@ -43,6 +39,9 @@ namespace ResortEmpire.Core
 
             if (buildingRegistry == null)
                 buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
+
+            if (workerAllocation == null)
+                workerAllocation = FindAnyObjectByType<WorkerAllocation>();
 
             RefreshSeats();
 
@@ -119,7 +118,8 @@ namespace ResortEmpire.Core
                 if (seats.Count == 0)
                     continue;
 
-                float utilization = hasWorker[i] ? staffedUtilization : emptyUtilization;
+                bool staffed = workerAllocation != null && workerAllocation.IsStaffed(need);
+                float utilization = staffed ? staffedUtilization : emptyUtilization;
                 float step = (utilization / safeServiceTime) * deltaTime;
 
                 int completedCount = 0;

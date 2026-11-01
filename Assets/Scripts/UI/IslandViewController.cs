@@ -31,14 +31,27 @@ namespace ResortEmpire.UI
 
         private void Start()
         {
-            UpdateHUD(700, 12450, 45);
+            UpdateHUD(700, CurrentCoins(), 45);
             SetResortState(currentState);
+
+            if (GameState.Instance != null)
+                GameState.Instance.CoinsChanged += HandleCoinsChanged;
+        }
+
+        private int CurrentCoins() => GameState.Instance != null ? GameState.Instance.Coins : 0;
+
+        private void HandleCoinsChanged(int coins)
+        {
+            if (coinsText != null) coinsText.text = $" {coins:N0}";
         }
 
         private void OnDestroy()
         {
             if (startWaveButton != null)
                 startWaveButton.onClick.RemoveListener(HandleStartWaveClicked);
+
+            if (GameState.Instance != null)
+                GameState.Instance.CoinsChanged -= HandleCoinsChanged;
         }
 
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)
@@ -71,7 +84,7 @@ namespace ResortEmpire.UI
             if (Application.isPlaying)
             {
                 SetResortState(currentState);
-                UpdateHUD(700, 12450, 45);
+                UpdateHUD(700, CurrentCoins(), 45);
             }
         }
 #endif

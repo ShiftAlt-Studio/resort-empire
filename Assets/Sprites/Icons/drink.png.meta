@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13d3c7b870e3ac546a2e6cf9e18d790d
+guid: acbda76d90b2be34e8f9cedcae7eb912
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -144,10 +144,10 @@ TextureImporter:
       name: drink_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 20
-        height: 23
+        x: 63
+        y: 20
+        width: 386
+        height: 451
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

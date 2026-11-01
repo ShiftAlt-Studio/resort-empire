@@ -22,6 +22,9 @@ namespace ResortEmpire.Core
 
         private readonly List<float>[] activeSeats = new List<float>[AllNeeds.Length];
         private readonly int[] seatsPerNeed = new int[AllNeeds.Length];
+        private readonly int[] lastQueueLength = new int[AllNeeds.Length];
+
+        public event Action<GuestNeedType, int> QueueChanged;
 
         private void Awake()
         {
@@ -63,6 +66,7 @@ namespace ResortEmpire.Core
                     activeSeats[i].Clear();
 
                 RefreshSeats();
+                Array.Clear(lastQueueLength, 0, lastQueueLength.Length);
             }
             else if (state == ResortState.WAVE_ACTIVE)
             {
@@ -115,6 +119,8 @@ namespace ResortEmpire.Core
                         seats.Add(0f);
                 }
 
+                TrackQueue(i, need);
+
                 if (seats.Count == 0)
                     continue;
 
@@ -146,6 +152,18 @@ namespace ResortEmpire.Core
                     }
                 }
             }
+        }
+
+        private void TrackQueue(int index, GuestNeedType need)
+        {
+            int queued = needAggregator.GetQueueLength(need);
+            if (queued == lastQueueLength[index]) return;
+
+            if (queued > lastQueueLength[index])
+                Debug.Log($"[ServiceQueueProcessor] {need}: demand queued, queue = {queued}");
+
+            lastQueueLength[index] = queued;
+            QueueChanged?.Invoke(need, queued);
         }
 
         private void EvaluateWaveCompletion()

@@ -24,6 +24,8 @@ namespace ResortEmpire.Core
         public int GetBacklog(GuestNeedType need) => arrived[(int)need] - served[(int)need];
         public int GetWaiting(GuestNeedType need) => GetBacklog(need) - inService[(int)need];
 
+        public int GetQueueLength(GuestNeedType need) => GetWaiting(need);
+
         public bool AllServed
         {
             get

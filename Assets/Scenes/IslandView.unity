@@ -4960,6 +4960,52 @@ MonoBehaviour:
     emptyBadge: {fileID: 1584558325}
     fade: {fileID: 955474591}
     focusMarker: {fileID: 1010118010}
+--- !u!1 &701903416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701903418}
+  - component: {fileID: 701903417}
+  m_Layer: 0
+  m_Name: BottleneckDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &701903417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701903416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd32ba4feb0ea0748be57e47d1503cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.BottleneckDetector
+  queueProcessor: {fileID: 378912371}
+  queueThreshold: 10
+--- !u!4 &701903418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701903416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 447.62964, y: 224.26404, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703230552
 GameObject:
   m_ObjectHideFlags: 0
@@ -12611,3 +12657,4 @@ SceneRoots:
   - {fileID: 1029378689}
   - {fileID: 378912369}
   - {fileID: 1316899463}
+  - {fileID: 701903418}

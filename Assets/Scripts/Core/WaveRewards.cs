@@ -15,8 +15,17 @@ namespace ResortEmpire.Core
         {
             float raw = totalWaveUnits * CoinsPerUnit * CoinsRatingMultiplier[(int)rating];
             int coins = Mathf.RoundToInt(raw);
-
             return Mathf.Max(1, coins);
+        }
+
+        private static readonly int[] EnergyRatingReward =
+        {
+            0, 1, 2, 3, 5, 5
+        };
+
+        public static int CalculateEnergy(WaveRating rating)
+        {
+            return EnergyRatingReward[(int)rating];
         }
     }
 }

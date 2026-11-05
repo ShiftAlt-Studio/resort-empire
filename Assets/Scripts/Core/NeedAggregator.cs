@@ -69,7 +69,12 @@ namespace ResortEmpire.Core
         private void HandleStateChanged(ResortState state)
         {
             if (state == ResortState.WAVE_INCOMING)
+            {
+                if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                    return;
+
                 ResetAll();
+            }
         }
 
         private void HandleArrivalFinished()
@@ -113,6 +118,24 @@ namespace ResortEmpire.Core
             if (logChanges)
                 Debug.Log($"[NeedAggregator] {need}: served {GetServed(need)}/{GetArrived(need)}, backlog {GetBacklog(need)}");
             NeedChanged?.Invoke(need);
+        }
+
+        public void GetSnapshots(out int[] arrivedCopy, out int[] inServiceCopy, out int[] servedCopy)
+        {
+            arrivedCopy = (int[])arrived.Clone();
+            inServiceCopy = (int[])inService.Clone();
+            servedCopy = (int[])served.Clone();
+        }
+
+        public void RestoreState(bool demandClosed, int[] savedArrived, int[] savedInService, int[] savedServed)
+        {
+            IsDemandClosed = demandClosed;
+            if (savedArrived != null) Array.Copy(savedArrived, arrived, Mathf.Min(NeedCount, savedArrived.Length));
+            if (savedInService != null) Array.Copy(savedInService, inService, Mathf.Min(NeedCount, savedInService.Length));
+            if (savedServed != null) Array.Copy(savedServed, served, Mathf.Min(NeedCount, savedServed.Length));
+
+            foreach (GuestNeedType need in Enum.GetValues(typeof(GuestNeedType)))
+                NeedChanged?.Invoke(need);
         }
 
         public void ResetAll()

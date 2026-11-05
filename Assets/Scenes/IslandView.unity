@@ -6991,6 +6991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858441119}
   - component: {fileID: 858441120}
+  - component: {fileID: 858441121}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -7040,6 +7041,28 @@ MonoBehaviour:
   startWaveButton: {fileID: 1473440886}
   readyForGuestsBadge: {fileID: 187155740}
   readyForGuestsText: {fileID: 796385223}
+--- !u!114 &858441121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858441118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41d903901c95dc4b869202a37d6a180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.UI.WaveCompletePanel
+  rewardService: {fileID: 0}
+  panelRoot: {fileID: 0}
+  titleText: {fileID: 0}
+  ratingText: {fileID: 0}
+  satisfactionText: {fileID: 0}
+  servedText: {fileID: 0}
+  coinsRewardText: {fileID: 0}
+  energyRewardText: {fileID: 0}
+  resortValueRewardText: {fileID: 0}
+  claimRewardsButton: {fileID: 0}
 --- !u!1 &858445007
 GameObject:
   m_ObjectHideFlags: 0
@@ -8803,6 +8826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WaveSatisfaction
   needAggregator: {fileID: 0}
   maxAcceptableWait: 30
+  waveFloor: 40
   resultLabel: {fileID: 1330773092}
 --- !u!4 &1168126949
 Transform:
@@ -12335,6 +12359,8 @@ GameObject:
   - component: {fileID: 1777466691}
   - component: {fileID: 1777466692}
   - component: {fileID: 1777466693}
+  - component: {fileID: 1777466695}
+  - component: {fileID: 1777466694}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -12371,6 +12397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.GameState
   startingWorkers: 2
   startingCoins: 1000
+  startingEnergy: 45
+  startingResortValue: 700
 --- !u!114 &1777466692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12383,6 +12411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca05dd2ec0c57b498cae4ca7ebacfc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.BuildingUpgradeService
+  resortValuePerUpgrade: 20
 --- !u!114 &1777466693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12397,6 +12426,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WorkerAllocation
   buildingRegistry: {fileID: 2147341636}
   initiallyStaffed: 0000000002000000i
+--- !u!114 &1777466694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777466689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ace500c6676f345afb13413bcb9f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WavePauseController
+  arrivalPhase: {fileID: 0}
+  needAggregator: {fileID: 0}
+  queueProcessor: {fileID: 0}
+  workerAllocation: {fileID: 0}
+  waveSatisfaction: {fileID: 0}
+  editorPauseToggleKey: 112
+--- !u!114 &1777466695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777466689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f766f31ad51f08c4ba4cc1d2fc2145a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WaveRewardService
+  waveSatisfaction: {fileID: 0}
+  needAggregator: {fileID: 0}
 --- !u!1 &1786840330
 GameObject:
   m_ObjectHideFlags: 0

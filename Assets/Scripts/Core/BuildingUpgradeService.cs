@@ -13,6 +13,8 @@ namespace ResortEmpire.Core
 
     public class BuildingUpgradeService : MonoBehaviour
     {
+        [SerializeField] private int resortValuePerUpgrade = 20;
+
         public bool IsUpgradeWindowOpen
         {
             get
@@ -41,7 +43,9 @@ namespace ResortEmpire.Core
                 return UpgradeResult.NotEnoughCoins;
 
             b.SetLevel(b.Level + 1);
-            Debug.Log($"[BuildingUpgradeService] {b.Type} -> Lv{b.Level}, seats {b.Capacity}, paid {cost}");
+            GameState.Instance.AddResortValue(resortValuePerUpgrade);
+
+            Debug.Log($"[BuildingUpgradeService] {b.Type} -> Lv{b.Level}, seats {b.Capacity}, paid {cost}, +{resortValuePerUpgrade} Resort Value");
             return UpgradeResult.Success;
         }
 

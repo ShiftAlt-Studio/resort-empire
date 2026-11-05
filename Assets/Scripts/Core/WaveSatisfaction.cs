@@ -8,6 +8,7 @@ namespace ResortEmpire.Core
     {
         [SerializeField] private NeedAggregator needAggregator;
         [SerializeField] private float maxAcceptableWait = 30f;
+        [SerializeField] private float waveFloor = 40f;
         [SerializeField] private TMP_Text resultLabel;
 
         private static readonly GuestNeedType[] AllNeeds =
@@ -17,6 +18,9 @@ namespace ResortEmpire.Core
         private bool tracking;
 
         public float LastResult { get; private set; }
+        public float TotalWaitUnitSeconds => totalWaitUnitSeconds;
+        public bool IsTracking => tracking;
+
         public event Action<float> ResultReady;
 
         private void Start()
@@ -41,6 +45,9 @@ namespace ResortEmpire.Core
         {
             if (state == ResortState.WAVE_INCOMING)
             {
+                if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                    return;
+
                 totalWaitUnitSeconds = 0f;
                 tracking = true;
                 if (resultLabel != null)
@@ -56,9 +63,16 @@ namespace ResortEmpire.Core
         private void Update()
         {
             if (!tracking || needAggregator == null) return;
+            if (GameState.Instance != null && GameState.Instance.CurrentState == ResortState.WAVE_PAUSED) return;
 
             foreach (GuestNeedType need in AllNeeds)
                 totalWaitUnitSeconds += needAggregator.GetWaiting(need) * Time.deltaTime;
+        }
+
+        public void RestoreState(float savedWaitSeconds, bool savedTracking)
+        {
+            totalWaitUnitSeconds = Mathf.Max(0f, savedWaitSeconds);
+            tracking = savedTracking;
         }
 
         private void Finish()
@@ -68,7 +82,8 @@ namespace ResortEmpire.Core
                 servedTotal += needAggregator.GetServed(need);
 
             float avgWait = servedTotal > 0 ? totalWaitUnitSeconds / servedTotal : 0f;
-            LastResult = Mathf.Clamp(100f * (1f - avgWait / maxAcceptableWait), 0f, 100f);
+            float rawPercent = 100f * (1f - avgWait / maxAcceptableWait);
+            LastResult = Mathf.Clamp(rawPercent, waveFloor, 100f);
 
             Debug.Log($"[WaveSatisfaction] avg wait {avgWait:F1}s, satisfaction {LastResult:F0}%");
             ResultReady?.Invoke(LastResult);

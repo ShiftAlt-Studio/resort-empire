@@ -13,6 +13,7 @@ namespace ResortEmpire.Core
 
         public bool IsRunning { get; private set; }
         public bool IsFinished { get; private set; }
+        public float Elapsed => elapsed;
 
         private float elapsed;
         private List<NeedDemand> forecast;
@@ -33,7 +34,12 @@ namespace ResortEmpire.Core
         private void HandleStateChanged(ResortState state)
         {
             if (state == ResortState.WAVE_INCOMING)
+            {
+                if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                    return;
+
                 StartArrival();
+            }
         }
 
         private void StartArrival()
@@ -49,6 +55,7 @@ namespace ResortEmpire.Core
         private void Update()
         {
             if (!IsRunning || IsFinished) return;
+            if (GameState.Instance != null && GameState.Instance.CurrentState == ResortState.WAVE_PAUSED) return;
 
             elapsed += Time.deltaTime;
             float progress = Mathf.Clamp01(elapsed / duration);
@@ -68,6 +75,22 @@ namespace ResortEmpire.Core
             {
                 StopDemandGeneration();
             }
+        }
+
+        public int[] GetAddedSnapshot() => added != null ? (int[])added.Clone() : Array.Empty<int>();
+
+        public void RestoreState(float savedElapsed, bool running, bool finished, int[] savedAdded)
+        {
+            forecast = GameState.Instance != null ? GameState.Instance.GetForecast() : new List<NeedDemand>();
+            added = new int[forecast.Count];
+            if (savedAdded != null)
+            {
+                int copyLen = Mathf.Min(added.Length, savedAdded.Length);
+                Array.Copy(savedAdded, added, copyLen);
+            }
+            elapsed = Mathf.Clamp(savedElapsed, 0f, duration);
+            IsRunning = running;
+            IsFinished = finished;
         }
 
         private void StopDemandGeneration()

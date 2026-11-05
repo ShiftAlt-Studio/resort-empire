@@ -27,5 +27,15 @@ namespace ResortEmpire.Core
         {
             return EnergyRatingReward[(int)rating];
         }
+
+        private static readonly int[] ResortValueRatingReward =
+        {
+            5, 8, 12, 15, 20, 25
+        };
+
+        public static int CalculateResortValue(WaveRating rating)
+        {
+            return ResortValueRatingReward[(int)rating];
+        }
     }
 }

@@ -60,6 +60,9 @@ namespace ResortEmpire.Core
 
         private void HandleStateChanged(ResortState state)
         {
+            if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                return;
+
             if (state == ResortState.WAVE_INCOMING)
             {
                 for (int i = 0; i < activeSeats.Length; i++)
@@ -104,6 +107,7 @@ namespace ResortEmpire.Core
 
         private void ProcessQueues(float deltaTime)
         {
+            RefreshSeats();
             float safeServiceTime = Mathf.Max(0.1f, serviceTime);
 
             for (int i = 0; i < AllNeeds.Length; i++)
@@ -164,6 +168,19 @@ namespace ResortEmpire.Core
 
             lastQueueLength[index] = queued;
             QueueChanged?.Invoke(need, queued);
+        }
+
+        public float[] GetSeatProgressForNeed(GuestNeedType need)
+        {
+            return activeSeats[(int)need].ToArray();
+        }
+
+        public void RestoreSeatProgressForNeed(GuestNeedType need, float[] progress)
+        {
+            List<float> list = activeSeats[(int)need];
+            list.Clear();
+            if (progress != null)
+                list.AddRange(progress);
         }
 
         private void EvaluateWaveCompletion()

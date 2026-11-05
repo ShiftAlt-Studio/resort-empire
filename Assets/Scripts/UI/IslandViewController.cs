@@ -31,18 +31,21 @@ namespace ResortEmpire.UI
 
         private void Start()
         {
-            UpdateHUD(700, CurrentCoins(), 45);
-            SetResortState(currentState);
-
             if (GameState.Instance != null)
+            {
+                UpdateHUD(GameState.Instance.ResortValue, GameState.Instance.Coins, GameState.Instance.Energy);
+                SetResortState(GameState.Instance.CurrentState);
+
                 GameState.Instance.CoinsChanged += HandleCoinsChanged;
-        }
-
-        private int CurrentCoins() => GameState.Instance != null ? GameState.Instance.Coins : 0;
-
-        private void HandleCoinsChanged(int coins)
-        {
-            if (coinsText != null) coinsText.text = $" {coins:N0}";
+                GameState.Instance.EnergyChanged += HandleEnergyChanged;
+                GameState.Instance.ResortValueChanged += HandleResortValueChanged;
+                GameState.Instance.OnStateChanged += SetResortState;
+            }
+            else
+            {
+                UpdateHUD(700, 1000, 45);
+                SetResortState(currentState);
+            }
         }
 
         private void OnDestroy()
@@ -51,14 +54,34 @@ namespace ResortEmpire.UI
                 startWaveButton.onClick.RemoveListener(HandleStartWaveClicked);
 
             if (GameState.Instance != null)
+            {
                 GameState.Instance.CoinsChanged -= HandleCoinsChanged;
+                GameState.Instance.EnergyChanged -= HandleEnergyChanged;
+                GameState.Instance.ResortValueChanged -= HandleResortValueChanged;
+                GameState.Instance.OnStateChanged -= SetResortState;
+            }
+        }
+
+        private void HandleCoinsChanged(int coins)
+        {
+            if (coinsText != null) coinsText.text = $" {coins:N0}";
+        }
+
+        private void HandleEnergyChanged(int energy)
+        {
+            if (energyText != null) energyText.text = $"{energy}/50";
+        }
+
+        private void HandleResortValueChanged(int resortVal)
+        {
+            if (resortValueText != null) resortValueText.text = $"Resort Value: {resortVal}";
         }
 
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)
         {
-            if (resortValueText != null) resortValueText.text = $"Resort Value: {resortVal}";
-            if (coinsText != null) coinsText.text = $" {coinsVal:N0}";
-            if (energyText != null) energyText.text = $"{energyVal}/50";
+            HandleResortValueChanged(resortVal);
+            HandleCoinsChanged(coinsVal);
+            HandleEnergyChanged(energyVal);
         }
 
         public void SetResortState(ResortState newState)
@@ -77,16 +100,5 @@ namespace ResortEmpire.UI
             Debug.Log("[IslandView] Start Wave clicked (FR-3 hook).");
             OnStartWaveRequested?.Invoke();
         }
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (Application.isPlaying)
-            {
-                SetResortState(currentState);
-                UpdateHUD(700, CurrentCoins(), 45);
-            }
-        }
-#endif
     }
 }

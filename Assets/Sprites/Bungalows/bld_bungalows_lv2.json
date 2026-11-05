@@ -1,0 +1,19 @@
+{
+  "asset": "bld_bungalows_lv2",
+  "width_px": 900,
+  "height_px": 600,
+  "px_per_meter": null,
+  "bungalows": 5,
+  "footprint_m": [
+    18.4,
+    4.8
+  ],
+  "pivot_px_from_top_left": [
+    410.8,
+    392.9
+  ],
+  "unity_pivot_normalized": [
+    0.4564,
+    0.3452
+  ]
+}

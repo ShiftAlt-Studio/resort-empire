@@ -1,0 +1,19 @@
+{
+  "asset": "bld_pool_lv1",
+  "width_px": 896,
+  "height_px": 748,
+  "px_per_meter": 50,
+  "loungers": 3,
+  "footprint_m": [
+    11.2,
+    8.0
+  ],
+  "pivot_px_from_top_left": [
+    398.4,
+    510.4
+  ],
+  "unity_pivot_normalized": [
+    0.4446,
+    0.3176
+  ]
+}

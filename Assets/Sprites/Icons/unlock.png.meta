@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac341c32639a9e84d86cd079ac7a9551
+guid: 3b37707baee86014293733ea72528818
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -144,10 +144,10 @@ TextureImporter:
       name: unlock_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 22
-        height: 24
+        x: 41
+        y: 20
+        width: 430
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

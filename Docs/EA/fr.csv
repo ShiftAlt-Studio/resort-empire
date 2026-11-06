@@ -1,0 +1,51 @@
+Name;Type;Notes;Phase
+FR-1 Počiatočný stav hry;Requirement;Systém inicializuje prototyp s tromi aktívnymi budovami poskytujúcimi služby v rámci vlny, tromi dostupnými potrebami hostí, dvoma pracovníkmi a rezortom v stave AWAITING_WAVE;Prototype
+FR-2 Postup v prototype;Requirement;Systém musí v Prototype obsahovať osem vĺn hostí, počas ktorých sa rezort postupne rozšíri z troch servisných budov a troch potrieb hostí na päť servisných budov a päť potrieb hostí;Prototype
+FR-3 Spustenie vlny hostí;Requirement;Systém musí umožniť hráčovi spustiť novú vlnu hostí, keď je rezort v stave AWAITING_WAVE;Prototype
+FR-4 Predpoveď potrieb vlny;Requirement;Systém musí pred začiatkom vlny zobraziť potreby a ich očakávaný objem dopytu pre nasledujúcu vlnu hostí;Prototype
+FR-5 Fáza príchodu hostí;Requirement;Systém musí po spustení vlny postupne pridávať dopyt hostí počas približne 90-sekundovej fázy príchodu;Prototype
+FR-6 Priebeh potrieb vlny;Requirement;Systém musí počas vlny zobrazovať počet obslúžených a celkových jednotiek pre každú aktívnu potrebu hostí;Prototype
+FR-7 Ukončenie príchodu hostí;Requirement;Systém musí po skončení fázy príchodu prestať pridávať nový dopyt hostí a umožniť spracovanie existujúcich radov až do ich vyprázdnenia;Prototype
+FR-8 Dokončenie vlny;Requirement;Systém musí dokončiť vlnu hostí po skončení fázy príchodu a spracovaní všetkých zostávajúcich radov;Prototype
+FR-9 Pozastavenie a obnovenie vlny;Requirement;Systém musí pozastaviť aktívnu vlnu pri pozastavení alebo zatvorení aplikácie a po návrate hráča ju obnoviť v rovnakom stave;Prototype
+FR-10 Spracovanie potrieb hostí;Requirement;Systém musí spracovávať potreby bežných hostí spoločne podľa typu potreby namiesto samostatnej správy každého hosťa;Prototype
+FR-11 Priradenie potreby k službe;Requirement;Systém musí zaradiť nespracované jednotky potreby do čakacieho radu, ak príslušná služba nedokáže prichádzajúci dopyt okamžite spracovať;Prototype
+FR-12 Čakací rad na službu;Requirement;Systém musí pre každú potrebu hostí evidovať čakací rad nespracovaných jednotiek a zobrazovať jeho aktuálnu dĺžku, pričom jednotky, ktoré sú práve obsluhované, sa do radu nepočítajú;Prototype
+FR-13 Detekcia úzkeho miesta;Requirement;Systém musí označiť potrebu hostí ako bottleneck, keď dĺžka čakacieho radu prekročí stanovený prah a rad nepretržite rastie po stanovenú dobu;Prototype
+FR-14 Vizuálne zobrazenie stavu potreby;Requirement;Systém musí vizuálne zobrazovať aktuálny stav každej potreby ako OK, BOTTLENECK, RECOVERING, SATISFIED alebo LOCKED podľa situácie;Prototype
+FR-15 Spokojnosť počas vlny;Requirement;Systém musí vypočítať Wave Satisfaction na základe času čakania jednotiek potrieb počas vlny a výslednú hodnotu zobraziť až po skončení vlny;Prototype
+FR-16 Priradenie pracovníka;Requirement;Systém musí umožniť priradiť každého dostupného Workera vždy k jednej servisnej budove;Prototype
+FR-17 Presun pracovníka;Requirement;Systém musí umožniť hráčovi presunúť Workera z jednej servisnej budovy do druhej pred vlnou alebo počas nej;Prototype
+FR-18 Okamžitý a bezplatný presun pracovníka;Requirement;Systém musí vykonať presun Workera okamžite, bez potreby Coins, Energy alebo potvrdenia hráča;Prototype
+FR-19 Prevádzka budovy bez pracovníka;Requirement;Systém musí umožniť servisnej budove bez prideleného Workera pokračovať v spracovaní potrieb hostí so zníženou rýchlosťou;Prototype
+FR-20 Nedostatok pracovníkov;Requirement;Systém musí udržiavať počet Workerov nižší ako počet aktívnych wave-service budov, aby aspoň jedna servisná budova fungovala bez prideleného Workera;Prototype
+FR-21 Rozšírenie počtu pracovníkov;Requirement;Systém musí pridať jedného Workera do dostupného poolu, keď hráč kúpi odomknutie oblasti, ktoré pridáva novú wave-service budovu;Prototype
+FR-22 Kapacita služby budovy;Requirement;Systém musí každej wave-service budove priradiť servisnú kapacitu podľa jej aktuálnej úrovne;Prototype
+FR-23 Úrovne rozvoja budovy;Requirement;Systém musí v Prototype podporovať tri úrovne progresu Level 1–3 pre každú wave-service budovu;Prototype
+FR-24 Zvýšenie kapacity;Requirement;Systém musí pri vylepšení budovy na vyššiu úroveň zvýšiť jej servisnú kapacitu;Prototype
+FR-25 Cena vylepšenia;Requirement;Systém musí na vylepšenie budovy vyžadovať od hráča zaplatenie určenej sumy Coins;Prototype
+FR-26 Dostupnosť vylepšenia;Requirement;Systém musí umožniť vylepšovanie budov iba medzi vlnami a počas aktívnej vlny nesmie poskytovať možnosť vylepšenia;Prototype
+FR-27 Odporúčanie vylepšenia;Requirement;Systém musí po skončení vlny odporučiť vylepšenie budovy na základe bottlenecku, ktorý sa počas tejto vlny vyskytol;Prototype
+FR-28 Náhľad výsledku vylepšenia;Requirement;Systém musí pred potvrdením vylepšenia zobraziť aktuálnu kapacitu, kapacitu po vylepšení, cenu v Coins a zvýšenie Resort Value;Prototype
+FR-29 Podmienky odomknutia oblasti;Requirement;Systém musí sprístupniť Pool na kúpu po dokončení Wave 3 a Bungalows po dokončení Wave 6;Prototype
+FR-30 Kúpa oblasti;Requirement;Systém musí po splnení podmienky odomknutia vyžadovať od hráča zaplatenie určenej sumy Coins na odomknutie oblasti;Prototype
+FR-31 Stav odomknutia oblasti;Requirement;Systém musí reprezentovať každú odomykateľnú oblasť stavom LOCKED, AVAILABLE, NOT AFFORDABLE alebo UNLOCKED podľa progresu hráča a dostupných Coins;Prototype
+FR-32 Aktivácia nového obsahu;Requirement;Systém musí po kúpe odomknutia oblasti aktivovať novú servisnú budovu, jej príslušnú potrebu hostí a jedného ďalšieho Workera;Prototype
+FR-33 Zavedenie novej potreby;Requirement;Systém musí v prvej vlne po odomknutí zaviesť novú potrebu s nižším objemom dopytu ako existujúce potreby a počas tejto vlny nesmie zvýšiť objem dopytu existujúcich potrieb;Prototype
+FR-34 Odmeny za vlnu;Requirement;Systém musí po dokončení vlny udeliť hráčovi Coins, Energy a zvýšenie Resort Value;Prototype
+FR-35 Výpočet odmeny v minciach;Requirement;Systém musí vypočítať odmenu v Coins za dokončenú vlnu na základe celkového dopytu vlny a dosiahnutého ratingu;Prototype
+FR-36 Minimálna odmena za vlnu;Requirement;Systém musí udeliť nenulovú odmenu v Coins za každú dokončenú vlnu vrátane vĺn s najnižším možným ratingom;Prototype
+FR-37 Odmena v podobe energie;Requirement;Systém musí určiť množstvo Energy udelené za dokončenú vlnu podľa dosiahnutého ratingu;Prototype
+FR-38 Rast hodnoty rezortu;Requirement;Systém musí zvyšovať Resort Value ako ukazovateľ progresu a nesmie umožniť hráčovi používať Resort Value ako menu;Prototype
+FR-39 Zobrazenie a prevzatie odmien;Requirement;Systém musí na obrazovke Wave Complete zobraziť dosiahnutý rating, Coins, Energy, zvýšenie Resort Value a Wave Satisfaction a umožniť hráčovi prevziať odmeny;Prototype
+FR-40 Ponuka VIP hosťa;Requirement;Systém musí prezentovať dostupných VIP hostí ako voliteľné príležitosti a umožniť hráčovi VIP návštevu prijať, odložiť alebo odmietnuť;MVP
+FR-41 Náhľad pripravenosti na VIP návštevu;Requirement;Systém musí pred prijatím návštevy zobraziť typ VIP hosťa, náročnosť, zostávajúci čas dostupnosti, súhrn požiadaviek, rozsah možnej odmeny a pripravenosť rezortu;MVP
+FR-42 Správa požiadaviek VIP hosťa;Requirement;Systém musí pre prijatého VIP hosťa poskytnúť individuálny Guest Request Board a sledovať každú VIP požiadavku samostatne;MVP
+FR-43 Pripravenosť na požiadavky VIP hosťa;Requirement;Systém musí určiť pripravenosť každej VIP požiadavky podľa požadovaných budov, Materials, dekorácií, Managerov a Specialistov dostupných hráčovi;MVP
+FR-44 Chýbajúce požiadavky VIP hosťa;Requirement;Systém musí umožniť doplniť chýbajúce spotrebné požiadavky počas VIP návštevy a pri chýbajúcom požadovanom členovi personálu znížiť maximálnu dosiahnuteľnú kvalitu bez zablokovania požiadavky;MVP
+FR-45 Dokončenie VIP návštevy a odmeny;Requirement;Systém musí vyhodnotiť dokončenú VIP návštevu a na obrazovke VIP Complete zobraziť jej rating, splnené požiadavky, získané odmeny a zvýšenie Resort Value;MVP
+FR-46 Najímanie manažéra;Requirement;Systém musí umožniť hráčovi najať Manager pre príslušnú wave-service budovu za Coins, pričom najatý Manager musí zvýšiť výkon tejto budovy;MVP
+FR-47 Najímanie špecialistov;Requirement;Systém musí umožniť hráčovi najímať Specialistov za Coins a používať najatých Specialistov ako personálne požiadavky pre príslušné VIP požiadavky;MVP
+FR-48 Najímanie ďalších pracovníkov;Requirement;Systém musí umožniť hráčovi medzi vlnami najímať ďalších Workerov za Coins, pričom počet Workerov musí zostať nižší ako celkový počet dostupných Worker slotov;MVP
+FR-49 Rozšírený rozvoj budov;Requirement;Systém musí v MVP rozšíriť progres wave-service budov z Level 3 na Level 5, pričom vyššie úrovne poskytujú ďalšie Worker sloty, service quality a kapacitu podľa úrovne budovy;MVP
+FR-50 Uchovávanie herného progresu;Requirement;Systém musí medzi hernými reláciami zachovať trvalý progres hráča vrátane mien, odomknutých oblastí, úrovní budov a rozmiestnenia Workers;Prototype

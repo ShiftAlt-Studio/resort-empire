@@ -1,0 +1,625 @@
+{
+  "px_per_meter": 100,
+  "quality": "final",
+  "rating_to_leave_sprite": {
+    "5_star": null,
+    "4_star": "any char_tourist_v*_leave_1 / leave_2 (1 person)",
+    "3_star": "char_tourist_leave_group_3",
+    "2_star": "char_tourist_leave_group_4",
+    "1_star": "char_tourist_leave_group_6"
+  },
+  "sprites": {
+    "char_tourist_v0_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v0_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v0_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v0_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v0_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v0_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v1_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v2_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v3_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v4_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v5_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v6_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_queue_a": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_queue_b": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_exit_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_exit_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_leave_1": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_v7_leave_2": {
+      "width_px": 240,
+      "height_px": 300,
+      "pivot_px_from_top_left": [
+        120,
+        250
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.1667
+      ]
+    },
+    "char_tourist_leave_group_3": {
+      "width_px": 560,
+      "height_px": 400,
+      "pivot_px_from_top_left": [
+        280,
+        290
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.275
+      ]
+    },
+    "char_tourist_leave_group_4": {
+      "width_px": 560,
+      "height_px": 400,
+      "pivot_px_from_top_left": [
+        280,
+        290
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.275
+      ]
+    },
+    "char_tourist_leave_group_6": {
+      "width_px": 560,
+      "height_px": 400,
+      "pivot_px_from_top_left": [
+        280,
+        290
+      ],
+      "unity_pivot_normalized": [
+        0.5,
+        0.275
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "asset": "bld_beachbar_lv2",
+  "width_px": 776,
+  "height_px": 696,
+  "px_per_meter": 50,
+  "stools": 5,
+  "pivot_px_from_top_left": [
+    386.9,
+    474.3
+  ],
+  "unity_pivot_normalized": [
+    0.4986,
+    0.3186
+  ]
+}

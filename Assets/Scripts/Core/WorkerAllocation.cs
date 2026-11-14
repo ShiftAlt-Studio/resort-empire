@@ -110,6 +110,29 @@ namespace ResortEmpire.Core
 
         public bool IsStaffed(GuestNeedType need) => staffed[(int)need];
 
+        /// <summary>
+        /// SS-24 (SS-64, SS-65): Вызывается при покупке новой области (Pool / Bungalows).
+        /// Увеличивает пул рабочих в GameState ровно на 1 и ставит нового рабочего в здание этой потребности.
+        /// Если рабочий там уже стоит, ничего не делает и возвращает false (защита от двойного начисления).
+        /// </summary>
+        public bool GrantWorkerForUnlockedNeed(GuestNeedType need)
+        {
+            int idx = (int)need;
+            if (idx < 0 || idx >= staffed.Length)
+                return false;
+
+            if (staffed[idx])
+                return false;
+
+            if (GameState.Instance != null)
+                GameState.Instance.AddWorker();
+
+            staffed[idx] = true;
+            Debug.Log($"[WorkerAllocation] Granted +1 Worker for unlocked need '{need}'. Staffed count: {StaffedCount}");
+            WorkerMoved?.Invoke(need, need);
+            return true;
+        }
+
         public MoveResult TryMoveWorker(GuestNeedType from, GuestNeedType to)
         {
             if (from == to) return MoveResult.SameBuilding;
@@ -142,6 +165,7 @@ namespace ResortEmpire.Core
             }
             return MoveResult.NoEmptyBuilding;
         }
+
         public MoveResult TryMoveWorkerTo(GuestNeedType to)
         {
             for (int i = 0; i < AllNeeds.Length; i++)

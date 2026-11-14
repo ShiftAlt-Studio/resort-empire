@@ -126,6 +126,12 @@ namespace ResortEmpire.Core
             return true;
         }
 
+        public void AddWorker()
+        {
+            AvailableWorkers += 1;
+            Debug.Log($"[GameState] +1 Worker -> AvailableWorkers: {AvailableWorkers}");
+        }
+        
         public void AddCoins(int amount)
         {
             if (amount <= 0) return;

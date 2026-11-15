@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70901204459272141b3ab22db4952e35
+guid: c433f911ae0f1634c9df29501cbc347a
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -144,10 +144,10 @@ TextureImporter:
       name: lightning_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 20
-        height: 24
+        x: 63
+        y: 20
+        width: 386
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

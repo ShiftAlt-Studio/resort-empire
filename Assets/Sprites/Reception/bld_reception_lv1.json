@@ -1,0 +1,11 @@
+{
+  "asset": "bld_reception_lv1",
+  "level": 1,
+  "width_px": 820,
+  "height_px": 956,
+  "px_per_meter": 50,
+  "pivot_px_from_top_left": [
+    364.9,
+    737.6
+  ]
+}

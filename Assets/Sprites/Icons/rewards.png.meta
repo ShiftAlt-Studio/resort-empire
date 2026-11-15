@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 144b0fa2afdda644889fff87f8386121
+guid: f88f350687f9636458ae2d759296990b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 3867242452186849909
     second: rewards_3
+  - first:
+      213: 7767580458977319113
+    second: rewards_4
+  - first:
+      213: -514845174147335232
+    second: rewards_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,10 +159,10 @@ TextureImporter:
       name: rewards_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 63
+        y: 425
+        width: 45
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +181,10 @@ TextureImporter:
       name: rewards_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 15
-        width: 12
-        height: 9
+        x: 169
+        y: 340
+        width: 98
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +203,10 @@ TextureImporter:
       name: rewards_2
       rect:
         serializedVersion: 2
-        x: 12
-        y: 12
-        width: 12
-        height: 12
+        x: 276
+        y: 276
+        width: 216
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +225,10 @@ TextureImporter:
       name: rewards_3
       rect:
         serializedVersion: 2
-        x: 15
-        y: 2
-        width: 9
-        height: 12
+        x: 20
+        y: 20
+        width: 287
+        height: 287
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,6 +239,50 @@ TextureImporter:
       bones: []
       spriteID: 57268ee45843ba530800000000000000
       internalID: 3867242452186849909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rewards_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 169
+        width: 152
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8db95e54dfbcb60800000000000000
+      internalID: 7767580458977319113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rewards_5
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 63
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbbf98ba07ead8f0800000000000000
+      internalID: -514845174147335232
       vertices: []
       indices: 
       edges: []
@@ -255,6 +305,8 @@ TextureImporter:
       rewards_1: 4029397541345990230
       rewards_2: 7773038755907741589
       rewards_3: 3867242452186849909
+      rewards_4: 7767580458977319113
+      rewards_5: -514845174147335232
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

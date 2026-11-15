@@ -1,0 +1,14 @@
+{
+  "asset": "site_bungalows",
+  "width_px": 932,
+  "height_px": 572,
+  "px_per_meter": 50,
+  "pivot_px_from_top_left": [
+    480.7,
+    308.8
+  ],
+  "unity_pivot_normalized": [
+    0.5158,
+    0.4601
+  ]
+}

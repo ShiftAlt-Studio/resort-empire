@@ -5119,7 +5119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.BottleneckDetector
   queueProcessor: {fileID: 378912371}
-  queueThreshold: 10
+  queueThreshold: 4
+  hysteresisSeconds: 3
 --- !u!4 &701903418
 Transform:
   m_ObjectHideFlags: 0
@@ -8825,8 +8826,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WaveSatisfaction
   needAggregator: {fileID: 0}
-  maxAcceptableWait: 30
+  patienceGrace: 10
+  patienceFloorAfter: 30
+  unitFloor: 0.25
   waveFloor: 40
+  oceanViewWeight: 1.5
   resultLabel: {fileID: 1330773092}
 --- !u!4 &1168126949
 Transform:

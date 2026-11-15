@@ -3,10 +3,6 @@ using UnityEngine;
 
 namespace ResortEmpire.Core
 {
-    /// <summary>
-    /// SS-16: Приостанавливает активную волну при сворачивании/закрытии приложения
-    /// и восстанавливает её ровно в том же состоянии после возврата.
-    /// </summary>
     public class WavePauseController : MonoBehaviour
     {
         private const string SaveKey = "ResortEmpire.ActiveWaveSnapshot";
@@ -17,6 +13,8 @@ namespace ResortEmpire.Core
         [SerializeField] private WorkerAllocation workerAllocation;
         [SerializeField] private WaveSatisfaction waveSatisfaction;
         [SerializeField] private KeyCode editorPauseToggleKey = KeyCode.P;
+
+        private bool suppressSave;
 
         [Serializable]
         private class WaveSnapshot
@@ -94,8 +92,22 @@ namespace ResortEmpire.Core
             PauseAndSaveWave();
         }
 
+        public void ClearSavedWave()
+        {
+            suppressSave = true;
+
+            if (PlayerPrefs.HasKey(SaveKey))
+            {
+                PlayerPrefs.DeleteKey(SaveKey);
+                PlayerPrefs.Save();
+            }
+
+            Debug.Log("[WavePauseController] Saved wave snapshot cleared.");
+        }
+
         public void PauseAndSaveWave()
         {
+            if (suppressSave) return;
             if (GameState.Instance == null) return;
 
             ResortState current = GameState.Instance.CurrentState;

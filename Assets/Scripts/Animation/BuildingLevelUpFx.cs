@@ -33,13 +33,13 @@ namespace ResortEmpire.Fx
         [ContextMenu("Test Play")]
         void TestPlay() { Play(building.sprite, 2); }
 
-        public void Play(Sprite newSprite, int newLevel, Action done = null)
+        public void Play(Sprite newSprite, int newLevel, Action done = null, Vector3? newScale = null)
         {
             if (_running) return;
-            StartCoroutine(Run(newSprite, Mathf.Clamp(newLevel, 1, 5), done));
+            StartCoroutine(Run(newSprite, Mathf.Clamp(newLevel, 1, 5), done, newScale));
         }
 
-        IEnumerator Run(Sprite newSprite, int level, Action done)
+        IEnumerator Run(Sprite newSprite, int level, Action done, Vector3? newScale)
         {
             _running = true;
             var bt = building.transform;
@@ -59,6 +59,7 @@ namespace ResortEmpire.Fx
             });
 
             if (newSprite != null) building.sprite = newSprite;
+            if (newScale.HasValue) _bs = newScale.Value;
             float h = building.sprite ? building.sprite.bounds.max.y * _bs.y : 3f;
             Vector3 center = ground + Vector3.up * h * 0.5f;
             Color a0 = new Color(accent.r, accent.g, accent.b, 0.9f);

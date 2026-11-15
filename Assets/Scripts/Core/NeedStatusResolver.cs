@@ -22,7 +22,6 @@ namespace ResortEmpire.Core
             (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
 
         private readonly NeedDisplayStatus[] current = new NeedDisplayStatus[AllNeeds.Length];
-        private readonly bool[] wasBottleneck = new bool[AllNeeds.Length];
         private float timer;
 
         public event Action<GuestNeedType, NeedDisplayStatus> StatusChanged;
@@ -36,22 +35,7 @@ namespace ResortEmpire.Core
             if (bottleneckDetector == null)
                 bottleneckDetector = FindAnyObjectByType<BottleneckDetector>();
 
-            if (GameState.Instance != null)
-                GameState.Instance.OnStateChanged += HandleStateChanged;
-
             Refresh(true);
-        }
-
-        private void OnDestroy()
-        {
-            if (GameState.Instance != null)
-                GameState.Instance.OnStateChanged -= HandleStateChanged;
-        }
-
-        private void HandleStateChanged(ResortState state)
-        {
-            if (state == ResortState.WAVE_INCOMING)
-                Array.Clear(wasBottleneck, 0, wasBottleneck.Length);
         }
 
         private void Update()
@@ -69,7 +53,7 @@ namespace ResortEmpire.Core
             for (int i = 0; i < AllNeeds.Length; i++)
             {
                 GuestNeedType need = AllNeeds[i];
-                NeedDisplayStatus status = Evaluate(i, need);
+                NeedDisplayStatus status = Evaluate(need);
 
                 if (!force && status == current[i]) continue;
 
@@ -78,26 +62,22 @@ namespace ResortEmpire.Core
             }
         }
 
-        private NeedDisplayStatus Evaluate(int i, GuestNeedType need)
+        private NeedDisplayStatus Evaluate(GuestNeedType need)
         {
             if (!IsUnlocked(need))
                 return NeedDisplayStatus.LOCKED;
 
-            if (bottleneckDetector != null &&
-                bottleneckDetector.GetStatus(need) == NeedStatus.BOTTLENECK)
+            if (bottleneckDetector != null)
             {
-                wasBottleneck[i] = true;
-                return NeedDisplayStatus.BOTTLENECK;
+                NeedStatus s = bottleneckDetector.GetStatus(need);
+                if (s == NeedStatus.BOTTLENECK) return NeedDisplayStatus.BOTTLENECK;
+                if (s == NeedStatus.RECOVERING) return NeedDisplayStatus.RECOVERING;
             }
 
-            if (wasBottleneck[i])
-            {
-                if (needAggregator.GetQueueLength(need) > 0)
-                    return NeedDisplayStatus.RECOVERING;
-                wasBottleneck[i] = false;
-            }
-
-            if (needAggregator.GetArrived(need) > 0 && needAggregator.GetBacklog(need) == 0)
+            // GDD: SATISFIED = príchod uzavretý AND rad 0 AND nikto nesedí
+            if (needAggregator.IsDemandClosed &&
+                needAggregator.GetArrived(need) > 0 &&
+                needAggregator.GetBacklog(need) == 0)
                 return NeedDisplayStatus.SATISFIED;
 
             return NeedDisplayStatus.OK;

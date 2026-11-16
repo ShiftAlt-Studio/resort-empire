@@ -22,6 +22,15 @@ namespace ResortEmpire.Core
         public int ResortValue { get; private set; }
 
         public bool IsResumingFromPause { get; private set; }
+        public int CompletedWaves
+        {
+            get
+            {
+                bool currentDone = CurrentState == ResortState.WAVE_COMPLETE
+                                || CurrentState == ResortState.UPGRADE;
+                return currentDone ? CurrentWaveNumber : CurrentWaveNumber - 1;
+            }
+        }
 
         public event Action<ResortState> OnStateChanged;
         public event Action<int> CoinsChanged;

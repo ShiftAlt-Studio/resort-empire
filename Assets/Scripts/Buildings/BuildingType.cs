@@ -2,5 +2,7 @@ public enum BuildingType
 {
     Reception,
     Restaurant,
-    BeachBar
+    BeachBar,
+    Pool,
+    Bungalows
 }

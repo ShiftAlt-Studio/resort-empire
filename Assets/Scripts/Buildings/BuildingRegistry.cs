@@ -10,6 +10,13 @@ public class BuildingRegistry : MonoBehaviour
         return buildings.Find(b => b.ServedNeed == need);
     }
 
+    public void Register(Building building)
+    {
+        if (building == null || buildings.Contains(building)) return;
+        buildings.Add(building);
+        Debug.Log($"[BuildingRegistry] Registered {building.Type} for {building.ServedNeed}");
+    }
+
     private void Start()
     {
         foreach (GuestNeedType need in System.Enum.GetValues(typeof(GuestNeedType)))

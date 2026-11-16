@@ -9,6 +9,24 @@ namespace ResortEmpire.Core
         Bungalows
     }
 
+    public enum AreaState
+    {
+        Locked,
+        Available,
+        NotAffordable,
+        Unlocked
+    }
+
+    public enum PurchaseResult
+    {
+        Success,
+        WaveInProgress,
+        NotEligible,
+        NotEnoughCoins,
+        AlreadyUnlocked,
+        NotConfigured
+    }
+
     public class AreaActivationService : MonoBehaviour
     {
         [Serializable]
@@ -54,6 +72,63 @@ namespace ResortEmpire.Core
         {
             return GameState.Instance != null
                 && GameState.Instance.CompletedWaves >= RequiredWave(type);
+        }
+
+        public static int GetCost(AreaType type)
+        {
+            switch (type)
+            {
+                case AreaType.Pool: return 1200;
+                case AreaType.Bungalows: return 2500;
+                default: return int.MaxValue;
+            }
+        }
+
+        public bool IsPurchaseWindowOpen
+        {
+            get
+            {
+                if (GameState.Instance == null) return false;
+                ResortState s = GameState.Instance.CurrentState;
+                return s == ResortState.AWAITING_WAVE
+                    || s == ResortState.WAVE_COMPLETE
+                    || s == ResortState.UPGRADE;
+            }
+        }
+
+        public AreaState GetState(AreaType type)
+        {
+            if (IsActivated(type)) return AreaState.Unlocked;
+            if (!IsEligible(type)) return AreaState.Locked;
+            if (GameState.Instance.Coins < GetCost(type)) return AreaState.NotAffordable;
+            return AreaState.Available;
+        }
+
+        public PurchaseResult TryPurchase(AreaType type)
+        {
+            Area a = Find(type);
+            if (a == null || a.building == null) return PurchaseResult.NotConfigured;
+            if (!IsPurchaseWindowOpen) return PurchaseResult.WaveInProgress;
+
+            switch (GetState(type))
+            {
+                case AreaState.Unlocked: return PurchaseResult.AlreadyUnlocked;
+                case AreaState.Locked: return PurchaseResult.NotEligible;
+                case AreaState.NotAffordable: return PurchaseResult.NotEnoughCoins;
+            }
+
+            int cost = GetCost(type);
+            if (!GameState.Instance.TrySpendCoins(cost))
+                return PurchaseResult.NotEnoughCoins;
+
+            if (!Activate(type))
+            {
+                GameState.Instance.AddCoins(cost);
+                return PurchaseResult.NotConfigured;
+            }
+
+            Debug.Log($"[AreaActivationService] {type} purchased for {cost} Coins");
+            return PurchaseResult.Success;
         }
 
         public bool Activate(AreaType type)

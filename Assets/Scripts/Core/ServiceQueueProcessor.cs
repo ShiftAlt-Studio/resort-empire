@@ -8,6 +8,8 @@ namespace ResortEmpire.Core
     {
         [SerializeField] private NeedAggregator needAggregator;
         [SerializeField] private ArrivalPhase arrivalPhase;
+        [SerializeField] private BuildingRegistry buildingRegistry;
+        [SerializeField] private WorkerAllocation workerAllocation;
 
         [Header("(Build Doc §4.8)")]
         [SerializeField] private int seatsPerBuilding = 3;
@@ -19,16 +21,15 @@ namespace ResortEmpire.Core
             (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
 
         private readonly List<float>[] activeSeats = new List<float>[AllNeeds.Length];
-        private readonly bool[] hasWorker = new bool[AllNeeds.Length];
+        private readonly int[] seatsPerNeed = new int[AllNeeds.Length];
+        private readonly int[] lastQueueLength = new int[AllNeeds.Length];
+
+        public event Action<GuestNeedType, int> QueueChanged;
 
         private void Awake()
         {
             for (int i = 0; i < AllNeeds.Length; i++)
                 activeSeats[i] = new List<float>(seatsPerBuilding);
-
-            hasWorker[(int)GuestNeedType.Rooms] = true;
-            hasWorker[(int)GuestNeedType.Drinks] = true;
-            hasWorker[(int)GuestNeedType.Food] = false;
         }
 
         private void Start()
@@ -38,6 +39,14 @@ namespace ResortEmpire.Core
 
             if (arrivalPhase == null)
                 arrivalPhase = GetComponent<ArrivalPhase>() ?? FindAnyObjectByType<ArrivalPhase>();
+
+            if (buildingRegistry == null)
+                buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
+
+            if (workerAllocation == null)
+                workerAllocation = FindAnyObjectByType<WorkerAllocation>();
+
+            RefreshSeats();
 
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
@@ -51,15 +60,30 @@ namespace ResortEmpire.Core
 
         private void HandleStateChanged(ResortState state)
         {
+            if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                return;
+
             if (state == ResortState.WAVE_INCOMING)
             {
                 for (int i = 0; i < activeSeats.Length; i++)
                     activeSeats[i].Clear();
+
+                RefreshSeats();
+                Array.Clear(lastQueueLength, 0, lastQueueLength.Length);
             }
             else if (state == ResortState.WAVE_ACTIVE)
             {
                 Debug.Log("[ServiceQueueProcessor] Drain phase (dobeh) started — processing remaining queues.");
                 EvaluateWaveCompletion();
+            }
+        }
+
+        private void RefreshSeats()
+        {
+            for (int i = 0; i < AllNeeds.Length; i++)
+            {
+                Building b = buildingRegistry != null ? buildingRegistry.GetBuildingForNeed(AllNeeds[i]) : null;
+                seatsPerNeed[i] = b != null ? b.Capacity : seatsPerBuilding;
             }
         }
 
@@ -83,6 +107,7 @@ namespace ResortEmpire.Core
 
         private void ProcessQueues(float deltaTime)
         {
+            RefreshSeats();
             float safeServiceTime = Mathf.Max(0.1f, serviceTime);
 
             for (int i = 0; i < AllNeeds.Length; i++)
@@ -90,7 +115,7 @@ namespace ResortEmpire.Core
                 GuestNeedType need = AllNeeds[i];
                 List<float> seats = activeSeats[i];
 
-                int freeSeats = seatsPerBuilding - seats.Count;
+                int freeSeats = seatsPerNeed[i] - seats.Count;
                 if (freeSeats > 0)
                 {
                     int started = needAggregator.TryBeginService(need, freeSeats);
@@ -98,10 +123,13 @@ namespace ResortEmpire.Core
                         seats.Add(0f);
                 }
 
+                TrackQueue(i, need);
+
                 if (seats.Count == 0)
                     continue;
 
-                float utilization = hasWorker[i] ? staffedUtilization : emptyUtilization;
+                bool staffed = workerAllocation != null && workerAllocation.IsStaffed(need);
+                float utilization = staffed ? staffedUtilization : emptyUtilization;
                 float step = (utilization / safeServiceTime) * deltaTime;
 
                 int completedCount = 0;
@@ -119,7 +147,7 @@ namespace ResortEmpire.Core
                 {
                     needAggregator.CompleteService(need, completedCount);
 
-                    int newlyFree = seatsPerBuilding - seats.Count;
+                    int newlyFree = seatsPerNeed[i] - seats.Count;
                     if (newlyFree > 0)
                     {
                         int started = needAggregator.TryBeginService(need, newlyFree);
@@ -128,6 +156,31 @@ namespace ResortEmpire.Core
                     }
                 }
             }
+        }
+
+        private void TrackQueue(int index, GuestNeedType need)
+        {
+            int queued = needAggregator.GetQueueLength(need);
+            if (queued == lastQueueLength[index]) return;
+
+            if (queued > lastQueueLength[index])
+                Debug.Log($"[ServiceQueueProcessor] {need}: demand queued, queue = {queued}");
+
+            lastQueueLength[index] = queued;
+            QueueChanged?.Invoke(need, queued);
+        }
+
+        public float[] GetSeatProgressForNeed(GuestNeedType need)
+        {
+            return activeSeats[(int)need].ToArray();
+        }
+
+        public void RestoreSeatProgressForNeed(GuestNeedType need, float[] progress)
+        {
+            List<float> list = activeSeats[(int)need];
+            list.Clear();
+            if (progress != null)
+                list.AddRange(progress);
         }
 
         private void EvaluateWaveCompletion()

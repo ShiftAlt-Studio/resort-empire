@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+language: en-US
+reviews:
+  profile: chill
+  poem: false
+  path_filters:
+    - "!Library/**"
+    - "!Temp/**"
+    - "!Logs/**"
+    - "!obj/**"
+    - "!Builds/**"
+    - "!**/*.meta"
+    - "!**/*.png"
+    - "!**/*.blend"
+    - "!**/*.unity"
+    - "!**/*.prefab"
+    - "!**/*.anim"
+    - "!**/*.controller"
+  path_instructions:
+    - path: "Assets/**/*.cs"
+      instructions: |
+        Review Unity C# code. Check for:
+        - Find/GetComponent/FindObjectOfType calls inside Update or other per-frame methods
+        - missing null checks on serialized references
+        - public fields that should be [SerializeField] private
+        - coroutines or events that are never stopped/unsubscribed (memory leaks)
+        - clear naming and short methods
+    - path: "**/*.py"
+      instructions: |
+        These are Blender render scripts. Check that settings (camera angle, px per meter) stay consistent between scripts.
+knowledge_base:
+  jira:
+    usage: auto
+    project_keys: ["SS"]

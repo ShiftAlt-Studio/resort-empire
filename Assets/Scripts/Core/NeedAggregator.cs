@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace ResortEmpire.Core
 {
@@ -9,6 +10,15 @@ namespace ResortEmpire.Core
         [SerializeField] private bool logChanges = true;
 
         public event Action<GuestNeedType> NeedChanged;
+        public event Action<GuestNeedType, float> UnitSeated;
+
+        private readonly Queue<float>[] waitingSince = CreateQueues();
+        private static Queue<float>[] CreateQueues()
+        {
+            var q = new Queue<float>[Enum.GetValues(typeof(GuestNeedType)).Length];
+            for (int i = 0; i < q.Length; i++) q[i] = new Queue<float>();
+            return q;
+        }
 
         private static readonly int NeedCount = Enum.GetValues(typeof(GuestNeedType)).Length;
 
@@ -23,6 +33,8 @@ namespace ResortEmpire.Core
         public int GetServed(GuestNeedType need) => served[(int)need];
         public int GetBacklog(GuestNeedType need) => arrived[(int)need] - served[(int)need];
         public int GetWaiting(GuestNeedType need) => GetBacklog(need) - inService[(int)need];
+
+        public int GetQueueLength(GuestNeedType need) => GetWaiting(need);
 
         public bool AllServed
         {
@@ -67,7 +79,12 @@ namespace ResortEmpire.Core
         private void HandleStateChanged(ResortState state)
         {
             if (state == ResortState.WAVE_INCOMING)
+            {
+                if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                    return;
+
                 ResetAll();
+            }
         }
 
         private void HandleArrivalFinished()
@@ -82,6 +99,7 @@ namespace ResortEmpire.Core
             if (IsDemandClosed || units <= 0) return;
 
             arrived[(int)need] += units;
+            for (int i = 0; i < units; i++) waitingSince[(int)need].Enqueue(Time.time);
             if (logChanges)
                 Debug.Log($"[NeedAggregator] {need}: arrived {GetArrived(need)}, backlog {GetBacklog(need)}");
             NeedChanged?.Invoke(need);
@@ -95,6 +113,12 @@ namespace ResortEmpire.Core
             if (taken <= 0) return 0;
 
             inService[(int)need] += taken;
+            for (int i = 0; i < taken; i++)
+            {
+                if (waitingSince[(int)need].Count == 0) break;
+                float wait = Time.time - waitingSince[(int)need].Dequeue();
+                UnitSeated?.Invoke(need, wait);
+            }
             NeedChanged?.Invoke(need);
             return taken;
         }
@@ -113,13 +137,38 @@ namespace ResortEmpire.Core
             NeedChanged?.Invoke(need);
         }
 
+        public void GetSnapshots(out int[] arrivedCopy, out int[] inServiceCopy, out int[] servedCopy)
+        {
+            arrivedCopy = (int[])arrived.Clone();
+            inServiceCopy = (int[])inService.Clone();
+            servedCopy = (int[])served.Clone();
+        }
+
+        public void RestoreState(bool demandClosed, int[] savedArrived, int[] savedInService, int[] savedServed)
+        {
+            IsDemandClosed = demandClosed;
+            if (savedArrived != null) Array.Copy(savedArrived, arrived, Mathf.Min(NeedCount, savedArrived.Length));
+            if (savedInService != null) Array.Copy(savedInService, inService, Mathf.Min(NeedCount, savedInService.Length));
+            if (savedServed != null) Array.Copy(savedServed, served, Mathf.Min(NeedCount, savedServed.Length));
+
+            foreach (var q in waitingSince) q.Clear();
+            for (int n = 0; n < NeedCount; n++)
+            {
+                int waiting = arrived[n] - served[n] - inService[n];
+                for (int k = 0; k < waiting; k++) waitingSince[n].Enqueue(Time.time);
+            }
+            foreach (GuestNeedType need in Enum.GetValues(typeof(GuestNeedType)))
+                NeedChanged?.Invoke(need);
+        }
+
         public void ResetAll()
         {
             IsDemandClosed = false;
             Array.Clear(arrived, 0, NeedCount);
             Array.Clear(inService, 0, NeedCount);
             Array.Clear(served, 0, NeedCount);
-
+            
+            foreach (var q in waitingSince) q.Clear();
             foreach (GuestNeedType need in Enum.GetValues(typeof(GuestNeedType)))
                 NeedChanged?.Invoke(need);
         }

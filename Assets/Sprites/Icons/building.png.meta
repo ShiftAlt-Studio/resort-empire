@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b05f619a0583eb04e92f43509c3e6cf7
+guid: 59cbd80e4313b764aa5f08d3ba2b89c1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -144,10 +144,10 @@ TextureImporter:
       name: building_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 20
-        height: 24
+        x: 63
+        y: 20
+        width: 386
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

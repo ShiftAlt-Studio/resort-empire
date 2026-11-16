@@ -40,6 +40,22 @@ namespace ResortEmpire.Core
             return a != null && GameState.Instance != null && GameState.Instance.IsNeedUnlocked(a.need);
         }
 
+        public static int RequiredWave(AreaType type)
+        {
+            switch (type)
+            {
+                case AreaType.Pool: return 3;
+                case AreaType.Bungalows: return 6;
+                default: return int.MaxValue;
+            }
+        }
+
+        public bool IsEligible(AreaType type)
+        {
+            return GameState.Instance != null
+                && GameState.Instance.CompletedWaves >= RequiredWave(type);
+        }
+
         public bool Activate(AreaType type)
         {
             Area a = Find(type);

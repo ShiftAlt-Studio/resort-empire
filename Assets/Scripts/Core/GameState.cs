@@ -27,6 +27,7 @@ namespace ResortEmpire.Core
         public event Action<int> CoinsChanged;
         public event Action<int> EnergyChanged;
         public event Action<int> ResortValueChanged;
+        public event Action<GuestNeedType> NeedUnlocked;
 
         private ResortState stateBeforePause = ResortState.AWAITING_WAVE;
 
@@ -123,6 +124,24 @@ namespace ResortEmpire.Core
             IsResumingFromPause = true;
             SetState(stateBeforePause);
             IsResumingFromPause = false;
+            return true;
+        }
+
+        public void AddWorker()
+        {
+            AvailableWorkers += 1;
+            Debug.Log($"[GameState] +1 Worker -> AvailableWorkers: {AvailableWorkers}");
+        }
+        
+        public bool IsNeedUnlocked(GuestNeedType need) => unlockedNeeds.Contains(need);
+
+        public bool UnlockNeed(GuestNeedType need)
+        {
+            if (!unlockedNeeds.Add(need))
+                return false;
+
+            Debug.Log($"[GameState] Need unlocked: {need}");
+            NeedUnlocked?.Invoke(need);
             return true;
         }
 

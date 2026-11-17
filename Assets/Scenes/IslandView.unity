@@ -12989,7 +12989,7 @@ MonoBehaviour:
     title: Ocean Bungalows
     line1: 'Adds: Ocean View Demand'
     line2: 'Includes: 1 Worker'
-    image: {fileID: 21300000, guid: 5ede40bac0d2bae48b9e4f3f2c3d61a4, type: 3}
+    image: {fileID: 21300000, guid: 3c2ef2681a0e697499a4afdceee8bad6, type: 3}
 --- !u!1 &919813151
 GameObject:
   m_ObjectHideFlags: 0

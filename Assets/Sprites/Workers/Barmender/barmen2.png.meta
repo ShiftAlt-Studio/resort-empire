@@ -1,0 +1,730 @@
+fileFormatVersion: 2
+guid: 081e02381d64d5448b046a33520b2c84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6631996199681458437
+    second: barmen2_0
+  - first:
+      213: -4935637087368263954
+    second: barmen2_1
+  - first:
+      213: 5304511989669215870
+    second: barmen2_2
+  - first:
+      213: 6988411135910288260
+    second: barmen2_3
+  - first:
+      213: -1170750694308358978
+    second: barmen2_4
+  - first:
+      213: -1444475370170022146
+    second: barmen2_5
+  - first:
+      213: 1439323163569025923
+    second: barmen2_6
+  - first:
+      213: -4515515945469151683
+    second: barmen2_7
+  - first:
+      213: 1759264229489084660
+    second: barmen2_8
+  - first:
+      213: -1506553763973643142
+    second: barmen2_9
+  - first:
+      213: 3925057511071004049
+    second: barmen2_10
+  - first:
+      213: -7851989210019971843
+    second: barmen2_11
+  - first:
+      213: -6161605452721055002
+    second: barmen2_12
+  - first:
+      213: -7145029967209577369
+    second: barmen2_13
+  - first:
+      213: -6062125364981365930
+    second: barmen2_14
+  - first:
+      213: -1407035963407731580
+    second: barmen2_15
+  - first:
+      213: -9107087546867374321
+    second: barmen2_16
+  - first:
+      213: -7308251961662978396
+    second: barmen2_17
+  - first:
+      213: 6866212532840406637
+    second: barmen2_18
+  - first:
+      213: -8911992601376138060
+    second: barmen2_19
+  - first:
+      213: 8688828758630566127
+    second: barmen2_20
+  - first:
+      213: -5378618796809751561
+    second: barmen2_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barmen2_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 953
+        height: 1515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50101c1e765990c50800000000000000
+      internalID: 6631996199681458437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_1
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1475
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6cb2b1838118bb0800000000000000
+      internalID: -4935637087368263954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1478
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7eb803dc896d9940800000000000000
+      internalID: 5304511989669215870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_3
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1477
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48b1154e6e2dbf060800000000000000
+      internalID: 6988411135910288260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_4
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1483
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb455394278a0cfe0800000000000000
+      internalID: -1170750694308358978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_5
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1471
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef60732dd4134fbe0800000000000000
+      internalID: -1444475370170022146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_6
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1451
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383f5899ac089f310800000000000000
+      internalID: 1439323163569025923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_7
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1363
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36f2bcfb2aa551c0800000000000000
+      internalID: -4515515945469151683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_8
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 1359
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f88fb8ee792a6810800000000000000
+      internalID: 1759264229489084660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_9
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 1297
+        width: 71
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a74c25f6555a71be0800000000000000
+      internalID: -1506553763973643142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_10
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1325
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 195bd5ea20b987630800000000000000
+      internalID: 3925057511071004049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_11
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1311
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc3f844a61280390800000000000000
+      internalID: -7851989210019971843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1279
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea93708c749d7aa0800000000000000
+      internalID: -6161605452721055002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 941
+        width: 183
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 764c3fec911c7dc90800000000000000
+      internalID: -7145029967209577369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_14
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 921
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 653866c59110fdba0800000000000000
+      internalID: -6062125364981365930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_15
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 887
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484f1eefe34397ce0800000000000000
+      internalID: -1407035963407731580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 891
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f072696a0202d9180800000000000000
+      internalID: -9107087546867374321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_17
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 869
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6c608cf8fd39a90800000000000000
+      internalID: -7308251961662978396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_18
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 839
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e994c7befa94f50800000000000000
+      internalID: 6866212532840406637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_19
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 840
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcd01262fd325480800000000000000
+      internalID: -8911992601376138060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_20
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 647
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe88f5878bbe49870800000000000000
+      internalID: 8688828758630566127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barmen2_21
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 74
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f37ae193be4b55b0800000000000000
+      internalID: -5378618796809751561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      barmen2_0: 6631996199681458437
+      barmen2_1: -4935637087368263954
+      barmen2_10: 3925057511071004049
+      barmen2_11: -7851989210019971843
+      barmen2_12: -6161605452721055002
+      barmen2_13: -7145029967209577369
+      barmen2_14: -6062125364981365930
+      barmen2_15: -1407035963407731580
+      barmen2_16: -9107087546867374321
+      barmen2_17: -7308251961662978396
+      barmen2_18: 6866212532840406637
+      barmen2_19: -8911992601376138060
+      barmen2_2: 5304511989669215870
+      barmen2_20: 8688828758630566127
+      barmen2_21: -5378618796809751561
+      barmen2_3: 6988411135910288260
+      barmen2_4: -1170750694308358978
+      barmen2_5: -1444475370170022146
+      barmen2_6: 1439323163569025923
+      barmen2_7: -4515515945469151683
+      barmen2_8: 1759264229489084660
+      barmen2_9: -1506553763973643142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

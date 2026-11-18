@@ -11,6 +11,7 @@ namespace ResortEmpire.Core
 
         public event Action<GuestNeedType> NeedChanged;
         public event Action<GuestNeedType, float> UnitSeated;
+        public event Action<GuestNeedType, int> ServiceCompleted;
 
         private readonly Queue<float>[] waitingSince = CreateQueues();
         private static Queue<float>[] CreateQueues()
@@ -132,6 +133,7 @@ namespace ResortEmpire.Core
 
             inService[(int)need] -= done;
             served[(int)need] += done;
+            ServiceCompleted?.Invoke(need, done);
             if (logChanges)
                 Debug.Log($"[NeedAggregator] {need}: served {GetServed(need)}/{GetArrived(need)}, backlog {GetBacklog(need)}");
             NeedChanged?.Invoke(need);
@@ -167,7 +169,7 @@ namespace ResortEmpire.Core
             Array.Clear(arrived, 0, NeedCount);
             Array.Clear(inService, 0, NeedCount);
             Array.Clear(served, 0, NeedCount);
-            
+
             foreach (var q in waitingSince) q.Clear();
             foreach (GuestNeedType need in Enum.GetValues(typeof(GuestNeedType)))
                 NeedChanged?.Invoke(need);

@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,10 +6,6 @@ using ResortEmpire.Core;
 
 namespace ResortEmpire.UI
 {
-    /// <summary>
-    /// SS-37: Отображает результаты волны (rating, Wave Satisfaction, Coins, Energy, Resort Value)
-    /// на экране Wave Complete и позволяет игроку забрать награды кнопкой Claim Rewards.
-    /// </summary>
     public class WaveCompletePanel : MonoBehaviour
     {
         [SerializeField] private WaveRewardService rewardService;
@@ -23,6 +20,10 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text energyRewardText;
         [SerializeField] private TMP_Text resortValueRewardText;
         [SerializeField] private Button claimRewardsButton;
+
+        [Header("Reward flight animation")]
+        [SerializeField] private RewardFlyAnimation rewardFlyAnimation;
+        private bool claiming;
 
         private void Awake()
         {
@@ -62,6 +63,8 @@ namespace ResortEmpire.UI
         public void ShowWaveResults(WaveRewardSummary summary)
         {
             EnsureUI();
+            claiming = false;
+            if (claimRewardsButton != null) claimRewardsButton.interactable = true;
 
             if (titleText != null)
                 titleText.text = "WAVE COMPLETE!";
@@ -90,8 +93,31 @@ namespace ResortEmpire.UI
 
         private void OnClaimClicked()
         {
-            if (panelRoot != null)
-                panelRoot.SetActive(false);
+            if (claiming) return;
+            if (rewardService != null && !rewardService.HasUnclaimedRewards) return;
+
+            claiming = true;
+            if (claimRewardsButton != null) claimRewardsButton.interactable = false;
+
+            if (rewardFlyAnimation == null)
+                rewardFlyAnimation = GetComponent<RewardFlyAnimation>();
+
+            if (rewardFlyAnimation == null)
+            {
+                FinishClaim();
+                return;
+            }
+
+            rewardFlyAnimation.Play(
+                coinsRewardText != null ? coinsRewardText.rectTransform : null,
+                energyRewardText != null ? energyRewardText.rectTransform : null,
+                resortValueRewardText != null ? resortValueRewardText.rectTransform : null,
+                FinishClaim);
+        }
+
+        private void FinishClaim()
+        {
+            if (panelRoot != null) panelRoot.SetActive(false);
 
             if (rewardService != null)
                 rewardService.ClaimRewards();
@@ -109,13 +135,13 @@ namespace ResortEmpire.UI
         {
             switch (rating)
             {
-                case WaveRating.OneStar:   return "★☆☆☆☆  (1★)";
-                case WaveRating.TwoStars:  return "★★☆☆☆  (2★)";
-                case WaveRating.ThreeStars:return "★★★☆☆  (3★)";
+                case WaveRating.OneStar: return "★☆☆☆☆  (1★)";
+                case WaveRating.TwoStars: return "★★☆☆☆  (2★)";
+                case WaveRating.ThreeStars: return "★★★☆☆  (3★)";
                 case WaveRating.FourStars: return "★★★★☆  (4★)";
                 case WaveRating.FiveStars: return "★★★★★  (5★)";
-                case WaveRating.Perfect:   return "★★★★★  PERFECT!";
-                default:                   return "★☆☆☆☆";
+                case WaveRating.Perfect: return "★★★★★  PERFECT!";
+                default: return "★☆☆☆☆";
             }
         }
 
@@ -130,7 +156,6 @@ namespace ResortEmpire.UI
             TMP_Text existingText = canvas.GetComponentInChildren<TMP_Text>(true);
             if (existingText != null) sharedFont = existingText.font;
 
-            // Полноэкранный полупрозрачный фон
             panelRoot = new GameObject("WaveCompleteOverlay", typeof(RectTransform), typeof(Image));
             panelRoot.transform.SetParent(canvas.transform, false);
             RectTransform rootRt = panelRoot.GetComponent<RectTransform>();
@@ -140,7 +165,6 @@ namespace ResortEmpire.UI
             rootRt.offsetMax = Vector2.zero;
             panelRoot.GetComponent<Image>().color = new Color(0.05f, 0.12f, 0.18f, 0.82f);
 
-            // Центральная карточка
             GameObject card = new GameObject("Card", typeof(RectTransform), typeof(Image));
             card.transform.SetParent(panelRoot.transform, false);
             RectTransform cardRt = card.GetComponent<RectTransform>();
@@ -160,7 +184,6 @@ namespace ResortEmpire.UI
             energyRewardText = CreateLabel(card.transform, "EnergyReward", "+5 Energy", 32, new Vector2(0f, -85f), new Color(0.12f, 0.52f, 0.85f), sharedFont);
             resortValueRewardText = CreateLabel(card.transform, "ResortValueReward", "+20 Resort Value", 32, new Vector2(0f, -135f), new Color(0.85f, 0.55f, 0.08f), sharedFont);
 
-            // Кнопка CLAIM REWARDS
             GameObject btnObj = new GameObject("ClaimRewardsButton", typeof(RectTransform), typeof(Image), typeof(Button));
             btnObj.transform.SetParent(card.transform, false);
             RectTransform btnRt = btnObj.GetComponent<RectTransform>();

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ResortEmpire.Core
@@ -56,6 +57,40 @@ namespace ResortEmpire.Core
         {
             Area a = Find(type);
             return a != null && GameState.Instance != null && GameState.Instance.IsNeedUnlocked(a.need);
+        }
+
+        public List<AreaType> GetUnlockedAreasSnapshot()
+        {
+            var list = new List<AreaType>();
+            if (areas == null || GameState.Instance == null) return list;
+
+            foreach (Area a in areas)
+            {
+                if (GameState.Instance.IsNeedUnlocked(a.need))
+                    list.Add(a.type);
+            }
+            return list;
+        }
+
+        public void RestoreUnlockedAreas(IEnumerable<AreaType> unlockedAreas)
+        {
+            if (unlockedAreas == null || GameState.Instance == null) return;
+            if (buildingRegistry == null) buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
+
+            foreach (AreaType type in unlockedAreas)
+            {
+                Area a = Find(type);
+                if (a == null) continue;
+
+                GameState.Instance.UnlockNeed(a.need);
+                if (a.siteObject != null) a.siteObject.SetActive(false);
+                if (a.building != null)
+                {
+                    a.building.gameObject.SetActive(true);
+                    if (buildingRegistry != null)
+                        buildingRegistry.Register(a.building);
+                }
+            }
         }
 
         public static int RequiredWave(AreaType type)

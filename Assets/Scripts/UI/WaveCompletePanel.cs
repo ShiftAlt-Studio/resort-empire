@@ -191,7 +191,7 @@ namespace ResortEmpire.UI
                     continue;
 
                 bool isBottleneck = bottleneckDetector != null &&
-                                    bottleneckDetector.GetStatus(need) == NeedStatus.BOTTLENECK;
+                                    bottleneckDetector.HadBottleneckThisWave(need);
 
                 if (isBottleneck)
                 {
@@ -199,17 +199,21 @@ namespace ResortEmpire.UI
                     string label = b != null ? b.Type.ToString() : need.ToString();
                     issueNeeds.Add(label);
                 }
-                else
+                else if (bottleneckDetector != null)
                 {
                     goodNeeds.Add(need.ToString());
                 }
             }
 
-            okLine = goodNeeds.Count > 0
+            okLine = bottleneckDetector == null
+                ? "Performance data unavailable"
+                : goodNeeds.Count > 0
                 ? $"{string.Join(" & ", goodNeeds)} went great!"
                 : "All service lines processed";
 
-            bottleneckLine = issueNeeds.Count > 0
+            bottleneckLine = bottleneckDetector == null
+                ? "Bottleneck data unavailable"
+                : issueNeeds.Count > 0
                 ? $"{string.Join(", ", issueNeeds)} capacity needs improvement"
                 : "No major bottlenecks detected";
         }

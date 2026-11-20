@@ -14396,8 +14396,8 @@ MonoBehaviour:
   coinSprite: {fileID: 7346423642426575543, guid: 4c21b18c50c5dca478aa4c5a37d60c9b, type: 3}
   energySprite: {fileID: -2983090718515566234, guid: c433f911ae0f1634c9df29501cbc347a, type: 3}
   starSprite: {fileID: 4815476061570213978, guid: 18fff3bb4ad6fe54eb32d7ca4bb67da3, type: 3}
+  filledStarSprite: {fileID: 7809497162449050188, guid: aed98fed2bb89a0458ce9ffb1d76770f, type: 3}
   filledStarColor: {r: 0.98, g: 0.78, b: 0.1, a: 1}
-  emptyStarColor: {r: 1, g: 1, b: 1, a: 0.35}
   checkIconColor: {r: 0.1, g: 0.68, b: 0.36, a: 1}
   alertIconColor: {r: 0.96, g: 0.65, b: 0.08, a: 1}
   coinIconColor: {r: 0.1, g: 0.68, b: 0.36, a: 1}
@@ -26929,6 +26929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.WaveRewardService
   waveSatisfaction: {fileID: 0}
   needAggregator: {fileID: 0}
+  workerAllocation: {fileID: 0}
+  speedUpService: {fileID: 0}
 --- !u!114 &1777466696
 MonoBehaviour:
   m_ObjectHideFlags: 0

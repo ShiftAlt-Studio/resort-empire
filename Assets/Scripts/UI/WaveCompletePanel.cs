@@ -39,10 +39,10 @@ namespace ResortEmpire.UI
         [SerializeField] private Sprite coinSprite;
         [SerializeField] private Sprite energySprite;
         [SerializeField] private Sprite starSprite;
+        [SerializeField] private Sprite filledStarSprite;
 
         [Header("Цвета иконок")]
         [SerializeField] private Color filledStarColor = new Color(0.98f, 0.78f, 0.10f, 1f);
-        [SerializeField] private Color emptyStarColor = new Color(1f, 1f, 1f, 0.35f);
         [SerializeField] private Color checkIconColor = new Color(0.10f, 0.68f, 0.36f, 1f);
         [SerializeField] private Color alertIconColor = new Color(0.96f, 0.65f, 0.08f, 1f);
         [SerializeField] private Color coinIconColor = new Color(0.10f, 0.68f, 0.36f, 1f);
@@ -53,7 +53,8 @@ namespace ResortEmpire.UI
         [SerializeField] private RewardFlyAnimation rewardFlyAnimation;
         private bool claiming;
 
-        private readonly List<Image> starImages = new List<Image>(5);
+        private readonly List<Image> starCenterFills = new List<Image>(5);
+        private readonly List<Image> starRingImages = new List<Image>(5);
         private Image goodIconImg;
         private Image alertIconImg;
         private Image coinIconImg;
@@ -110,7 +111,6 @@ namespace ResortEmpire.UI
             claiming = false;
             if (claimRewardsButton != null) claimRewardsButton.interactable = true;
 
-            // Скрываем левый временный текст Wave Satisfaction, если он включился в WaveSatisfaction.Finish()
             if (waveSatisfaction != null)
             {
                 var tmp = waveSatisfaction.GetComponentInChildren<TMP_Text>(true);
@@ -154,40 +154,30 @@ namespace ResortEmpire.UI
 
         private void UpdateRatingStars(WaveRating rating)
         {
-            int litCount = StarsForRating(rating);
+            int litCount = WaveRatingCalculator.ToStarCount(rating);
 
-            if (starImages.Count > 0)
+            for (int i = 0; i < 5; i++)
             {
-                for (int i = 0; i < starImages.Count; i++)
+                bool earned = i < litCount;
+
+                if (i < starCenterFills.Count && starCenterFills[i] != null)
                 {
-                    Image starImg = starImages[i];
-                    if (starImg == null) continue;
+                    Image centerFill = starCenterFills[i];
+                    centerFill.sprite = filledStarSprite != null ? filledStarSprite : ResortEmpire.Fx.FxKit.Star;
+                    centerFill.gameObject.SetActive(earned);
+                    centerFill.color = filledStarColor;
+                }
 
-                    if (starSprite != null)
-                        starImg.sprite = starSprite;
-
-                    bool earned = i < litCount;
-                    starImg.color = earned ? filledStarColor : emptyStarColor;
-                    starImg.transform.localScale = earned ? Vector3.one : Vector3.one * 0.9f;
+                if (i < starRingImages.Count && starRingImages[i] != null)
+                {
+                    Image ringImg = starRingImages[i];
+                    if (starSprite != null) ringImg.sprite = starSprite;
+                    ringImg.color = earned ? filledStarColor : Color.white;
                 }
             }
 
             if (ratingText != null)
                 ratingText.text = $"{litCount}/5 ★";
-        }
-
-        private static int StarsForRating(WaveRating rating)
-        {
-            switch (rating)
-            {
-                case WaveRating.OneStar:    return 1;
-                case WaveRating.TwoStars:   return 2;
-                case WaveRating.ThreeStars: return 3;
-                case WaveRating.FourStars:  return 4;
-                case WaveRating.FiveStars:  return 5;
-                case WaveRating.Perfect:    return 5;
-                default:                    return 1;
-            }
         }
 
         private void BuildPerformanceNotes(out string okLine, out string bottleneckLine)
@@ -318,22 +308,17 @@ namespace ResortEmpire.UI
             // =========================================================================
             GameObject perfCard = CreateCard(panelRoot.transform, "PerformanceCard", new Vector2(-340f, 20f), new Vector2(560f, 410f), cardBg, brownOutline, cardSprite, true);
 
-            // Заголовок: левый край -240 (центр -240 + 480/2 = 0)
             CreateLabel(perfCard.transform, "PerfHeader", "PERFORMANCE", 32, new Vector2(0f, 145f), new Vector2(480f, 46f), brownOutline, headerFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            // Строка 1: Guests Served (левый край -240, правый край +240)
             CreateLabel(perfCard.transform, "ServedLabel", "Guests Served", 27, new Vector2(-70f, 70f), new Vector2(340f, 42f), new Color(0.32f, 0.35f, 0.38f), bodyFont, FontStyles.Normal, TextAlignmentOptions.Left);
             guestsServedValueText = CreateLabel(perfCard.transform, "ServedValue", "12/12", 29, new Vector2(170f, 70f), new Vector2(140f, 42f), greenText, headerFont, FontStyles.Bold, TextAlignmentOptions.Right);
 
-            // Строка 2: Avg. Satisfaction (левый край -240, правый край +240)
             CreateLabel(perfCard.transform, "SatLabel", "Avg. Satisfaction", 27, new Vector2(-70f, 5f), new Vector2(340f, 42f), new Color(0.32f, 0.35f, 0.38f), bodyFont, FontStyles.Normal, TextAlignmentOptions.Left);
             satisfactionValueText = CreateLabel(perfCard.transform, "SatValue", "88%", 29, new Vector2(170f, 5f), new Vector2(140f, 42f), greenText, headerFont, FontStyles.Bold, TextAlignmentOptions.Right);
 
-            // Строка 3: Иконка 38x38 с левым краем -240 (центр -221), текст с левым краем -190 (центр -190 + 430/2 = +25)
             goodIconImg = CreateRowIcon(perfCard.transform, "GoodIcon", checkSprite, new Vector2(-221f, -65f), new Vector2(38f, 38f), checkIconColor);
             goodNeedsText = CreateLabel(perfCard.transform, "GoodNeeds", "Rooms & drinks went great!", 24, new Vector2(25f, -65f), new Vector2(430f, 54f), new Color(0.22f, 0.25f, 0.28f), bodyFont, FontStyles.Normal, TextAlignmentOptions.Left);
 
-            // Строка 4: Иконка 38x38 с левым краем -240 (центр -221), текст с левым краем -190 (центр +25)
             alertIconImg = CreateRowIcon(perfCard.transform, "AlertIcon", alertSprite, new Vector2(-221f, -135f), new Vector2(38f, 38f), alertIconColor);
             bottleneckHintText = CreateLabel(perfCard.transform, "BottleneckHint", "Food capacity needs improvement", 24, new Vector2(25f, -135f), new Vector2(430f, 60f), new Color(0.82f, 0.45f, 0.08f), bodyFont, FontStyles.Normal, TextAlignmentOptions.Left);
 
@@ -342,10 +327,8 @@ namespace ResortEmpire.UI
             // =========================================================================
             GameObject rewardsCard = CreateCard(panelRoot.transform, "RewardsCard", new Vector2(340f, 20f), new Vector2(540f, 340f), cardBg, brownOutline, cardSprite, true);
 
-            // Заголовок: левый край -225 (центр -225 + 450/2 = 0)
             CreateLabel(rewardsCard.transform, "RewardsHeader", "REWARDS EARNED", 32, new Vector2(0f, 115f), new Vector2(450f, 46f), brownOutline, headerFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            // Награды: иконка 44x44 с левым краем -225 (центр -203), текст с левым краем -168 (центр -168 + 395/2 = +29.5)
             coinIconImg = CreateRowIcon(rewardsCard.transform, "CoinIcon", coinSprite, new Vector2(-203f, 32f), new Vector2(44f, 44f), coinIconColor);
             coinsRewardText = CreateLabel(rewardsCard.transform, "CoinsReward", "+120 Coins", 31, new Vector2(30f, 32f), new Vector2(395f, 48f), greenText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
@@ -377,14 +360,15 @@ namespace ResortEmpire.UI
 
         private void CreateStarsRow(Transform parent, Vector2 anchoredPos)
         {
-            starImages.Clear();
+            starCenterFills.Clear();
+            starRingImages.Clear();
 
             GameObject row = new GameObject("StarsRow", typeof(RectTransform), typeof(HorizontalLayoutGroup));
             row.transform.SetParent(parent, false);
             RectTransform rt = row.GetComponent<RectTransform>();
             rt.anchorMin = new Vector2(0.5f, 0.5f);
             rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.sizeDelta = new Vector2(340f, 56f);
+            rt.sizeDelta = new Vector2(360f, 58f);
             rt.anchoredPosition = anchoredPos;
 
             HorizontalLayoutGroup layout = row.GetComponent<HorizontalLayoutGroup>();
@@ -395,22 +379,54 @@ namespace ResortEmpire.UI
             layout.childForceExpandWidth = false;
             layout.childForceExpandHeight = false;
 
+            bool customFilled = filledStarSprite != null;
+
             for (int i = 0; i < 5; i++)
             {
-                GameObject starGo = new GameObject($"Star_{i + 1}", typeof(RectTransform), typeof(Image));
-                starGo.transform.SetParent(row.transform, false);
-                RectTransform starRt = starGo.GetComponent<RectTransform>();
-                starRt.sizeDelta = new Vector2(48f, 48f);
+                bool earnedDefault = i < 4;
 
-                Image img = starGo.GetComponent<Image>();
-                img.preserveAspect = true;
-                img.raycastTarget = false;
+                GameObject starSlot = new GameObject($"Star_{i + 1}", typeof(RectTransform));
+                starSlot.transform.SetParent(row.transform, false);
+                starSlot.GetComponent<RectTransform>().sizeDelta = new Vector2(52f, 52f);
 
-                if (starSprite != null)
-                    img.sprite = starSprite;
+                GameObject centerGo = new GameObject("CenterFill", typeof(RectTransform), typeof(Image));
+                centerGo.transform.SetParent(starSlot.transform, false);
+                RectTransform centerRt = centerGo.GetComponent<RectTransform>();
+                centerRt.anchorMin = customFilled ? Vector2.zero : new Vector2(0.5f, 0.5f);
+                centerRt.anchorMax = customFilled ? Vector2.one : new Vector2(0.5f, 0.5f);
+                if (customFilled)
+                {
+                    centerRt.offsetMin = Vector2.zero;
+                    centerRt.offsetMax = Vector2.zero;
+                }
+                else
+                {
+                    centerRt.sizeDelta = new Vector2(32f, 32f);
+                    centerRt.anchoredPosition = Vector2.zero;
+                }
 
-                img.color = i < 4 ? filledStarColor : emptyStarColor;
-                starImages.Add(img);
+                Image centerImg = centerGo.GetComponent<Image>();
+                centerImg.sprite = customFilled ? filledStarSprite : ResortEmpire.Fx.FxKit.Star;
+                centerImg.preserveAspect = true;
+                centerImg.raycastTarget = false;
+                centerImg.color = filledStarColor;
+                centerImg.gameObject.SetActive(earnedDefault);
+                starCenterFills.Add(centerImg);
+
+                GameObject ringGo = new GameObject("StarOutline", typeof(RectTransform), typeof(Image));
+                ringGo.transform.SetParent(starSlot.transform, false);
+                RectTransform ringRt = ringGo.GetComponent<RectTransform>();
+                ringRt.anchorMin = Vector2.zero;
+                ringRt.anchorMax = Vector2.one;
+                ringRt.offsetMin = Vector2.zero;
+                ringRt.offsetMax = Vector2.zero;
+
+                Image ringImg = ringGo.GetComponent<Image>();
+                if (starSprite != null) ringImg.sprite = starSprite;
+                ringImg.preserveAspect = true;
+                ringImg.raycastTarget = false;
+                ringImg.color = earnedDefault ? filledStarColor : Color.white;
+                starRingImages.Add(ringImg);
             }
 
             if (ratingText != null)

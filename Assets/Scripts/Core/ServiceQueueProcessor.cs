@@ -10,6 +10,7 @@ namespace ResortEmpire.Core
         [SerializeField] private ArrivalPhase arrivalPhase;
         [SerializeField] private BuildingRegistry buildingRegistry;
         [SerializeField] private WorkerAllocation workerAllocation;
+        [SerializeField] private SpeedUpService speedUpService;
 
         [Header("(Build Doc §4.8)")]
         [SerializeField] private int seatsPerBuilding = 3;
@@ -45,6 +46,9 @@ namespace ResortEmpire.Core
 
             if (workerAllocation == null)
                 workerAllocation = FindAnyObjectByType<WorkerAllocation>();
+
+            if (speedUpService == null)
+                speedUpService = FindAnyObjectByType<SpeedUpService>();    
 
             RefreshSeats();
 
@@ -130,7 +134,8 @@ namespace ResortEmpire.Core
 
                 bool staffed = workerAllocation != null && workerAllocation.IsStaffed(need);
                 float utilization = staffed ? staffedUtilization : emptyUtilization;
-                float step = (utilization / safeServiceTime) * deltaTime;
+                float boost = speedUpService != null ? speedUpService.GetMultiplier(need) : 1f;
+                float step = (utilization / safeServiceTime) * boost * deltaTime;
 
                 int completedCount = 0;
                 for (int s = seats.Count - 1; s >= 0; s--)

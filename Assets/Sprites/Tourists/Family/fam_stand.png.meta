@@ -1,0 +1,1978 @@
+fileFormatVersion: 2
+guid: 7b836181e704f5d46b966c9f44cec834
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7636936378322680487
+    second: fam_stand_0
+  - first:
+      213: 1490610868852065804
+    second: fam_stand_1
+  - first:
+      213: 5908047670502206287
+    second: fam_stand_2
+  - first:
+      213: -6715551440150844242
+    second: fam_stand_3
+  - first:
+      213: -2220919593551780770
+    second: fam_stand_4
+  - first:
+      213: 2830877193950501414
+    second: fam_stand_5
+  - first:
+      213: -3175270287852254532
+    second: fam_stand_6
+  - first:
+      213: -3396734229250940410
+    second: fam_stand_7
+  - first:
+      213: -8538809064002518985
+    second: fam_stand_8
+  - first:
+      213: -7615750591238843309
+    second: fam_stand_9
+  - first:
+      213: 5331244959815301923
+    second: fam_stand_10
+  - first:
+      213: 5244018497256126312
+    second: fam_stand_11
+  - first:
+      213: -392131384985015024
+    second: fam_stand_12
+  - first:
+      213: -3584771095810738077
+    second: fam_stand_13
+  - first:
+      213: -2616364249864260769
+    second: fam_stand_14
+  - first:
+      213: 7730910950127556868
+    second: fam_stand_15
+  - first:
+      213: 1226027702305680864
+    second: fam_stand_16
+  - first:
+      213: 3749023776086937681
+    second: fam_stand_17
+  - first:
+      213: -6521994082204280080
+    second: fam_stand_18
+  - first:
+      213: -5873324986484397146
+    second: fam_stand_19
+  - first:
+      213: 1507973315902333719
+    second: fam_stand_20
+  - first:
+      213: 7149539012289277452
+    second: fam_stand_21
+  - first:
+      213: 3181566039559466405
+    second: fam_stand_22
+  - first:
+      213: -8502356752103560542
+    second: fam_stand_23
+  - first:
+      213: 4916230871020524001
+    second: fam_stand_24
+  - first:
+      213: 5719817329181937848
+    second: fam_stand_25
+  - first:
+      213: 2645401891580283735
+    second: fam_stand_26
+  - first:
+      213: 1446379958689414828
+    second: fam_stand_27
+  - first:
+      213: 7685567957650907222
+    second: fam_stand_28
+  - first:
+      213: 2444814488241226986
+    second: fam_stand_29
+  - first:
+      213: 4223120141333692086
+    second: fam_stand_30
+  - first:
+      213: -5680620695639673617
+    second: fam_stand_31
+  - first:
+      213: 6755809895273738445
+    second: fam_stand_32
+  - first:
+      213: -6698167133097630645
+    second: fam_stand_33
+  - first:
+      213: -8369721748965201877
+    second: fam_stand_34
+  - first:
+      213: 5687377352658311146
+    second: fam_stand_35
+  - first:
+      213: -1380268624953264090
+    second: fam_stand_36
+  - first:
+      213: 2123910839677414171
+    second: fam_stand_37
+  - first:
+      213: 4802059618647619732
+    second: fam_stand_38
+  - first:
+      213: 4520037737798411016
+    second: fam_stand_39
+  - first:
+      213: -5582720367015981464
+    second: fam_stand_40
+  - first:
+      213: 5980407753768962236
+    second: fam_stand_41
+  - first:
+      213: -3407624324156740061
+    second: fam_stand_42
+  - first:
+      213: -6297799939174842876
+    second: fam_stand_43
+  - first:
+      213: 1089233629647724036
+    second: fam_stand_44
+  - first:
+      213: 2404520074021923052
+    second: fam_stand_45
+  - first:
+      213: 4653746203888496806
+    second: fam_stand_46
+  - first:
+      213: 1148617954690839866
+    second: fam_stand_47
+  - first:
+      213: 6174531870462397556
+    second: fam_stand_48
+  - first:
+      213: -454044031035790876
+    second: fam_stand_49
+  - first:
+      213: -1066697411857058335
+    second: fam_stand_50
+  - first:
+      213: -1582697717527150100
+    second: fam_stand_51
+  - first:
+      213: 4162188287240297732
+    second: fam_stand_52
+  - first:
+      213: 8673874034026044998
+    second: fam_stand_53
+  - first:
+      213: -7054133984336945236
+    second: fam_stand_54
+  - first:
+      213: 1393978961452976988
+    second: fam_stand_55
+  - first:
+      213: 3210015916003037266
+    second: fam_stand_56
+  - first:
+      213: -5629295862816447968
+    second: fam_stand_57
+  - first:
+      213: 7345928410639086257
+    second: fam_stand_58
+  - first:
+      213: -4337450373099830089
+    second: fam_stand_59
+  - first:
+      213: 3901832749727231333
+    second: fam_stand_60
+  - first:
+      213: -645274350555375985
+    second: fam_stand_61
+  - first:
+      213: -5580394158202001912
+    second: fam_stand_62
+  - first:
+      213: 7052467438324271463
+    second: fam_stand_63
+  - first:
+      213: 1282283770076030386
+    second: fam_stand_64
+  - first:
+      213: -6306020702245995340
+    second: fam_stand_65
+  - first:
+      213: 8233646547124661745
+    second: fam_stand_66
+  - first:
+      213: -1878837129228962928
+    second: fam_stand_67
+  - first:
+      213: 7738864062599444346
+    second: fam_stand_68
+  - first:
+      213: 7685544346671711870
+    second: fam_stand_69
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fam_stand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1110
+        width: 274
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa7e228c29dbf960800000000000000
+      internalID: 7636936378322680487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1160
+        width: 48
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06834800b6bfa410800000000000000
+      internalID: 1490610868852065804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1123
+        width: 123
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bab5cdd0a9df150800000000000000
+      internalID: 5908047670502206287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_3
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1152
+        width: 140
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac22f2bb819dc2a0800000000000000
+      internalID: -6715551440150844242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_4
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1226
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5424a78565bd21e0800000000000000
+      internalID: -2220919593551780770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_5
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1239
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a9c2c2fcb494720800000000000000
+      internalID: 2830877193950501414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1190
+        width: 59
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbac6ba1f7c2fe3d0800000000000000
+      internalID: -3175270287852254532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1155
+        width: 57
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602661517306cd0d0800000000000000
+      internalID: -3396734229250940410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_8
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1189
+        width: 61
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7308e37956e008980800000000000000
+      internalID: -8538809064002518985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_9
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1118
+        width: 27
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354dc3fef2b6f4690800000000000000
+      internalID: -7615750591238843309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_10
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1154
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32bf1687b036cf940800000000000000
+      internalID: 5331244959815301923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_11
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1221
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867778c0a0f76c840800000000000000
+      internalID: 5244018497256126312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_12
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1209
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01dafac359ede8af0800000000000000
+      internalID: -392131384985015024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_13
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 1205
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368fc196ea5504ec0800000000000000
+      internalID: -3584771095810738077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_14
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1123
+        width: 75
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f533fcba39ec0bbd0800000000000000
+      internalID: -2616364249864260769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_15
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1209
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409d78c8c86b94b60800000000000000
+      internalID: 7730910950127556868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_16
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1209
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ede7b013b9b30110800000000000000
+      internalID: 1226027702305680864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_17
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1191
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150d72cd245370430800000000000000
+      internalID: 3749023776086937681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_18
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1213
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa930fefe83d75a0800000000000000
+      internalID: -6521994082204280080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_19
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1213
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abeb220b02cd7ea0800000000000000
+      internalID: -5873324986484397146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_20
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1146
+        width: 62
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7136021cdb56de410800000000000000
+      internalID: 1507973315902333719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_21
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1189
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0eac4f0ad3483360800000000000000
+      internalID: 7149539012289277452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_22
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 1173
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad6361d471372c20800000000000000
+      internalID: 3181566039559466405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_23
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1179
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa2935d49f810a80800000000000000
+      internalID: -8502356752103560542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_24
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1179
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1dcfc0ee5f93440800000000000000
+      internalID: 4916230871020524001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_25
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1142
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b053065e8fd06f40800000000000000
+      internalID: 5719817329181937848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_26
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1160
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b0ac3210b56b420800000000000000
+      internalID: 2645401891580283735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_27
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1138
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae3defb8e2921410800000000000000
+      internalID: 1446379958689414828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1155
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65028ec665f98aa60800000000000000
+      internalID: 7685567957650907222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_29
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1154
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4c859e2d9bde120800000000000000
+      internalID: 2444814488241226986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_30
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1155
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6befdfbb4698b9a30800000000000000
+      internalID: 4223120141333692086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_31
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1130
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe43aa413916a21b0800000000000000
+      internalID: -5680620695639673617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_32
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 1160
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc03cd15e4571cd50800000000000000
+      internalID: 6755809895273738445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_33
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1110
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44e4891b745b03a0800000000000000
+      internalID: -6698167133097630645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_34
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1032
+        width: 74
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28611cf966c8db80800000000000000
+      internalID: -8369721748965201877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_35
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1142
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7dcc8b19f9dee40800000000000000
+      internalID: 5687377352658311146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_36
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1118
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6283b03affc48dce0800000000000000
+      internalID: -1380268624953264090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_37
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 1118
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1be29dd7a5a97d10800000000000000
+      internalID: 2123910839677414171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_38
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1124
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4983dbfd7c754a240800000000000000
+      internalID: 4802059618647619732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_39
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1124
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803a5d4df566abe30800000000000000
+      internalID: 4520037737798411016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_40
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1072
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e8cab97613682b0800000000000000
+      internalID: -5582720367015981464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_41
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1129
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8046f9a2daef250800000000000000
+      internalID: 5980407753768962236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_42
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1140
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e28a64bbfa5b0d0800000000000000
+      internalID: -3407624324156740061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_43
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1125
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40eb10f8258b998a0800000000000000
+      internalID: -6297799939174842876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_44
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1117
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40edf84173cbd1f00800000000000000
+      internalID: 1089233629647724036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_45
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1126
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce86f5384429e5120800000000000000
+      internalID: 2404520074021923052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_46
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1120
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0b89d048d659040800000000000000
+      internalID: 4653746203888496806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1254
+        height: 1124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35bbf3b1f5b0ff00800000000000000
+      internalID: 1148617954690839866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_48
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1094
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c4d39a50850b550800000000000000
+      internalID: 6174531870462397556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_49
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1101
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9a9b10c59e2b9f0800000000000000
+      internalID: -454044031035790876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_50
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 1004
+        width: 99
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e57e630b545231f0800000000000000
+      internalID: -1066697411857058335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_51
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1110
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce109f7bfc0290ae0800000000000000
+      internalID: -1582697717527150100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1066
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ddf3de13013c930800000000000000
+      internalID: 4162188287240297732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_53
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 990
+        width: 64
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e5b905a7acf5870800000000000000
+      internalID: 8673874034026044998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_54
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1026
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafd591048eaa1e90800000000000000
+      internalID: -7054133984336945236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_55
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 982
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5bc5c5da78685310800000000000000
+      internalID: 1393978961452976988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_56
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 762
+        width: 64
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25016bcd7744c8c20800000000000000
+      internalID: 3210015916003037266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_57
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 742
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022ef31fc39b0e1b0800000000000000
+      internalID: -5629295862816447968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_58
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 698
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2b79518faf1f560800000000000000
+      internalID: 7345928410639086257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 620
+        width: 6
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4cf70ddd74ec3c0800000000000000
+      internalID: -4337450373099830089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_60
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 650
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d2a7c8638162630800000000000000
+      internalID: 3901832749727231333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_61
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 119
+        width: 143
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86d970a5668b07f0800000000000000
+      internalID: -645274350555375985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_62
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 375
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80664bd44157e82b0800000000000000
+      internalID: -5580394158202001912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_63
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 383
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769c35305c56fd160800000000000000
+      internalID: 7052467438324271463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_64
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 71
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b561a88b469bc110800000000000000
+      internalID: 1282283770076030386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_65
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 63
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc3e5005938c78a0800000000000000
+      internalID: -6306020702245995340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_66
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 69
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdac7f29e9c34270800000000000000
+      internalID: 8233646547124661745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_67
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 74
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0933e71e5970de5e0800000000000000
+      internalID: -1878837129228962928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_68
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 19
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77b648dcd7f56b60800000000000000
+      internalID: 7738864062599444346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fam_stand_69
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 29
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7601e01dd988aa60800000000000000
+      internalID: 7685544346671711870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fam_stand_0: 7636936378322680487
+      fam_stand_1: 1490610868852065804
+      fam_stand_10: 5331244959815301923
+      fam_stand_11: 5244018497256126312
+      fam_stand_12: -392131384985015024
+      fam_stand_13: -3584771095810738077
+      fam_stand_14: -2616364249864260769
+      fam_stand_15: 7730910950127556868
+      fam_stand_16: 1226027702305680864
+      fam_stand_17: 3749023776086937681
+      fam_stand_18: -6521994082204280080
+      fam_stand_19: -5873324986484397146
+      fam_stand_2: 5908047670502206287
+      fam_stand_20: 1507973315902333719
+      fam_stand_21: 7149539012289277452
+      fam_stand_22: 3181566039559466405
+      fam_stand_23: -8502356752103560542
+      fam_stand_24: 4916230871020524001
+      fam_stand_25: 5719817329181937848
+      fam_stand_26: 2645401891580283735
+      fam_stand_27: 1446379958689414828
+      fam_stand_28: 7685567957650907222
+      fam_stand_29: 2444814488241226986
+      fam_stand_3: -6715551440150844242
+      fam_stand_30: 4223120141333692086
+      fam_stand_31: -5680620695639673617
+      fam_stand_32: 6755809895273738445
+      fam_stand_33: -6698167133097630645
+      fam_stand_34: -8369721748965201877
+      fam_stand_35: 5687377352658311146
+      fam_stand_36: -1380268624953264090
+      fam_stand_37: 2123910839677414171
+      fam_stand_38: 4802059618647619732
+      fam_stand_39: 4520037737798411016
+      fam_stand_4: -2220919593551780770
+      fam_stand_40: -5582720367015981464
+      fam_stand_41: 5980407753768962236
+      fam_stand_42: -3407624324156740061
+      fam_stand_43: -6297799939174842876
+      fam_stand_44: 1089233629647724036
+      fam_stand_45: 2404520074021923052
+      fam_stand_46: 4653746203888496806
+      fam_stand_47: 1148617954690839866
+      fam_stand_48: 6174531870462397556
+      fam_stand_49: -454044031035790876
+      fam_stand_5: 2830877193950501414
+      fam_stand_50: -1066697411857058335
+      fam_stand_51: -1582697717527150100
+      fam_stand_52: 4162188287240297732
+      fam_stand_53: 8673874034026044998
+      fam_stand_54: -7054133984336945236
+      fam_stand_55: 1393978961452976988
+      fam_stand_56: 3210015916003037266
+      fam_stand_57: -5629295862816447968
+      fam_stand_58: 7345928410639086257
+      fam_stand_59: -4337450373099830089
+      fam_stand_6: -3175270287852254532
+      fam_stand_60: 3901832749727231333
+      fam_stand_61: -645274350555375985
+      fam_stand_62: -5580394158202001912
+      fam_stand_63: 7052467438324271463
+      fam_stand_64: 1282283770076030386
+      fam_stand_65: -6306020702245995340
+      fam_stand_66: 8233646547124661745
+      fam_stand_67: -1878837129228962928
+      fam_stand_68: 7738864062599444346
+      fam_stand_69: 7685544346671711870
+      fam_stand_7: -3396734229250940410
+      fam_stand_8: -8538809064002518985
+      fam_stand_9: -7615750591238843309
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

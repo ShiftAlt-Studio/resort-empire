@@ -1,0 +1,21 @@
+Name;Type;Notes;Phase
+NFR-1 Kompatibilita mobilnej platformy;Requirement;Systém musí byť navrhnutý a nasadený ako mobilná hra pre podporované mobilné operačné systémy (Android/IOS) a zariadenia;Prototype
+NFR-2 Landscape orientácia;Requirement;Systém musí zobrazovať gameplay v landscape orientácii a zachovať v nej zamýšľané herné rozhranie;Prototype
+NFR-3 Prispôsobenie obrazovke;Requirement;Systém musí zachovať použiteľnosť a čitateľnosť gameplay obrazoviek v podporovanom rozsahu veľkostí a pomerov strán mobilných displejov;Prototype
+NFR-4 Dostupnosť mobilného ovládania;Requirement;Systém musí umiestniť hlavné herné ovládacie prvky do pohodlného dosahu palcov pri držaní zariadenia oboma rukami v landscape orientácii;Prototype
+NFR-5 Znovupoužiteľné komponenty;Requirement;Systém musí podporovať opätovné použitie spoločných gameplay a UI komponentov vo funkciách, ktoré zdieľajú rovnaké správanie alebo prezentačnú štruktúru;Prototype / MVP
+NFR-6 Rozšíriteľná architektúra;Requirement;Systém musí byť štruktúrovaný tak, aby MVP funkcie mohli rozšíriť validované systémy Prototypu bez potreby nahradiť základnú funkcionalitu správy vĺn;Prototype
+NFR-7 Čitateľnosť herných informácií;Requirement;Texty, hodnoty, ikony a stavové prvky musia zostať počas hrania dostatočne čitateľné a vzájomne rozlíšiteľné;Prototype
+NFR-8 Rozlíšenie herných stavov;Requirement;Systém musí vizuálne odlíšiť dôležité herné stavy tak, aby hráč dokázal rozpoznať normálny stav, problém a jeho riešenie;Prototype
+NFR-9 Nepenalizujúci návrat do hry;Requirement;Návrat do hry po prestávke nesmie hráčovi vytvárať pocit straty alebo trestu spôsobeného jeho neprítomnosťou;Prototype
+NFR-10 Odozva používateľského rozhrania;Requirement;Herné rozhranie musí reagovať na vstupy hráča bez vnímateľného oneskorenia;Prototype
+NFR-11 Jednoduché ovládanie;Requirement;Systém musí poskytovať jednoduché a zrozumiteľné ovládanie vhodné pre mobilné zariadenia;Prototype
+NFR-12 Prehľadné používateľské rozhranie;Requirement;Používateľské rozhranie musí byť prehľadné a nesmie zobrazovať zbytočne veľké množstvo informácií naraz;Prototype
+NFR-13 Jasné hlavné akcie;Requirement;Hlavné akcie na herných obrazovkách musia byť ľahko rozpoznateľné;Prototype
+NFR-14 Konzistentný vzhľad;Requirement;Herné obrazovky musia používať konzistentný vizuálny štýl a spôsob zobrazovania rovnakých prvkov;Prototype
+NFR-15 Stabilita hry;Requirement;Hra musí počas bežného používania fungovať stabilne bez neočakávaného ukončenia;Prototype
+NFR-16 Pokojný herný zážitok;Requirement;Hra musí poskytovať pokojný herný zážitok bez potreby rýchlych reflexov a zbytočného časového tlaku;Prototype
+NFR-17 Ochrana osobných údajov;Requirement;Systém v aktuálnej fáze nesmie zhromažďovať osobné údaje hráča a v prípade budúceho spracovania osobných údajov musí zabezpečiť ich ochranu v súlade s platnými pravidlami ochrany súkromia a osobných údajov;Prototype / MVP
+NFR-18 Efektívne využitie zariadenia;Requirement;Systém musí počas bežného hrania primerane využívať výkon mobilného zariadenia a nesmie spôsobovať zbytočne vysokú záťaž zariadenia;MVP
+NFR-19 Spotreba batérie;Requirement;Systém musí byť optimalizovaný tak, aby počas bežného hrania nespôsoboval neprimerane vysokú spotrebu batérie mobilného zariadenia;MVP
+NFR-20 Veľkosť aplikácie;Requirement;Systém musí optimalizovať herné súbory a zdroje tak, aby aplikácia nezaberala zbytočne veľké množstvo úložného priestoru mobilného zariadenia;MVP

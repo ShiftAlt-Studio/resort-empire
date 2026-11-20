@@ -27,6 +27,10 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text statusText;
         [SerializeField] private Button closeButton;
         [SerializeField] private WorkerRow[] rows;
+        [Header("Speed Up (SS-130)")]
+        [SerializeField] private SpeedUpService speedUpService;
+        [SerializeField] private Button speedUpButton;
+        [SerializeField] private TMP_Text speedUpLabel;
 
         private GuestNeedType focusNeed;
 
@@ -39,6 +43,8 @@ namespace ResortEmpire.UI
             }
             if (closeButton != null)
                 closeButton.onClick.AddListener(Close);
+            if (speedUpButton != null)
+                speedUpButton.onClick.AddListener(OnSpeedUpClicked);
         }
 
         private void OnEnable()
@@ -46,6 +52,9 @@ namespace ResortEmpire.UI
             allocation.WorkerMoved += HandleWorkerMoved;
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
+            if (speedUpService != null)
+                speedUpService.SpeedUpChanged += HandleSpeedUpChanged;
+            RefreshSpeedUp();
         }
 
         private void OnDisable()
@@ -53,6 +62,8 @@ namespace ResortEmpire.UI
             allocation.WorkerMoved -= HandleWorkerMoved;
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged -= HandleStateChanged;
+            if (speedUpService != null)
+                speedUpService.SpeedUpChanged -= HandleSpeedUpChanged;
         }
 
         public void Open(Building focus)
@@ -97,6 +108,55 @@ namespace ResortEmpire.UI
                 if (row.card != null) row.button.gameObject.SetActive(staffed);
                 else row.button.interactable = staffed;
             }
+            RefreshSpeedUp();
+        }
+
+        private void Update()
+        {
+            if (speedUpService != null && speedUpService.GetState(focusNeed) == SpeedUpState.Active)
+                RefreshSpeedUp();
+        }
+
+        private void RefreshSpeedUp()
+        {
+            if (speedUpButton == null || speedUpService == null) return;
+
+            SpeedUpState state = speedUpService.GetState(focusNeed);
+            bool visible = state != SpeedUpState.Unavailable;
+            speedUpButton.gameObject.SetActive(visible);
+            if (!visible) return;
+
+            speedUpButton.interactable = state == SpeedUpState.Available;
+
+            if (speedUpLabel == null) return;
+            switch (state)
+            {
+                case SpeedUpState.Available:
+                    speedUpLabel.text = $"Speed Up ({speedUpService.EnergyCost} Energy)";
+                    break;
+                case SpeedUpState.Active:
+                    speedUpLabel.text = $"Speed Up {Mathf.CeilToInt(speedUpService.GetRemainingSeconds(focusNeed))}s";
+                    break;
+                case SpeedUpState.Used:
+                    speedUpLabel.text = "Speed Up used";
+                    break;
+                case SpeedUpState.NotEnoughEnergy:
+                    speedUpLabel.text = "Not enough Energy";
+                    break;
+            }
+        }
+
+        private void OnSpeedUpClicked()
+        {
+            SpeedUpResult result = speedUpService.TrySpeedUp(focusNeed);
+            if (result != SpeedUpResult.Success)
+                Debug.Log($"[WorkerAllocationPanel] Speed Up refused: {result}");
+            RefreshSpeedUp();
+        }
+
+        private void HandleSpeedUpChanged(GuestNeedType need)
+        {
+            if (need == focusNeed) RefreshSpeedUp();
         }
 
         private void OnRowClicked(WorkerRow row)

@@ -22,11 +22,21 @@ namespace ResortEmpire.Core
         public int ResortValue { get; private set; }
 
         public bool IsResumingFromPause { get; private set; }
+        public int CompletedWaves
+        {
+            get
+            {
+                bool currentDone = CurrentState == ResortState.WAVE_COMPLETE
+                                || CurrentState == ResortState.UPGRADE;
+                return currentDone ? CurrentWaveNumber : CurrentWaveNumber - 1;
+            }
+        }
 
         public event Action<ResortState> OnStateChanged;
         public event Action<int> CoinsChanged;
         public event Action<int> EnergyChanged;
         public event Action<int> ResortValueChanged;
+        public event Action<GuestNeedType> NeedUnlocked;
 
         private ResortState stateBeforePause = ResortState.AWAITING_WAVE;
 
@@ -85,9 +95,6 @@ namespace ResortEmpire.Core
             SetState(ResortState.WAVE_COMPLETE);
         }
 
-        /// <summary>
-        /// Вызывается после нажатия Claim Rewards на экране Wave Complete (SS-37).
-        /// </summary>
         public void CompleteClaimAndAdvanceWave()
         {
             if (CurrentState != ResortState.WAVE_COMPLETE && CurrentState != ResortState.UPGRADE)
@@ -99,9 +106,6 @@ namespace ResortEmpire.Core
             SetState(ResortState.AWAITING_WAVE);
         }
 
-        /// <summary>
-        /// SS-16: Приостанавливает активную волну (в фазе прихода или добега).
-        /// </summary>
         public bool PauseWave()
         {
             if (CurrentState != ResortState.WAVE_INCOMING && CurrentState != ResortState.WAVE_ACTIVE)
@@ -112,9 +116,6 @@ namespace ResortEmpire.Core
             return true;
         }
 
-        /// <summary>
-        /// SS-16: Возобновляет приостановленную волну ровно в том состоянии, где она была.
-        /// </summary>
         public bool ResumeWave()
         {
             if (CurrentState != ResortState.WAVE_PAUSED)
@@ -123,6 +124,49 @@ namespace ResortEmpire.Core
             IsResumingFromPause = true;
             SetState(stateBeforePause);
             IsResumingFromPause = false;
+            return true;
+        }
+
+        public void AddWorker()
+        {
+            AvailableWorkers += 1;
+            Debug.Log($"[GameState] +1 Worker -> AvailableWorkers: {AvailableWorkers}");
+        }
+
+        public void SetWorkers(int count)
+        {
+            AvailableWorkers = Mathf.Max(0, count);
+            Debug.Log($"[GameState] AvailableWorkers restored -> {AvailableWorkers}");
+        }
+
+        public bool IsNeedUnlocked(GuestNeedType need) => unlockedNeeds.Contains(need);
+
+        public List<GuestNeedType> GetUnlockedNeedsSnapshot()
+        {
+            return new List<GuestNeedType>(unlockedNeeds);
+        }
+
+        public void RestoreUnlockedNeeds(IEnumerable<GuestNeedType> needs)
+        {
+            unlockedNeeds.Clear();
+            unlockedNeeds.Add(GuestNeedType.Rooms);
+            unlockedNeeds.Add(GuestNeedType.Drinks);
+            unlockedNeeds.Add(GuestNeedType.Food);
+
+            if (needs != null)
+            {
+                foreach (GuestNeedType need in needs)
+                    unlockedNeeds.Add(need);
+            }
+        }
+
+        public bool UnlockNeed(GuestNeedType need)
+        {
+            if (!unlockedNeeds.Add(need))
+                return false;
+
+            Debug.Log($"[GameState] Need unlocked: {need}");
+            NeedUnlocked?.Invoke(need);
             return true;
         }
 
@@ -158,9 +202,6 @@ namespace ResortEmpire.Core
             return true;
         }
 
-        /// <summary>
-        /// SS-36 / SS-82: Resort Value только увеличивается с прогрессом курорта.
-        /// </summary>
         public void AddResortValue(int amount)
         {
             if (amount <= 0) return;
@@ -169,21 +210,27 @@ namespace ResortEmpire.Core
             ResortValueChanged?.Invoke(ResortValue);
         }
 
-        /// <summary>
-        /// SS-36 / SS-83: Resort Value — индикатор прогресса, его нельзя тратить как валюту.
-        /// </summary>
         public bool TrySpendResortValue(int amount)
         {
             Debug.LogWarning("[GameState] Resort Value cannot be spent or used as currency (SS-83).");
             return false;
         }
 
-        public void RestoreSnapshot(int waveNumber, int coins, int energy, int resortValue, ResortState activeState)
+        public void RestoreSnapshot(
+            int waveNumber,
+            int coins,
+            int energy,
+            int resortValue,
+            ResortState activeState,
+            IEnumerable<GuestNeedType> savedUnlockedNeeds = null)
         {
             CurrentWaveNumber = Mathf.Clamp(waveNumber, 1, WaveTable.TotalWaves);
             Coins = Mathf.Max(0, coins);
             Energy = Mathf.Max(0, energy);
             ResortValue = Mathf.Max(0, resortValue);
+
+            if (savedUnlockedNeeds != null)
+                RestoreUnlockedNeeds(savedUnlockedNeeds);
 
             CoinsChanged?.Invoke(Coins);
             EnergyChanged?.Invoke(Energy);

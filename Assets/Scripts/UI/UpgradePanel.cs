@@ -40,6 +40,7 @@ namespace ResortEmpire.UI
         [SerializeField] private Button laterButton;
 
         private Building current;
+        private string hint;
 
         private void Awake()
         {
@@ -61,9 +62,10 @@ namespace ResortEmpire.UI
             GameState.Instance.CoinsChanged -= HandleCoinsChanged;
         }
 
-        public void Open(Building building)
+        public void Open(Building building, string suggestionHint = null)
         {
             current = building;
+            hint = suggestionHint;
             Refresh();
             gameObject.SetActive(true);
         }
@@ -109,7 +111,7 @@ namespace ResortEmpire.UI
 
             int coins = GameState.Instance != null ? GameState.Instance.Coins : 0;
             if (feedbackText != null)
-                feedbackText.text = coins < cost ? $"Missing: {cost - coins:N0} Coins" : "";
+                feedbackText.text = coins < cost ? $"Missing: {cost - coins:N0} Coins" : (hint ?? "");
         }
 
         private void OnUpgradeNow()

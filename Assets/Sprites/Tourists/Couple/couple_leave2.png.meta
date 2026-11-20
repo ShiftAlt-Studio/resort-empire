@@ -1,0 +1,1536 @@
+fileFormatVersion: 2
+guid: fc2a2baab9853784ab1e5ccf4999ca6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7335226031585675061
+    second: couple_leave2_0
+  - first:
+      213: 2956881424825137780
+    second: couple_leave2_1
+  - first:
+      213: -344172911747134195
+    second: couple_leave2_2
+  - first:
+      213: -879621915095159383
+    second: couple_leave2_3
+  - first:
+      213: 8948310148230659136
+    second: couple_leave2_4
+  - first:
+      213: -8512131815619306180
+    second: couple_leave2_5
+  - first:
+      213: 4948907338867376022
+    second: couple_leave2_6
+  - first:
+      213: -864821447832128143
+    second: couple_leave2_7
+  - first:
+      213: 8319771936887209969
+    second: couple_leave2_8
+  - first:
+      213: 6920258791357481338
+    second: couple_leave2_9
+  - first:
+      213: 8833518886769147739
+    second: couple_leave2_10
+  - first:
+      213: 5345288058429393572
+    second: couple_leave2_11
+  - first:
+      213: -4512084024119705598
+    second: couple_leave2_12
+  - first:
+      213: 1210630936110200232
+    second: couple_leave2_13
+  - first:
+      213: -1579052560347522710
+    second: couple_leave2_14
+  - first:
+      213: 2501477573096574183
+    second: couple_leave2_15
+  - first:
+      213: -2788988402524658477
+    second: couple_leave2_16
+  - first:
+      213: -8323495256105066130
+    second: couple_leave2_17
+  - first:
+      213: 5388223989733840622
+    second: couple_leave2_18
+  - first:
+      213: 4022036191287299397
+    second: couple_leave2_19
+  - first:
+      213: -661019881882547690
+    second: couple_leave2_20
+  - first:
+      213: 2136074612972554153
+    second: couple_leave2_21
+  - first:
+      213: 2943412817640862935
+    second: couple_leave2_22
+  - first:
+      213: 4232745472324321055
+    second: couple_leave2_23
+  - first:
+      213: -2386067918196389083
+    second: couple_leave2_24
+  - first:
+      213: -1921482209940635173
+    second: couple_leave2_25
+  - first:
+      213: 3803723751145361946
+    second: couple_leave2_26
+  - first:
+      213: -6976632737435827380
+    second: couple_leave2_27
+  - first:
+      213: -2523924617343420042
+    second: couple_leave2_28
+  - first:
+      213: 8990358043812363150
+    second: couple_leave2_29
+  - first:
+      213: 2005141893577512044
+    second: couple_leave2_30
+  - first:
+      213: -8167159012098625727
+    second: couple_leave2_31
+  - first:
+      213: -8663845603678384210
+    second: couple_leave2_32
+  - first:
+      213: -1139985186368826047
+    second: couple_leave2_33
+  - first:
+      213: -4491432065755528641
+    second: couple_leave2_34
+  - first:
+      213: -6971312637620853645
+    second: couple_leave2_35
+  - first:
+      213: -7125432293378502262
+    second: couple_leave2_36
+  - first:
+      213: 1724702842278839319
+    second: couple_leave2_37
+  - first:
+      213: -7881784464902313381
+    second: couple_leave2_38
+  - first:
+      213: -7525262555375381914
+    second: couple_leave2_39
+  - first:
+      213: 4198504018007115846
+    second: couple_leave2_40
+  - first:
+      213: -6816658149505197842
+    second: couple_leave2_41
+  - first:
+      213: -3270683873889147165
+    second: couple_leave2_42
+  - first:
+      213: 1120684217254191365
+    second: couple_leave2_43
+  - first:
+      213: 2263358309342374215
+    second: couple_leave2_44
+  - first:
+      213: 5302947683245296508
+    second: couple_leave2_45
+  - first:
+      213: -4692090971602053917
+    second: couple_leave2_46
+  - first:
+      213: -7729797420518874225
+    second: couple_leave2_47
+  - first:
+      213: -8588209522398296225
+    second: couple_leave2_48
+  - first:
+      213: 2425064853758201408
+    second: couple_leave2_49
+  - first:
+      213: 6723946202845422264
+    second: couple_leave2_50
+  - first:
+      213: -7780699314622367128
+    second: couple_leave2_51
+  - first:
+      213: -2124662080852164464
+    second: couple_leave2_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: couple_leave2_0
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1243
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 537ccd74635fbc560800000000000000
+      internalID: 7335226031585675061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1052
+        width: 98
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a37a95df3f80920800000000000000
+      internalID: 2956881424825137780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1126
+        height: 1231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d000e6f80493bf0800000000000000
+      internalID: -344172911747134195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 988
+        width: 37
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adaa165784fac3f0800000000000000
+      internalID: -879621915095159383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_4
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1205
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cbf4d6ba8ce2c70800000000000000
+      internalID: 8948310148230659136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_5
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 1116
+        width: 133
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3dd5b08635ded980800000000000000
+      internalID: -8512131815619306180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_6
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1072
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f7387110d0ea440800000000000000
+      internalID: 4948907338867376022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_7
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 799
+        width: 138
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175b3d7a9798ff3f0800000000000000
+      internalID: -864821447832128143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_8
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 1144
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fffc6e1f74c57370800000000000000
+      internalID: 8319771936887209969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_9
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 1162
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7103a4a4b2b90060800000000000000
+      internalID: 6920258791357481338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_10
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1020
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f349220a6f69a70800000000000000
+      internalID: 8833518886769147739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_11
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 994
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa42d82b274e2a40800000000000000
+      internalID: 5345288058429393572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 805
+        width: 5
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20041a17c7bd161c0800000000000000
+      internalID: -4512084024119705598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_13
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 634
+        width: 142
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a572f41c660dc010800000000000000
+      internalID: 1210630936110200232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 674
+        width: 5
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6990d20014161ae0800000000000000
+      internalID: -1579052560347522710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_15
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 655
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec070e699807b220800000000000000
+      internalID: 2501477573096574183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 608
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d465d813d58b49d0800000000000000
+      internalID: -2788988402524658477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_17
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 616
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6165321a210d7c80800000000000000
+      internalID: -8323495256105066130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_18
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 629
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6d25eab21d6ca40800000000000000
+      internalID: 5388223989733840622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_19
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 445
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dc1773b9421d730800000000000000
+      internalID: 4022036191287299397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_20
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 488
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a8bee6be593d6f0800000000000000
+      internalID: -661019881882547690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_21
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 491
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a785f70b8cd4ad10800000000000000
+      internalID: 2136074612972554153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_22
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 393
+        width: 110
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4b0dedc5a19d820800000000000000
+      internalID: 2943412817640862935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_23
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 152
+        width: 36
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fb88eb49bbdba30800000000000000
+      internalID: 4232745472324321055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_24
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 230
+        width: 77
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52bc2fdcedbf2eed0800000000000000
+      internalID: -2386067918196389083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_25
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 182
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1814a4c168555e0800000000000000
+      internalID: -1921482209940635173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_26
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 136
+        width: 31
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a125cb2499a89c430800000000000000
+      internalID: 3803723751145361946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 163
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43c6c43d750e2f90800000000000000
+      internalID: -6976632737435827380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_28
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 127
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679b16fcee739fcd0800000000000000
+      internalID: -2523924617343420042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_29
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 135
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8bf205020b24cc70800000000000000
+      internalID: 8990358043812363150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_30
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 109
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6411f2bde1b3db10800000000000000
+      internalID: 2005141893577512044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_31
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 0
+        width: 74
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f2bb3662c68ae80800000000000000
+      internalID: -8167159012098625727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_32
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 118
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf8be39356d3c780800000000000000
+      internalID: -8663845603678384210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 111
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145574d4385fd20f0800000000000000
+      internalID: -1139985186368826047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_34
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 111
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f32c7d3355a3ba1c0800000000000000
+      internalID: -4491432065755528641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_35
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 117
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374ea68771ce04f90800000000000000
+      internalID: -6971312637620853645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_36
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 122
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81d312d4116d1d90800000000000000
+      internalID: -7125432293378502262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_37
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 95
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7140321e8106fe710800000000000000
+      internalID: 1724702842278839319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_38
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 95
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a2e45e9c64e9290800000000000000
+      internalID: -7881784464902313381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_39
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 102
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6625d419395e09790800000000000000
+      internalID: -7525262555375381914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_40
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 77
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6484d55e825144a30800000000000000
+      internalID: 4198504018007115846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_41
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 53
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8987b778d5661a0800000000000000
+      internalID: -6816658149505197842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_42
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 55
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e62d3478523c92d0800000000000000
+      internalID: -3270683873889147165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_43
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 63
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501a2d2ab587d8f00800000000000000
+      internalID: 1120684217254191365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_44
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 35
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749e7cbf360196f10800000000000000
+      internalID: 2263358309342374215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_45
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 47
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b015a52dad79940800000000000000
+      internalID: 5302947683245296508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_46
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 45
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e497dffe1852eeb0800000000000000
+      internalID: -4692090971602053917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_47
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 33
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83ed34433e3ab490800000000000000
+      internalID: -7729797420518874225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_48
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 33
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5782d011fc80d880800000000000000
+      internalID: -8588209522398296225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_49
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 33
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04eca8dc2af87a120800000000000000
+      internalID: 2425064853758201408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_50
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 35
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b2207d4271405d50800000000000000
+      internalID: 6723946202845422264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_51
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 37
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86afecf7237650490800000000000000
+      internalID: -7780699314622367128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_leave2_52
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 33
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090801b281fa382e0800000000000000
+      internalID: -2124662080852164464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      couple_leave2_0: 7335226031585675061
+      couple_leave2_1: 2956881424825137780
+      couple_leave2_10: 8833518886769147739
+      couple_leave2_11: 5345288058429393572
+      couple_leave2_12: -4512084024119705598
+      couple_leave2_13: 1210630936110200232
+      couple_leave2_14: -1579052560347522710
+      couple_leave2_15: 2501477573096574183
+      couple_leave2_16: -2788988402524658477
+      couple_leave2_17: -8323495256105066130
+      couple_leave2_18: 5388223989733840622
+      couple_leave2_19: 4022036191287299397
+      couple_leave2_2: -344172911747134195
+      couple_leave2_20: -661019881882547690
+      couple_leave2_21: 2136074612972554153
+      couple_leave2_22: 2943412817640862935
+      couple_leave2_23: 4232745472324321055
+      couple_leave2_24: -2386067918196389083
+      couple_leave2_25: -1921482209940635173
+      couple_leave2_26: 3803723751145361946
+      couple_leave2_27: -6976632737435827380
+      couple_leave2_28: -2523924617343420042
+      couple_leave2_29: 8990358043812363150
+      couple_leave2_3: -879621915095159383
+      couple_leave2_30: 2005141893577512044
+      couple_leave2_31: -8167159012098625727
+      couple_leave2_32: -8663845603678384210
+      couple_leave2_33: -1139985186368826047
+      couple_leave2_34: -4491432065755528641
+      couple_leave2_35: -6971312637620853645
+      couple_leave2_36: -7125432293378502262
+      couple_leave2_37: 1724702842278839319
+      couple_leave2_38: -7881784464902313381
+      couple_leave2_39: -7525262555375381914
+      couple_leave2_4: 8948310148230659136
+      couple_leave2_40: 4198504018007115846
+      couple_leave2_41: -6816658149505197842
+      couple_leave2_42: -3270683873889147165
+      couple_leave2_43: 1120684217254191365
+      couple_leave2_44: 2263358309342374215
+      couple_leave2_45: 5302947683245296508
+      couple_leave2_46: -4692090971602053917
+      couple_leave2_47: -7729797420518874225
+      couple_leave2_48: -8588209522398296225
+      couple_leave2_49: 2425064853758201408
+      couple_leave2_5: -8512131815619306180
+      couple_leave2_50: 6723946202845422264
+      couple_leave2_51: -7780699314622367128
+      couple_leave2_52: -2124662080852164464
+      couple_leave2_6: 4948907338867376022
+      couple_leave2_7: -864821447832128143
+      couple_leave2_8: 8319771936887209969
+      couple_leave2_9: 6920258791357481338
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

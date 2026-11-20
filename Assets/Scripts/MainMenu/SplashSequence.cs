@@ -30,8 +30,20 @@ public class SplashSequence : MonoBehaviour
     [SerializeField] GameObject splashPanel;
     [SerializeField] GameObject menuPanel;
 
+    static bool splashAlreadyShown;
+
     IEnumerator Start()
     {
+        if (splashAlreadyShown)
+        {
+            screenFade.alpha = 0f;
+            screenFade.blocksRaycasts = false;
+            splashPanel.SetActive(false);
+            menuPanel.SetActive(true);
+            yield break;
+        }
+        splashAlreadyShown = true;
+
         logoOutline.fillAmount = 0f;
         logoOutline.color = outlineDrawColor;
         SetAlpha(logoOutline, 1f);

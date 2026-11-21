@@ -283,11 +283,6 @@ namespace ResortEmpire.Core
                 waveSatisfaction.RestoreState(snap.totalWaitUnitSeconds, snap.satisfactionTracking);
 
 
-            if (suddenRush != null && snap.suddenRushSnapshot != null)
-            {
-                suddenRush.RestoreRushSnapshot(snap.suddenRushSnapshot);
-            }
-
             GameState.Instance.RestoreSnapshot(
                 snap.waveNumber,
                 snap.coins,
@@ -296,6 +291,11 @@ namespace ResortEmpire.Core
                 savedState,
                 snap.unlockedNeeds
             );
+
+            if (suddenRush != null && snap.suddenRushSnapshot != null)
+            {
+                suddenRush.RestoreRushSnapshot(snap.suddenRushSnapshot);
+            }
 
             Debug.Log($"[WavePauseController] Restored interrupted wave {snap.waveNumber} in state {savedState} (elapsed {snap.arrivalElapsed:F1}s).");
         }

@@ -77,6 +77,13 @@ namespace ResortEmpire.Core
             }
         }
 
+        public void AddExtraDemand(GuestNeedType need, int units)
+        {
+            if (units <= 0) return;
+            DemandAdded?.Invoke(need, units);
+            Debug.Log($"[ArrivalPhase] Extra demand +{units} {need}");
+        }
+        
         public int[] GetAddedSnapshot() => added != null ? (int[])added.Clone() : Array.Empty<int>();
 
         public void RestoreState(float savedElapsed, bool running, bool finished, int[] savedAdded)

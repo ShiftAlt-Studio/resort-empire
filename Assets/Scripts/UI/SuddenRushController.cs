@@ -23,10 +23,14 @@ namespace ResortEmpire.UI
         private static readonly GuestNeedType[] AllNeeds =
             (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
 
+        private const float ArrivalSafetyMargin = 0.9f;
+
         private bool triggered;
         private bool rushing;
         private float rushElapsed;
+        private float currentRushDuration;
         private int rushAdded;
+        private float lastArrivalElapsed = -1f;
         private GuestNeedType rushNeed;
         private Building rushBuilding;
 
@@ -70,6 +74,7 @@ namespace ResortEmpire.UI
             {
                 triggered = false;
                 rushing = false;
+                lastArrivalElapsed = 0f;
             }
             else if (state == ResortState.WAVE_COMPLETE || state == ResortState.AWAITING_WAVE)
             {
@@ -85,18 +90,19 @@ namespace ResortEmpire.UI
             ResortState state = GameState.Instance.CurrentState;
             if (state != ResortState.WAVE_INCOMING && state != ResortState.WAVE_ACTIVE) return;
 
-            if (!triggered && GetCurrentWave() == waveNumber
-                && arrivalPhase.IsRunning && arrivalPhase.Elapsed >= startAfterSeconds)
+            float elapsed = arrivalPhase.Elapsed;
+            bool crossedStart = lastArrivalElapsed >= 0f
+                                && lastArrivalElapsed < startAfterSeconds
+                                && elapsed >= startAfterSeconds;
+            lastArrivalElapsed = elapsed;
+
+            if (!triggered && crossedStart && arrivalPhase.IsRunning
+                && GameState.Instance.CurrentWaveNumber == waveNumber)
             {
                 TryStartRush();
             }
 
             if (rushing) AddRushDemand(Time.deltaTime);
-        }
-
-        private int GetCurrentWave()
-        {
-            return GameState.Instance.CurrentWaveNumber;
         }
 
         private void TryStartRush()
@@ -121,10 +127,12 @@ namespace ResortEmpire.UI
                 return;
             }
 
+            currentRushDuration = Mathf.Min(rushDuration, arrivalPhase.Remaining * ArrivalSafetyMargin);
+
             rushing = true;
             rushElapsed = 0f;
             rushAdded = 0;
-            Debug.Log($"[SuddenRush] Started at {rushBuilding.Type}: +{extraUnits} {rushNeed} over {rushDuration}s");
+            Debug.Log($"[SuddenRush] Started at {rushBuilding.Type}: +{extraUnits} {rushNeed} over {currentRushDuration:0.0}s");
 
             if (view != null)
             {
@@ -133,12 +141,14 @@ namespace ResortEmpire.UI
                 int cost = speedUp != null ? speedUp.EnergyCost : 0;
                 view.Show(rushBuilding.Type.ToString(), cost, canUseEnergy, canMoveWorker);
             }
+
+            if (currentRushDuration <= 0f) AddRushDemand(0f);
         }
 
         private void AddRushDemand(float deltaTime)
         {
             rushElapsed += deltaTime;
-            float progress = rushDuration > 0f ? Mathf.Clamp01(rushElapsed / rushDuration) : 1f;
+            float progress = currentRushDuration > 0f ? Mathf.Clamp01(rushElapsed / currentRushDuration) : 1f;
             int target = Mathf.FloorToInt(extraUnits * progress);
             int diff = target - rushAdded;
 

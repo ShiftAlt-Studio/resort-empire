@@ -14,6 +14,7 @@ namespace ResortEmpire.Core
         public bool IsRunning { get; private set; }
         public bool IsFinished { get; private set; }
         public float Elapsed => elapsed;
+        public float Remaining => Mathf.Max(0f, duration - elapsed);
 
         private float elapsed;
         private List<NeedDemand> forecast;

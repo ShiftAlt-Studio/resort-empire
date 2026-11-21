@@ -33,6 +33,95 @@ namespace ResortEmpire.UI
         private float lastArrivalElapsed = -1f;
         private GuestNeedType rushNeed;
         private Building rushBuilding;
+        private bool windowDismissed;
+
+        [Serializable]
+        public class RushSnapshot
+        {
+            public bool triggered;
+            public bool rushing;
+            public float rushElapsed;
+            public float currentRushDuration;
+            public int rushAdded;
+            public GuestNeedType rushNeed;
+            public float lastArrivalElapsed;
+            public bool windowDismissed;
+        }
+
+        public RushSnapshot GetRushSnapshot()
+        {
+            return new RushSnapshot
+            {
+                triggered = triggered,
+                rushing = rushing,
+                rushElapsed = rushElapsed,
+                currentRushDuration = currentRushDuration,
+                rushAdded = rushAdded,
+                rushNeed = rushNeed,
+                lastArrivalElapsed = lastArrivalElapsed,
+                windowDismissed = windowDismissed
+            };
+        }
+
+
+        public void RestoreRushSnapshot(RushSnapshot snapshot)
+        {
+            if (snapshot == null) return;
+
+            triggered = snapshot.triggered;
+            rushing = snapshot.rushing;
+            rushElapsed = snapshot.rushElapsed;
+            currentRushDuration = snapshot.currentRushDuration;
+            rushAdded = snapshot.rushAdded;
+            rushNeed = snapshot.rushNeed;
+            lastArrivalElapsed = snapshot.lastArrivalElapsed;
+            windowDismissed = snapshot.windowDismissed;
+
+            rushBuilding = registry != null
+                ? registry.GetBuildingForNeed(rushNeed)
+                : null;
+
+            if (view != null)
+            {
+                if (triggered && !windowDismissed && rushBuilding != null)
+                {
+                    bool canUseEnergy = speedUp != null
+                        && speedUp.GetState(rushNeed) == SpeedUpState.Available;
+
+                    bool canMoveWorker = workers != null
+                        && workers.StaffedCount > 0;
+
+                    int cost = speedUp != null ? speedUp.EnergyCost : 0;
+
+                    view.Show(
+                        rushBuilding.Type.ToString(),
+                        cost,
+                        canUseEnergy,
+                        canMoveWorker
+                    );
+                }
+                else
+                {
+                    view.Hide();
+                }
+            }
+        }
+
+
+        private void Awake()
+        {
+            if (arrivalPhase == null)
+                arrivalPhase = FindAnyObjectByType<ArrivalPhase>();
+
+            if (workers == null)
+                workers = FindAnyObjectByType<WorkerAllocation>();
+
+            if (registry == null)
+                registry = FindAnyObjectByType<BuildingRegistry>();
+
+            if (speedUp == null)
+                speedUp = FindAnyObjectByType<SpeedUpService>();
+        }
 
         private void Start()
         {
@@ -120,6 +209,7 @@ namespace ResortEmpire.UI
         private void TryStartRush()
         {
             triggered = true;
+            windowDismissed = false;
 
             rushBuilding = null;
             foreach (GuestNeedType need in AllNeeds)
@@ -175,6 +265,7 @@ namespace ResortEmpire.UI
 
         private void OnMoveWorker()
         {
+            windowDismissed = true;
             Debug.Log("[SuddenRush] Player chose: Move Worker");
             if (workerPanel != null && rushBuilding != null)
                 workerPanel.Open(rushBuilding);
@@ -182,6 +273,7 @@ namespace ResortEmpire.UI
 
         private void OnUseEnergy()
         {
+            windowDismissed = true;
             Debug.Log("[SuddenRush] Player chose: Use Energy");
             if (speedUp == null) return;
             SpeedUpResult result = speedUp.TrySpeedUp(rushNeed);
@@ -191,6 +283,7 @@ namespace ResortEmpire.UI
 
         private void OnIgnore()
         {
+            windowDismissed = true;
             Debug.Log("[SuddenRush] Player chose: Ignore");
         }
     }

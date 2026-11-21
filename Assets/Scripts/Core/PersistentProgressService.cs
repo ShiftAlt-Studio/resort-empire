@@ -233,7 +233,7 @@ namespace ResortEmpire.Core
                 }
             }
 
-            Building[] sceneBuildings = FindObjectsByType<Building>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            Building[] sceneBuildings = FindObjectsByType<Building>(FindObjectsInactive.Include);
             foreach (Building b in sceneBuildings)
             {
                 if (b != null && !result.Contains(b))

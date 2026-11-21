@@ -59,6 +59,7 @@ public class BoatController : MonoBehaviour
     }
 
 
+
     private void HandleStateChanged(ResortState state)
     {
         switch (state)
@@ -66,6 +67,9 @@ public class BoatController : MonoBehaviour
             case ResortState.WAVE_INCOMING:
                 if (GameState.Instance.IsResumingFromPause)
                 {
+                    if (GameState.Instance.PreviousState == ResortState.WAVE_PAUSED)
+                        return;
+
                     if (routine != null)
                     {
                         StopCoroutine(routine);
@@ -83,6 +87,9 @@ public class BoatController : MonoBehaviour
             case ResortState.WAVE_ACTIVE:
                 if (GameState.Instance.IsResumingFromPause)
                 {
+                    if (GameState.Instance.PreviousState == ResortState.WAVE_PAUSED)
+                        return;
+
                     if (routine != null)
                     {
                         StopCoroutine(routine);
@@ -107,6 +114,7 @@ public class BoatController : MonoBehaviour
                 break;
         }
     }
+
 
 
     private IEnumerator ArriveRoutine()

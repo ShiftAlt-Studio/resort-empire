@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using System.Linq;
+using ResortEmpire.UI;
 
 namespace ResortEmpire.Core
 {
@@ -13,6 +15,7 @@ namespace ResortEmpire.Core
         [SerializeField] private WorkerAllocation workerAllocation;
         [SerializeField] private WaveSatisfaction waveSatisfaction;
         [SerializeField] private GuestSpawner guestSpawner;
+        [SerializeField] private SuddenRushController suddenRush;
         [SerializeField] private KeyCode editorPauseToggleKey = KeyCode.P;
 
         private bool suppressSave;
@@ -22,6 +25,7 @@ namespace ResortEmpire.Core
         {
             public bool hasActiveWave;
             public int waveNumber;
+            public GuestNeedType[] unlockedNeeds;
             public int coins;
             public int energy;
             public int resortValue;
@@ -29,7 +33,7 @@ namespace ResortEmpire.Core
             public int[] guestActiveCounts;
             public int[] guestPending;
             public int[] guestCredits;
-
+            public SuddenRushController.RushSnapshot suddenRushSnapshot;
             public float arrivalElapsed;
             public bool arrivalRunning;
             public bool arrivalFinished;
@@ -60,6 +64,9 @@ namespace ResortEmpire.Core
             if (workerAllocation == null) workerAllocation = FindAnyObjectByType<WorkerAllocation>();
             if (waveSatisfaction == null) waveSatisfaction = FindAnyObjectByType<WaveSatisfaction>();
             if (guestSpawner == null) guestSpawner = FindAnyObjectByType<GuestSpawner>();
+
+            if (suddenRush == null)
+                suddenRush = FindAnyObjectByType<SuddenRushController>();
 
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
@@ -158,6 +165,7 @@ namespace ResortEmpire.Core
             {
                 hasActiveWave = true,
                 waveNumber = GameState.Instance.CurrentWaveNumber,
+                unlockedNeeds = GameState.Instance.GetUnlockedNeedsSnapshot().ToArray(),
                 coins = GameState.Instance.Coins,
                 energy = GameState.Instance.Energy,
                 resortValue = GameState.Instance.ResortValue,
@@ -210,6 +218,11 @@ namespace ResortEmpire.Core
                 snap.guestActiveCounts = guestSnapshot.activeCounts;
             }
 
+            if (suddenRush != null)
+            {
+                snap.suddenRushSnapshot = suddenRush.GetRushSnapshot();
+            }
+
             PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(snap));
             PlayerPrefs.Save();
         }
@@ -228,13 +241,15 @@ namespace ResortEmpire.Core
             ResortState savedState = (ResortState)snap.activeState;
             if (!IsWaveActiveState(savedState)) return;
 
+
             if (arrivalPhase != null)
                 arrivalPhase.RestoreState(
                     snap.arrivalElapsed,
                     snap.arrivalRunning,
                     snap.arrivalFinished,
                     snap.arrivalAdded,
-                    snap.waveNumber
+                    snap.waveNumber,
+                    snap.unlockedNeeds
                 );
 
 
@@ -267,7 +282,21 @@ namespace ResortEmpire.Core
             if (waveSatisfaction != null)
                 waveSatisfaction.RestoreState(snap.totalWaitUnitSeconds, snap.satisfactionTracking);
 
-            GameState.Instance.RestoreSnapshot(snap.waveNumber, snap.coins, snap.energy, snap.resortValue, savedState);
+
+            if (suddenRush != null && snap.suddenRushSnapshot != null)
+            {
+                suddenRush.RestoreRushSnapshot(snap.suddenRushSnapshot);
+            }
+
+            GameState.Instance.RestoreSnapshot(
+                snap.waveNumber,
+                snap.coins,
+                snap.energy,
+                snap.resortValue,
+                savedState,
+                snap.unlockedNeeds
+            );
+
             Debug.Log($"[WavePauseController] Restored interrupted wave {snap.waveNumber} in state {savedState} (elapsed {snap.arrivalElapsed:F1}s).");
         }
 

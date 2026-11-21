@@ -58,13 +58,40 @@ public class BoatController : MonoBehaviour
             GameState.Instance.OnStateChanged -= HandleStateChanged;
     }
 
+
     private void HandleStateChanged(ResortState state)
     {
         switch (state)
         {
             case ResortState.WAVE_INCOMING:
-                if (GameState.Instance.IsResumingFromPause) return;
+                if (GameState.Instance.IsResumingFromPause)
+                {
+                    if (routine != null)
+                    {
+                        StopCoroutine(routine);
+                        routine = null;
+                    }
+
+                    SnapTo(dockPoint);
+                    IsDocked = true;
+                    return;
+                }
+
                 Run(ArriveRoutine());
+                break;
+
+            case ResortState.WAVE_ACTIVE:
+                if (GameState.Instance.IsResumingFromPause)
+                {
+                    if (routine != null)
+                    {
+                        StopCoroutine(routine);
+                        routine = null;
+                    }
+
+                    SnapTo(dockPoint);
+                    IsDocked = true;
+                }
                 break;
 
             case ResortState.WAVE_COMPLETE:
@@ -72,10 +99,15 @@ public class BoatController : MonoBehaviour
                 break;
 
             case ResortState.AWAITING_WAVE:
-                if (routine == null) { IsDocked = false; SnapTo(seaStart); }
+                if (routine == null)
+                {
+                    IsDocked = false;
+                    SnapTo(seaStart);
+                }
                 break;
         }
     }
+
 
     private IEnumerator ArriveRoutine()
     {

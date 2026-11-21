@@ -12,6 +12,7 @@ namespace ResortEmpire.Core
         [SerializeField] private ServiceQueueProcessor queueProcessor;
         [SerializeField] private WorkerAllocation workerAllocation;
         [SerializeField] private WaveSatisfaction waveSatisfaction;
+        [SerializeField] private GuestSpawner guestSpawner;
         [SerializeField] private KeyCode editorPauseToggleKey = KeyCode.P;
 
         private bool suppressSave;
@@ -55,6 +56,7 @@ namespace ResortEmpire.Core
             if (queueProcessor == null) queueProcessor = FindAnyObjectByType<ServiceQueueProcessor>();
             if (workerAllocation == null) workerAllocation = FindAnyObjectByType<WorkerAllocation>();
             if (waveSatisfaction == null) waveSatisfaction = FindAnyObjectByType<WaveSatisfaction>();
+            if (guestSpawner == null) guestSpawner = FindAnyObjectByType<GuestSpawner>();
 
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
@@ -219,6 +221,9 @@ namespace ResortEmpire.Core
 
             if (needAggregator != null)
                 needAggregator.RestoreState(snap.demandClosed, snap.arrived, snap.inService, snap.served);
+
+            if (guestSpawner != null)
+                guestSpawner.RestoreGuests(snap.arrived, snap.inService, snap.served);
 
             if (queueProcessor != null)
             {

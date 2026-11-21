@@ -70,6 +70,27 @@ public class GuestAnimator : MonoBehaviour
         Run(WalkRoutine(to, true, false, onDone));
     }
 
+    public void RestoreAt(Vector3 position)
+    {
+        if (routine != null)
+        {
+            StopCoroutine(routine);
+            routine = null;
+        }
+
+        basePos = position;
+        transform.localPosition = position;
+        transform.localRotation = Quaternion.identity;
+
+        gameObject.SetActive(true);
+        Current = State.Idle;
+        SetAlpha(1f);
+
+        if (idleFrames != null && idleFrames.Length > 0)
+            SetSprite(idleFrames[0]);
+    }
+
+
     public void MoveTo(Vector3 target, Action onDone = null)
     {
         currentWalkFrames = enterFrames;

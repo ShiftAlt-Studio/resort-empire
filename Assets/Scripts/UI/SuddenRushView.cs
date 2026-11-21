@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using ResortEmpire.Core;
 
 namespace ResortEmpire.UI
 {
@@ -63,6 +64,7 @@ namespace ResortEmpire.UI
         private void Update()
         {
             if (!shown || autoHideSeconds <= 0f) return;
+            if (GameState.Instance != null && GameState.Instance.CurrentState == ResortState.WAVE_PAUSED) return;
 
             timeLeft -= Time.deltaTime;
             UpdateTimer();

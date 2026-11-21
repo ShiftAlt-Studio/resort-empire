@@ -14,6 +14,7 @@ namespace ResortEmpire.Core
         public bool IsRunning { get; private set; }
         public bool IsFinished { get; private set; }
         public float Elapsed => elapsed;
+        public float Remaining => Mathf.Max(0f, duration - elapsed);
 
         private float elapsed;
         private List<NeedDemand> forecast;
@@ -77,21 +78,48 @@ namespace ResortEmpire.Core
             }
         }
 
+        public void AddExtraDemand(GuestNeedType need, int units)
+        {
+            if (units <= 0) return;
+            DemandAdded?.Invoke(need, units);
+            Debug.Log($"[ArrivalPhase] Extra demand +{units} {need}");
+        }
+        
         public int[] GetAddedSnapshot() => added != null ? (int[])added.Clone() : Array.Empty<int>();
 
-        public void RestoreState(float savedElapsed, bool running, bool finished, int[] savedAdded)
+
+
+        public void RestoreState(
+            float savedElapsed,
+            bool running,
+            bool finished,
+            int[] savedAdded,
+            int savedWaveNumber,
+            GuestNeedType[] savedUnlockedNeeds)
         {
-            forecast = GameState.Instance != null ? GameState.Instance.GetForecast() : new List<NeedDemand>();
+            var unlockedNeeds = savedUnlockedNeeds != null
+                ? new List<GuestNeedType>(savedUnlockedNeeds)
+                : GameState.Instance.GetUnlockedNeedsSnapshot();
+
+            forecast = WaveTable.GetDemand(
+                Mathf.Clamp(savedWaveNumber, 1, WaveTable.TotalWaves),
+                unlockedNeeds
+            );
+
             added = new int[forecast.Count];
+
             if (savedAdded != null)
             {
                 int copyLen = Mathf.Min(added.Length, savedAdded.Length);
                 Array.Copy(savedAdded, added, copyLen);
             }
+
             elapsed = Mathf.Clamp(savedElapsed, 0f, duration);
             IsRunning = running;
             IsFinished = finished;
         }
+
+
 
         private void StopDemandGeneration()
         {

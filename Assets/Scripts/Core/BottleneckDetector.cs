@@ -14,7 +14,7 @@ namespace ResortEmpire.Core
     public class BottleneckDetector : MonoBehaviour
     {
         [SerializeField] private ServiceQueueProcessor queueProcessor;
-        [SerializeField] private int queueThreshold = 4;         
+        [SerializeField] private int queueThreshold = 4;
         [SerializeField] private float hysteresisSeconds = 3f;
 
         private static readonly GuestNeedType[] AllNeeds =
@@ -22,6 +22,10 @@ namespace ResortEmpire.Core
 
         private readonly Dictionary<GuestNeedType, NeedStatus> statuses =
             new Dictionary<GuestNeedType, NeedStatus>();
+        private readonly HashSet<GuestNeedType> bottlenecksThisWave = new HashSet<GuestNeedType>();
+
+        public bool HadBottleneckThisWave(GuestNeedType need) => bottlenecksThisWave.Contains(need);
+
         private readonly int[] queue = new int[AllNeeds.Length];
         private readonly float[] growingSince = new float[AllNeeds.Length];
 
@@ -60,7 +64,12 @@ namespace ResortEmpire.Core
 
         private void HandleStateChanged(ResortState state)
         {
-            if (state == ResortState.WAVE_INCOMING) ResetAll();
+            if (state == ResortState.WAVE_INCOMING &&
+                (GameState.Instance == null || !GameState.Instance.IsResumingFromPause))
+            {
+                bottlenecksThisWave.Clear();
+                ResetAll();
+            }
         }
 
         private void HandleQueueChanged(GuestNeedType need, int queued)
@@ -98,6 +107,8 @@ namespace ResortEmpire.Core
         {
             if (GetStatus(need) == status) return;
             statuses[need] = status;
+            if (status == NeedStatus.BOTTLENECK)
+                bottlenecksThisWave.Add(need);
             Debug.Log($"[BottleneckDetector] {need}: {status} (queue {queue[(int)need]})");
             StatusChanged?.Invoke(need, status);
         }

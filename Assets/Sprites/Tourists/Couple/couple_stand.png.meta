@@ -1,0 +1,1874 @@
+fileFormatVersion: 2
+guid: c71143e6703a4854a91682ac41f02d0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2283821766950331589
+    second: couple_stand_0
+  - first:
+      213: 3622905869942883448
+    second: couple_stand_1
+  - first:
+      213: -8209243737752040894
+    second: couple_stand_2
+  - first:
+      213: 8049076334576877004
+    second: couple_stand_3
+  - first:
+      213: -3627001103136474286
+    second: couple_stand_4
+  - first:
+      213: 3784989914513369071
+    second: couple_stand_5
+  - first:
+      213: 1344895553273162935
+    second: couple_stand_6
+  - first:
+      213: 8151033483573552929
+    second: couple_stand_7
+  - first:
+      213: 2669551306531371521
+    second: couple_stand_8
+  - first:
+      213: 4141563685886412589
+    second: couple_stand_9
+  - first:
+      213: -5202006632525771095
+    second: couple_stand_10
+  - first:
+      213: -3555139507496270619
+    second: couple_stand_11
+  - first:
+      213: 6788963237966178443
+    second: couple_stand_12
+  - first:
+      213: 1351283581961585100
+    second: couple_stand_13
+  - first:
+      213: -9081251447796985899
+    second: couple_stand_14
+  - first:
+      213: -4164808096310934310
+    second: couple_stand_15
+  - first:
+      213: -7496577949272289209
+    second: couple_stand_16
+  - first:
+      213: 1376035346705349580
+    second: couple_stand_17
+  - first:
+      213: -3715005145712927550
+    second: couple_stand_18
+  - first:
+      213: -2828838827290183000
+    second: couple_stand_19
+  - first:
+      213: 2583806142022111632
+    second: couple_stand_20
+  - first:
+      213: 861487260764930897
+    second: couple_stand_21
+  - first:
+      213: -1551495227085172937
+    second: couple_stand_22
+  - first:
+      213: 3093767409788506196
+    second: couple_stand_23
+  - first:
+      213: -3001426758706672396
+    second: couple_stand_24
+  - first:
+      213: -7674590186769387866
+    second: couple_stand_25
+  - first:
+      213: -7007327161933803301
+    second: couple_stand_26
+  - first:
+      213: 2677981865380305668
+    second: couple_stand_27
+  - first:
+      213: 2118530919032407161
+    second: couple_stand_28
+  - first:
+      213: -1021516791640244738
+    second: couple_stand_29
+  - first:
+      213: -4290278021264078225
+    second: couple_stand_30
+  - first:
+      213: 3272998800902408725
+    second: couple_stand_31
+  - first:
+      213: 2952450242793296468
+    second: couple_stand_32
+  - first:
+      213: -7309675048998532976
+    second: couple_stand_33
+  - first:
+      213: 2219747158950099885
+    second: couple_stand_34
+  - first:
+      213: -3685642094488251594
+    second: couple_stand_35
+  - first:
+      213: 7267051969820536115
+    second: couple_stand_36
+  - first:
+      213: 7635902447047663118
+    second: couple_stand_37
+  - first:
+      213: -8605904294610163894
+    second: couple_stand_38
+  - first:
+      213: 3772241769189262904
+    second: couple_stand_39
+  - first:
+      213: 4182098957435764321
+    second: couple_stand_40
+  - first:
+      213: -5193170962058491054
+    second: couple_stand_41
+  - first:
+      213: -2131556883994054090
+    second: couple_stand_42
+  - first:
+      213: 2781735525940355274
+    second: couple_stand_43
+  - first:
+      213: 5493006887749316890
+    second: couple_stand_44
+  - first:
+      213: 3632271644145898585
+    second: couple_stand_45
+  - first:
+      213: -6798367450598225258
+    second: couple_stand_46
+  - first:
+      213: -5824506587041112624
+    second: couple_stand_47
+  - first:
+      213: -8120194324747465294
+    second: couple_stand_48
+  - first:
+      213: 7062317145546509447
+    second: couple_stand_49
+  - first:
+      213: 5611644567307245759
+    second: couple_stand_50
+  - first:
+      213: 886649814688275083
+    second: couple_stand_51
+  - first:
+      213: -792501992437815267
+    second: couple_stand_52
+  - first:
+      213: 8550847424837319469
+    second: couple_stand_53
+  - first:
+      213: 228461618813739843
+    second: couple_stand_54
+  - first:
+      213: 9080434198567187174
+    second: couple_stand_55
+  - first:
+      213: -4938344866858531826
+    second: couple_stand_56
+  - first:
+      213: 7190682746915638789
+    second: couple_stand_57
+  - first:
+      213: 21040759883108274
+    second: couple_stand_58
+  - first:
+      213: 2846890521204469899
+    second: couple_stand_59
+  - first:
+      213: -8875202865360252258
+    second: couple_stand_60
+  - first:
+      213: -5931749493431437912
+    second: couple_stand_61
+  - first:
+      213: 758380379223444711
+    second: couple_stand_62
+  - first:
+      213: -855225492639045580
+    second: couple_stand_63
+  - first:
+      213: -4372754450939542121
+    second: couple_stand_64
+  - first:
+      213: -5455282461115987909
+    second: couple_stand_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: couple_stand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 897
+        width: 126
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c4216dfbc3c1bf10800000000000000
+      internalID: 2283821766950331589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 1075
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8748f9891b5274230800000000000000
+      internalID: 3622905869942883448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1138
+        width: 137
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a80b0a058e21e80800000000000000
+      internalID: -8209243737752040894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_3
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1191
+        width: 88
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd357cc74014bf60800000000000000
+      internalID: 8049076334576877004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_4
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1140
+        width: 105
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bb99f96bd4aadc0800000000000000
+      internalID: -3627001103136474286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_5
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1222
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe76105064cf68430800000000000000
+      internalID: 3784989914513369071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_6
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1221
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc69d051670aa210800000000000000
+      internalID: 1344895553273162935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_7
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1207
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12767bc64c94e1170800000000000000
+      internalID: 8151033483573552929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_8
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1211
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a7b77f4c62c0520800000000000000
+      internalID: 2669551306531371521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_9
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1179
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27cae7ba3ac97930800000000000000
+      internalID: 4141563685886412589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_10
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1205
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae43157782cec7b0800000000000000
+      internalID: -5202006632525771095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_11
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1205
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e44ab0347b99aec0800000000000000
+      internalID: -3555139507496270619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_12
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1195
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88e820781e373e50800000000000000
+      internalID: 6788963237966178443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_13
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 1195
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc143a52249b0c210800000000000000
+      internalID: 1351283581961585100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_14
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1156
+        width: 98
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df0f0a3ce9e8f180800000000000000
+      internalID: -9081251447796985899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_15
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 1189
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad447bd3a11a336c0800000000000000
+      internalID: -4164808096310934310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_16
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 1155
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740599ed21ec6f790800000000000000
+      internalID: -7496577949272289209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_17
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1171
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbf0c67bd8a81310800000000000000
+      internalID: 1376035346705349580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_18
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1076
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc580fb086a17cc0800000000000000
+      internalID: -3715005145712927550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_19
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1106
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa398c0312fdb8d0800000000000000
+      internalID: -2828838827290183000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_20
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1121
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09153bf1ff58bd320800000000000000
+      internalID: 2583806142022111632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_21
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1114
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1530b6c691e94fb00800000000000000
+      internalID: 861487260764930897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_22
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1108
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fcfd6af4bf77ae0800000000000000
+      internalID: -1551495227085172937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_23
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 1074
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450df1651154fea20800000000000000
+      internalID: 3093767409788506196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_24
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1098
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fccfe3e34ac856d0800000000000000
+      internalID: -3001426758706672396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_25
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1071
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae69e803e06e7590800000000000000
+      internalID: -7674590186769387866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_26
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1062
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd05df79219f0ce90800000000000000
+      internalID: -7007327161933803301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_27
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1062
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b5ee8615a1a2520800000000000000
+      internalID: 2677981865380305668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_28
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 811
+        width: 80
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974cb9a75a8866d10800000000000000
+      internalID: 2118530919032407161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_29
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 1024
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdbf26e3e7d2d1f0800000000000000
+      internalID: -1021516791640244738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_30
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 1014
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a83eadeded574c0800000000000000
+      internalID: -4290278021264078225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_31
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 966
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a411e71170c6d20800000000000000
+      internalID: 3272998800902408725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_32
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 857
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452d5b26ad539f820800000000000000
+      internalID: 2952450242793296468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_33
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 859
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09808e07541de8a90800000000000000
+      internalID: -7309675048998532976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_34
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 795
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab3764c7402ece10800000000000000
+      internalID: 2219747158950099885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_35
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 841
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6331dccda08f9dcc0800000000000000
+      internalID: -3685642094488251594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_36
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 819
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33da4799341c9d460800000000000000
+      internalID: 7267051969820536115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548
+        width: 53
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0edfcf91dc28f960800000000000000
+      internalID: 7635902447047663118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_38
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 746
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a47a0ccd3afa19880800000000000000
+      internalID: -8605904294610163894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_39
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 579
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836ca6327e1b95430800000000000000
+      internalID: 3772241769189262904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_40
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 594
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e7d7518dcc90a30800000000000000
+      internalID: 4182098957435764321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_41
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 564
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b41ac46862ee7b0800000000000000
+      internalID: -5193170962058491054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_42
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 539
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632fef6be403b62e0800000000000000
+      internalID: -2131556883994054090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_43
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 513
+        width: 84
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac062caf8b5ba9620800000000000000
+      internalID: 2781735525940355274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_44
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 523
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11721549a41b3c40800000000000000
+      internalID: 5493006887749316890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 110
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9545a05d0db686230800000000000000
+      internalID: 3632271644145898585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_46
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 224
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ac38ea2d857a1a0800000000000000
+      internalID: -6798367450598225258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_47
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 208
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dddd7f5e123b2fa0800000000000000
+      internalID: -5824506587041112624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_48
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 212
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bdc846c8464f4f80800000000000000
+      internalID: -8120194324747465294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_49
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 208
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78c437fa604620260800000000000000
+      internalID: 7062317145546509447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_50
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 199
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb85910900190ed40800000000000000
+      internalID: 5611644567307245759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_51
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 130
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a19ac0f430e4c00800000000000000
+      internalID: 886649814688275083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_52
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 59
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1864f003a77005f0800000000000000
+      internalID: -792501992437815267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_53
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 140
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2bfdf5bd66baa670800000000000000
+      internalID: 8550847424837319469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_54
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 343
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3432432c1a8ab2300800000000000000
+      internalID: 228461618813739843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_55
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 87
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2f7eb1bce240e70800000000000000
+      internalID: 9080434198567187174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_56
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 401
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0406801289777bb0800000000000000
+      internalID: -4938344866858531826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_57
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 192
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ecf664cdf6ac360800000000000000
+      internalID: 7190682746915638789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_58
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 31
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf03aaa570ca4000800000000000000
+      internalID: 21040759883108274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_59
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 328
+        width: 92
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80b1d678df228720800000000000000
+      internalID: 2846890521204469899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_60
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 222
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e925cac4402f4d480800000000000000
+      internalID: -8875202865360252258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_61
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 81
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a57a6373413eada0800000000000000
+      internalID: -5931749493431437912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_62
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 381
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec4d34dfee468a00800000000000000
+      internalID: 758380379223444711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_63
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 17
+        width: 78
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438246412f0a124f0800000000000000
+      internalID: -855225492639045580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_64
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 216
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7958db5aefad053c0800000000000000
+      internalID: -4372754450939542121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: couple_stand_65
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 168
+        width: 62
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3843c34181fa44b0800000000000000
+      internalID: -5455282461115987909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      couple_stand_0: 2283821766950331589
+      couple_stand_1: 3622905869942883448
+      couple_stand_10: -5202006632525771095
+      couple_stand_11: -3555139507496270619
+      couple_stand_12: 6788963237966178443
+      couple_stand_13: 1351283581961585100
+      couple_stand_14: -9081251447796985899
+      couple_stand_15: -4164808096310934310
+      couple_stand_16: -7496577949272289209
+      couple_stand_17: 1376035346705349580
+      couple_stand_18: -3715005145712927550
+      couple_stand_19: -2828838827290183000
+      couple_stand_2: -8209243737752040894
+      couple_stand_20: 2583806142022111632
+      couple_stand_21: 861487260764930897
+      couple_stand_22: -1551495227085172937
+      couple_stand_23: 3093767409788506196
+      couple_stand_24: -3001426758706672396
+      couple_stand_25: -7674590186769387866
+      couple_stand_26: -7007327161933803301
+      couple_stand_27: 2677981865380305668
+      couple_stand_28: 2118530919032407161
+      couple_stand_29: -1021516791640244738
+      couple_stand_3: 8049076334576877004
+      couple_stand_30: -4290278021264078225
+      couple_stand_31: 3272998800902408725
+      couple_stand_32: 2952450242793296468
+      couple_stand_33: -7309675048998532976
+      couple_stand_34: 2219747158950099885
+      couple_stand_35: -3685642094488251594
+      couple_stand_36: 7267051969820536115
+      couple_stand_37: 7635902447047663118
+      couple_stand_38: -8605904294610163894
+      couple_stand_39: 3772241769189262904
+      couple_stand_4: -3627001103136474286
+      couple_stand_40: 4182098957435764321
+      couple_stand_41: -5193170962058491054
+      couple_stand_42: -2131556883994054090
+      couple_stand_43: 2781735525940355274
+      couple_stand_44: 5493006887749316890
+      couple_stand_45: 3632271644145898585
+      couple_stand_46: -6798367450598225258
+      couple_stand_47: -5824506587041112624
+      couple_stand_48: -8120194324747465294
+      couple_stand_49: 7062317145546509447
+      couple_stand_5: 3784989914513369071
+      couple_stand_50: 5611644567307245759
+      couple_stand_51: 886649814688275083
+      couple_stand_52: -792501992437815267
+      couple_stand_53: 8550847424837319469
+      couple_stand_54: 228461618813739843
+      couple_stand_55: 9080434198567187174
+      couple_stand_56: -4938344866858531826
+      couple_stand_57: 7190682746915638789
+      couple_stand_58: 21040759883108274
+      couple_stand_59: 2846890521204469899
+      couple_stand_6: 1344895553273162935
+      couple_stand_60: -8875202865360252258
+      couple_stand_61: -5931749493431437912
+      couple_stand_62: 758380379223444711
+      couple_stand_63: -855225492639045580
+      couple_stand_64: -4372754450939542121
+      couple_stand_65: -5455282461115987909
+      couple_stand_7: 8151033483573552929
+      couple_stand_8: 2669551306531371521
+      couple_stand_9: 4141563685886412589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -110,6 +110,38 @@ namespace ResortEmpire.Core
 
         public bool IsStaffed(GuestNeedType need) => staffed[(int)need];
 
+        public bool[] GetStaffedSnapshot()
+        {
+            return (bool[])staffed.Clone();
+        }
+
+        public void RestoreStaffedSnapshot(bool[] savedStaffed)
+        {
+            if (savedStaffed == null) return;
+            Array.Clear(staffed, 0, staffed.Length);
+            int len = Mathf.Min(staffed.Length, savedStaffed.Length);
+            Array.Copy(savedStaffed, staffed, len);
+            WorkerMoved?.Invoke(GuestNeedType.Rooms, GuestNeedType.Rooms);
+        }
+
+        public bool GrantWorkerForUnlockedNeed(GuestNeedType need)
+        {
+            int idx = (int)need;
+            if (idx < 0 || idx >= staffed.Length)
+                return false;
+
+            if (staffed[idx])
+                return false;
+
+            if (GameState.Instance != null)
+                GameState.Instance.AddWorker();
+
+            staffed[idx] = true;
+            Debug.Log($"[WorkerAllocation] Granted +1 Worker for unlocked need '{need}'. Staffed count: {StaffedCount}");
+            WorkerMoved?.Invoke(need, need);
+            return true;
+        }
+
         public MoveResult TryMoveWorker(GuestNeedType from, GuestNeedType to)
         {
             if (from == to) return MoveResult.SameBuilding;
@@ -142,6 +174,7 @@ namespace ResortEmpire.Core
             }
             return MoveResult.NoEmptyBuilding;
         }
+
         public MoveResult TryMoveWorkerTo(GuestNeedType to)
         {
             for (int i = 0; i < AllNeeds.Length; i++)

@@ -88,16 +88,22 @@ namespace ResortEmpire.Core
         public int[] GetAddedSnapshot() => added != null ? (int[])added.Clone() : Array.Empty<int>();
 
 
+
         public void RestoreState(
             float savedElapsed,
             bool running,
             bool finished,
             int[] savedAdded,
-            int savedWaveNumber)
+            int savedWaveNumber,
+            GuestNeedType[] savedUnlockedNeeds)
         {
+            var unlockedNeeds = savedUnlockedNeeds != null
+                ? new List<GuestNeedType>(savedUnlockedNeeds)
+                : GameState.Instance.GetUnlockedNeedsSnapshot();
+
             forecast = WaveTable.GetDemand(
                 Mathf.Clamp(savedWaveNumber, 1, WaveTable.TotalWaves),
-                GameState.Instance.GetUnlockedNeedsSnapshot()
+                unlockedNeeds
             );
 
             added = new int[forecast.Count];
@@ -112,6 +118,7 @@ namespace ResortEmpire.Core
             IsRunning = running;
             IsFinished = finished;
         }
+
 
 
         private void StopDemandGeneration()

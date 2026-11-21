@@ -26,6 +26,9 @@ namespace ResortEmpire.Core
             public int energy;
             public int resortValue;
             public int activeState;
+            public int[] guestActiveCounts;
+            public int[] guestPending;
+            public int[] guestCredits;
 
             public float arrivalElapsed;
             public bool arrivalRunning;
@@ -198,6 +201,15 @@ namespace ResortEmpire.Core
                 snap.satisfactionTracking = waveSatisfaction.IsTracking;
             }
 
+
+            if (guestSpawner != null)
+            {
+                var guestSnapshot = guestSpawner.GetSpawnSnapshot();
+                snap.guestPending = guestSnapshot.pending;
+                snap.guestCredits = guestSnapshot.credits;
+                snap.guestActiveCounts = guestSnapshot.activeCounts;
+            }
+
             PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(snap));
             PlayerPrefs.Save();
         }
@@ -217,13 +229,31 @@ namespace ResortEmpire.Core
             if (!IsWaveActiveState(savedState)) return;
 
             if (arrivalPhase != null)
-                arrivalPhase.RestoreState(snap.arrivalElapsed, snap.arrivalRunning, snap.arrivalFinished, snap.arrivalAdded);
+                arrivalPhase.RestoreState(
+                    snap.arrivalElapsed,
+                    snap.arrivalRunning,
+                    snap.arrivalFinished,
+                    snap.arrivalAdded,
+                    snap.waveNumber
+                );
+
 
             if (needAggregator != null)
                 needAggregator.RestoreState(snap.demandClosed, snap.arrived, snap.inService, snap.served);
 
+
             if (guestSpawner != null)
-                guestSpawner.RestoreGuests(snap.arrived, snap.inService, snap.served);
+            {
+                guestSpawner.RestoreGuests(
+                    snap.arrived,
+                    snap.inService,
+                    snap.served,
+                    snap.guestPending,
+                    snap.guestCredits,
+                    snap.guestActiveCounts
+                );
+            }
+
 
             if (queueProcessor != null)
             {

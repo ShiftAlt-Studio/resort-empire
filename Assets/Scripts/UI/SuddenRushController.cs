@@ -1,0 +1,175 @@
+using System;
+using UnityEngine;
+using ResortEmpire.Core;
+
+namespace ResortEmpire.UI
+{
+    public class SuddenRushController : MonoBehaviour
+    {
+        [Header("References")]
+        [SerializeField] private SuddenRushView view;
+        [SerializeField] private WorkerAllocationPanel workerPanel;
+        [SerializeField] private ArrivalPhase arrivalPhase;
+        [SerializeField] private WorkerAllocation workers;
+        [SerializeField] private BuildingRegistry registry;
+        [SerializeField] private SpeedUpService speedUp;
+
+        [Header("Tuning (SS-134)")]
+        [SerializeField] private int waveNumber = 2;
+        [SerializeField] private float startAfterSeconds = 20f;
+        [SerializeField] private int extraUnits = 6;
+        [SerializeField] private float rushDuration = 10f;
+
+        private static readonly GuestNeedType[] AllNeeds =
+            (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
+
+        private bool triggered;
+        private bool rushing;
+        private float rushElapsed;
+        private int rushAdded;
+        private GuestNeedType rushNeed;
+        private Building rushBuilding;
+
+        private void Start()
+        {
+            if (arrivalPhase == null) arrivalPhase = FindAnyObjectByType<ArrivalPhase>();
+            if (workers == null) workers = FindAnyObjectByType<WorkerAllocation>();
+            if (registry == null) registry = FindAnyObjectByType<BuildingRegistry>();
+            if (speedUp == null) speedUp = FindAnyObjectByType<SpeedUpService>();
+
+            if (view != null)
+            {
+                view.MoveWorkerClicked += OnMoveWorker;
+                view.UseEnergyClicked += OnUseEnergy;
+                view.IgnoreClicked += OnIgnore;
+            }
+
+            if (GameState.Instance != null)
+                GameState.Instance.OnStateChanged += HandleStateChanged;
+        }
+
+        private void OnDestroy()
+        {
+            if (view != null)
+            {
+                view.MoveWorkerClicked -= OnMoveWorker;
+                view.UseEnergyClicked -= OnUseEnergy;
+                view.IgnoreClicked -= OnIgnore;
+            }
+
+            if (GameState.Instance != null)
+                GameState.Instance.OnStateChanged -= HandleStateChanged;
+        }
+
+        private void HandleStateChanged(ResortState state)
+        {
+            if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+                return;
+
+            if (state == ResortState.WAVE_INCOMING)
+            {
+                triggered = false;
+                rushing = false;
+            }
+            else if (state == ResortState.WAVE_COMPLETE || state == ResortState.AWAITING_WAVE)
+            {
+                rushing = false;
+                if (view != null) view.Hide();
+            }
+        }
+
+        private void Update()
+        {
+            if (GameState.Instance == null || arrivalPhase == null) return;
+
+            ResortState state = GameState.Instance.CurrentState;
+            if (state != ResortState.WAVE_INCOMING && state != ResortState.WAVE_ACTIVE) return;
+
+            if (!triggered && GetCurrentWave() == waveNumber
+                && arrivalPhase.IsRunning && arrivalPhase.Elapsed >= startAfterSeconds)
+            {
+                TryStartRush();
+            }
+
+            if (rushing) AddRushDemand(Time.deltaTime);
+        }
+
+        private int GetCurrentWave()
+        {
+            return GameState.Instance.CurrentWaveNumber;
+        }
+
+        private void TryStartRush()
+        {
+            triggered = true;
+
+            rushBuilding = null;
+            foreach (GuestNeedType need in AllNeeds)
+            {
+                Building b = registry != null ? registry.GetBuildingForNeed(need) : null;
+                if (b == null) continue;
+                if (workers != null && workers.IsStaffed(need)) continue;
+
+                rushNeed = need;
+                rushBuilding = b;
+                break;
+            }
+
+            if (rushBuilding == null)
+            {
+                Debug.Log("[SuddenRush] Every building has a Worker, event skipped.");
+                return;
+            }
+
+            rushing = true;
+            rushElapsed = 0f;
+            rushAdded = 0;
+            Debug.Log($"[SuddenRush] Started at {rushBuilding.Type}: +{extraUnits} {rushNeed} over {rushDuration}s");
+
+            if (view != null)
+            {
+                bool canUseEnergy = speedUp != null && speedUp.GetState(rushNeed) == SpeedUpState.Available;
+                bool canMoveWorker = workers != null && workers.StaffedCount > 0;
+                int cost = speedUp != null ? speedUp.EnergyCost : 0;
+                view.Show(rushBuilding.Type.ToString(), cost, canUseEnergy, canMoveWorker);
+            }
+        }
+
+        private void AddRushDemand(float deltaTime)
+        {
+            rushElapsed += deltaTime;
+            float progress = rushDuration > 0f ? Mathf.Clamp01(rushElapsed / rushDuration) : 1f;
+            int target = Mathf.FloorToInt(extraUnits * progress);
+            int diff = target - rushAdded;
+
+            if (diff > 0)
+            {
+                rushAdded = target;
+                arrivalPhase.AddExtraDemand(rushNeed, diff);
+            }
+
+            if (progress >= 1f) rushing = false;
+        }
+
+        private void OnMoveWorker()
+        {
+            Debug.Log("[SuddenRush] Player chose: Move Worker");
+            if (workerPanel != null && rushBuilding != null)
+                workerPanel.Open(rushBuilding);
+        }
+
+        private void OnUseEnergy()
+        {
+            Debug.Log("[SuddenRush] Player chose: Use Energy");
+            if (speedUp == null) return;
+            SpeedUpResult result = speedUp.TrySpeedUp(rushNeed);
+            if (result != SpeedUpResult.Success)
+                Debug.Log($"[SuddenRush] Speed Up refused: {result}");
+        }
+
+        private void OnIgnore()
+        {
+            Debug.Log("[SuddenRush] Player chose: Ignore");
+        }
+    }
+}

@@ -50,6 +50,49 @@ public class GuestSpawner : MonoBehaviour
     private int returning;
     private bool waveEnding;
 
+
+
+    [Serializable]
+    public class GuestSpawnSnapshot
+    {
+        public int[] pending;
+        public int[] credits;
+        public int[] activeCounts;
+    }
+
+
+    public GuestSpawnSnapshot GetSpawnSnapshot()
+    {
+        GuestNeedType[] needs =
+            (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
+
+
+        var snapshot = new GuestSpawnSnapshot
+        {
+            pending = new int[needs.Length],
+            credits = new int[needs.Length],
+            activeCounts = new int[needs.Length]
+        };
+
+
+        for (int i = 0; i < needs.Length; i++)
+        {
+            GuestNeedType need = needs[i];
+
+            snapshot.pending[i] =
+                remaining.TryGetValue(need, out int count) ? count : 0;
+
+            snapshot.credits[i] =
+                credits.TryGetValue(need, out int credit) ? credit : 0;
+
+            snapshot.activeCounts[i] =
+                lines.TryGetValue(need, out var line) ? line.Count : 0;
+        }
+
+        return snapshot;
+    }
+
+
     public bool AllGuestsBoarded => returning == 0 && leaveRoutine == null &&
         spawnRoutine == null && active.Count == 0;
 
@@ -138,7 +181,15 @@ public class GuestSpawner : MonoBehaviour
     }
 
 
-    public void RestoreGuests(int[] arrived, int[] inService, int[] served)
+
+    public void RestoreGuests(
+        int[] arrived,
+        int[] inService,
+        int[] served,
+        int[] savedPending,
+        int[] savedCredits,
+        int[] savedActiveCounts)
+
     {
         if (arrived == null || served == null) return;
 
@@ -169,12 +220,23 @@ public class GuestSpawner : MonoBehaviour
             if (!lines.TryGetValue(need, out var line))
                 continue;
 
-            int waiting = Mathf.Max(0, arrived[i] - served[i]);
 
-            int count = Mathf.Min(
-                Mathf.CeilToInt((float)waiting / Mathf.Max(1, unitsPerGuest)),
-                Capacity(need)
-            );
+            int count;
+
+            if (savedActiveCounts != null && i < savedActiveCounts.Length)
+            {
+                count = Mathf.Clamp(savedActiveCounts[i], 0, Capacity(need));
+            }
+            else
+            {
+                int waiting = Mathf.Max(0, arrived[i] - served[i]);
+
+                count = Mathf.Min(
+                    Mathf.CeilToInt((float)waiting / Mathf.Max(1, unitsPerGuest)),
+                    Capacity(need)
+                );
+            }
+
 
             for (int slot = 0; slot < count; slot++)
             {
@@ -200,6 +262,22 @@ public class GuestSpawner : MonoBehaviour
                 line.Add(ag);
             }
         }
+
+
+        for (int i = 0; i < needs.Length; i++)
+        {
+            GuestNeedType need = needs[i];
+
+            if (savedPending != null && i < savedPending.Length)
+                remaining[need] = Mathf.Max(0, savedPending[i]);
+
+            if (savedCredits != null && i < savedCredits.Length)
+                credits[need] = Mathf.Max(0, savedCredits[i]);
+        }
+
+        if (HasPending())
+            spawnRoutine = StartCoroutine(SpawnLoop());
+
     }
 
 

@@ -87,19 +87,32 @@ namespace ResortEmpire.Core
         
         public int[] GetAddedSnapshot() => added != null ? (int[])added.Clone() : Array.Empty<int>();
 
-        public void RestoreState(float savedElapsed, bool running, bool finished, int[] savedAdded)
+
+        public void RestoreState(
+            float savedElapsed,
+            bool running,
+            bool finished,
+            int[] savedAdded,
+            int savedWaveNumber)
         {
-            forecast = GameState.Instance != null ? GameState.Instance.GetForecast() : new List<NeedDemand>();
+            forecast = WaveTable.GetDemand(
+                Mathf.Clamp(savedWaveNumber, 1, WaveTable.TotalWaves),
+                GameState.Instance.GetUnlockedNeedsSnapshot()
+            );
+
             added = new int[forecast.Count];
+
             if (savedAdded != null)
             {
                 int copyLen = Mathf.Min(added.Length, savedAdded.Length);
                 Array.Copy(savedAdded, added, copyLen);
             }
+
             elapsed = Mathf.Clamp(savedElapsed, 0f, duration);
             IsRunning = running;
             IsFinished = finished;
         }
+
 
         private void StopDemandGeneration()
         {

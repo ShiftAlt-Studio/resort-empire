@@ -26,9 +26,7 @@ namespace ResortEmpire.Core
         public bool[] staffedNeeds = Array.Empty<bool>();
     }
 
-    /// <summary>
-    /// SS-45 (SS-87, SS-88, SS-89, SS-90): Сохраняет и восстанавливает постоянный прогресс между сессиями.
-    /// </summary>
+
     public class PersistentProgressService : MonoBehaviour
     {
         private const string SaveKey = "ResortEmpire.PersistentProgress.v1";
@@ -172,13 +170,11 @@ namespace ResortEmpire.Core
             isApplyingSave = true;
             try
             {
-                // SS-88 + замечание коллеги: восстанавливаем открытые области и все открытые потребности
                 if (areaActivationService != null && data.unlockedAreas != null)
                     areaActivationService.RestoreUnlockedAreas(data.unlockedAreas);
 
                 GameState.Instance.RestoreUnlockedNeeds(data.unlockedNeeds);
 
-                // SS-89: восстанавливаем уровни зданий
                 if (data.buildingLevels != null)
                 {
                     List<Building> allBuildings = CollectAllBuildings();
@@ -190,19 +186,23 @@ namespace ResortEmpire.Core
                     }
                 }
 
-                // SS-90: восстанавливаем рабочих и расстановку
                 GameState.Instance.SetWorkers(data.availableWorkers);
                 if (workerAllocation != null && data.staffedNeeds != null)
                     workerAllocation.RestoreStaffedSnapshot(data.staffedNeeds);
 
-                // SS-87: восстанавливаем валюты, Resort Value и номер волны (в AWAITING_WAVE для новой сессии)
-                GameState.Instance.RestoreSnapshot(
-                    data.waveNumber,
-                    data.coins,
-                    data.energy,
-                    data.resortValue,
-                    ResortState.AWAITING_WAVE,
-                    data.unlockedNeeds);
+
+                if (GameState.Instance.CurrentState != ResortState.WAVE_INCOMING
+                    && GameState.Instance.CurrentState != ResortState.WAVE_ACTIVE)
+                {
+                    GameState.Instance.RestoreSnapshot(
+                        data.waveNumber,
+                        data.coins,
+                        data.energy,
+                        data.resortValue,
+                        ResortState.AWAITING_WAVE,
+                        data.unlockedNeeds);
+                }
+
 
                 Debug.Log($"[PersistentProgressService] Loaded progress: Wave {data.waveNumber}, Coins {data.coins}, Energy {data.energy}, ResortValue {data.resortValue}, Workers {data.availableWorkers}.");
             }
@@ -233,7 +233,7 @@ namespace ResortEmpire.Core
                 }
             }
 
-            Building[] sceneBuildings = FindObjectsByType<Building>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            Building[] sceneBuildings = FindObjectsByType<Building>(FindObjectsInactive.Include);
             foreach (Building b in sceneBuildings)
             {
                 if (b != null && !result.Contains(b))

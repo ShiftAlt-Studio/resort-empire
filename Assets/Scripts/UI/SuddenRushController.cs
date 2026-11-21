@@ -92,8 +92,9 @@ namespace ResortEmpire.UI
 
             float elapsed = arrivalPhase.Elapsed;
             bool crossedStart = lastArrivalElapsed >= 0f
-                                && lastArrivalElapsed < startAfterSeconds
-                                && elapsed >= startAfterSeconds;
+                                && elapsed >= startAfterSeconds
+                                && (lastArrivalElapsed < startAfterSeconds
+                                    || (startAfterSeconds <= 0f && lastArrivalElapsed == 0f));
             lastArrivalElapsed = elapsed;
 
             if (!triggered && crossedStart && arrivalPhase.IsRunning

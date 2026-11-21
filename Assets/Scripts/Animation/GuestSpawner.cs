@@ -137,6 +137,72 @@ public class GuestSpawner : MonoBehaviour
         return null;
     }
 
+
+    public void RestoreGuests(int[] arrived, int[] inService, int[] served)
+    {
+        if (arrived == null || served == null) return;
+
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+            spawnRoutine = null;
+        }
+
+        waveEnding = false;
+        remaining.Clear();
+        credits.Clear();
+        active.Clear();
+
+        foreach (var line in lines.Values)
+            line.Clear();
+
+        GuestNeedType[] needs =
+            (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
+
+        for (int i = 0; i < needs.Length; i++)
+        {
+            if (i >= arrived.Length || i >= served.Length)
+                break;
+
+            GuestNeedType need = needs[i];
+
+            if (!lines.TryGetValue(need, out var line))
+                continue;
+
+            int waiting = Mathf.Max(0, arrived[i] - served[i]);
+
+            int count = Mathf.Min(
+                Mathf.CeilToInt((float)waiting / Mathf.Max(1, unitsPerGuest)),
+                Capacity(need)
+            );
+
+            for (int slot = 0; slot < count; slot++)
+            {
+                if (guestPrefabs == null || guestPrefabs.Length == 0)
+                    break;
+
+                Transform target = SlotAt(need, slot);
+                if (target == null) break;
+
+                var prefab = guestPrefabs[UnityEngine.Random.Range(0, guestPrefabs.Length)];
+                var guest = Get(prefab);
+
+                guest.RestoreAt(ToLocal(target.position));
+
+                var ag = new ActiveGuest
+                {
+                    guest = guest,
+                    need = need,
+                    slot = slot
+                };
+
+                active.Add(ag);
+                line.Add(ag);
+            }
+        }
+    }
+
+
     private void StartWave()
     {
         if (spawnRoutine != null) StopCoroutine(spawnRoutine);

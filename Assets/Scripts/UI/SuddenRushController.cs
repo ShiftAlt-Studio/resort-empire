@@ -65,10 +65,20 @@ namespace ResortEmpire.UI
                 GameState.Instance.OnStateChanged -= HandleStateChanged;
         }
 
+
         private void HandleStateChanged(ResortState state)
         {
             if (GameState.Instance != null && GameState.Instance.IsResumingFromPause)
+            {
+                if (GameState.Instance.PreviousState != ResortState.WAVE_PAUSED
+                    && lastArrivalElapsed < 0f
+                    && arrivalPhase != null)
+                {
+                    lastArrivalElapsed = arrivalPhase.Elapsed;
+                }
+
                 return;
+            }
 
             if (state == ResortState.WAVE_INCOMING)
             {
@@ -82,6 +92,7 @@ namespace ResortEmpire.UI
                 if (view != null) view.Hide();
             }
         }
+
 
         private void Update()
         {

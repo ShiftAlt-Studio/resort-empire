@@ -16,6 +16,7 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text coinsText;
         [SerializeField] private TMP_Text energyText;
         [SerializeField] private TMP_Text materialsText;
+        [SerializeField] private TMP_Text gemsText;
 
         [Header("AWAITING_WAVE Elements")]
         [SerializeField] private Button startWaveButton;
@@ -36,18 +37,21 @@ namespace ResortEmpire.UI
             {
                 UpdateHUD(GameState.Instance.ResortValue, GameState.Instance.Coins, GameState.Instance.Energy);
                 HandleMaterialsChanged(GameState.Instance.Materials);
+                HandleGemsChanged(GameState.Instance.Gems);
                 SetResortState(GameState.Instance.CurrentState);
 
                 GameState.Instance.CoinsChanged += HandleCoinsChanged;
                 GameState.Instance.EnergyChanged += HandleEnergyChanged;
                 GameState.Instance.ResortValueChanged += HandleResortValueChanged;
                 GameState.Instance.MaterialsChanged += HandleMaterialsChanged;
+                GameState.Instance.GemsChanged += HandleGemsChanged;
                 GameState.Instance.OnStateChanged += SetResortState;
             }
             else
             {
                 UpdateHUD(700, 1000, 45);
                 HandleMaterialsChanged(0);
+                HandleGemsChanged(0);
                 SetResortState(currentState);
             }
         }
@@ -63,6 +67,7 @@ namespace ResortEmpire.UI
                 GameState.Instance.EnergyChanged -= HandleEnergyChanged;
                 GameState.Instance.ResortValueChanged -= HandleResortValueChanged;
                 GameState.Instance.MaterialsChanged -= HandleMaterialsChanged;
+                GameState.Instance.GemsChanged -= HandleGemsChanged;
                 GameState.Instance.OnStateChanged -= SetResortState;
             }
         }
@@ -85,6 +90,11 @@ namespace ResortEmpire.UI
         private void HandleMaterialsChanged(int materials)
         {
             if (materialsText != null) materialsText.text = $"{materials:N0}";
+        }
+
+         private void HandleGemsChanged(int gems)
+        {
+            if (gemsText != null) gemsText.text = $"{gems:N0}";
         }
 
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)

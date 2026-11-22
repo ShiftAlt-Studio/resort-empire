@@ -18,6 +18,7 @@ namespace ResortEmpire.Core
         public int coins = 1000;
         public int energy = 45;
         public int resortValue = 700;
+        public int materials = 0;
         public int availableWorkers = 2;
 
         public List<AreaType> unlockedAreas = new List<AreaType>();
@@ -72,6 +73,7 @@ namespace ResortEmpire.Core
                 GameState.Instance.CoinsChanged += OnAnyIntChanged;
                 GameState.Instance.EnergyChanged += OnAnyIntChanged;
                 GameState.Instance.ResortValueChanged += OnAnyIntChanged;
+                GameState.Instance.MaterialsChanged += OnAnyIntChanged;
                 GameState.Instance.NeedUnlocked += OnNeedUnlocked;
                 GameState.Instance.OnStateChanged += OnStateChanged;
             }
@@ -95,6 +97,7 @@ namespace ResortEmpire.Core
                 GameState.Instance.CoinsChanged -= OnAnyIntChanged;
                 GameState.Instance.EnergyChanged -= OnAnyIntChanged;
                 GameState.Instance.ResortValueChanged -= OnAnyIntChanged;
+                GameState.Instance.MaterialsChanged -= OnAnyIntChanged;
                 GameState.Instance.NeedUnlocked -= OnNeedUnlocked;
                 GameState.Instance.OnStateChanged -= OnStateChanged;
             }
@@ -133,6 +136,7 @@ namespace ResortEmpire.Core
                 coins = GameState.Instance.Coins,
                 energy = GameState.Instance.Energy,
                 resortValue = GameState.Instance.ResortValue,
+                materials = GameState.Instance.Materials,
                 availableWorkers = GameState.Instance.AvailableWorkers,
                 unlockedNeeds = GameState.Instance.GetUnlockedNeedsSnapshot(),
                 unlockedAreas = areaActivationService != null
@@ -174,6 +178,7 @@ namespace ResortEmpire.Core
                     areaActivationService.RestoreUnlockedAreas(data.unlockedAreas);
 
                 GameState.Instance.RestoreUnlockedNeeds(data.unlockedNeeds);
+                GameState.Instance.RestoreMaterials(data.materials);
 
                 if (data.buildingLevels != null)
                 {
@@ -200,11 +205,12 @@ namespace ResortEmpire.Core
                         data.energy,
                         data.resortValue,
                         ResortState.AWAITING_WAVE,
-                        data.unlockedNeeds);
+                        data.unlockedNeeds
+                    );
                 }
 
 
-                Debug.Log($"[PersistentProgressService] Loaded progress: Wave {data.waveNumber}, Coins {data.coins}, Energy {data.energy}, ResortValue {data.resortValue}, Workers {data.availableWorkers}.");
+                   Debug.Log($"[PersistentProgressService] Loaded progress: Wave {data.waveNumber}, Coins {data.coins}, Energy {data.energy}, ResortValue {data.resortValue}, Materials {data.materials}, Workers {data.availableWorkers}.");
             }
             finally
             {

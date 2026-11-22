@@ -37,6 +37,8 @@ namespace ResortEmpire.Core
             public GuestNeedType need;
             public GameObject siteObject;
             public Building building;
+            [Tooltip("SS-184: Reputation needed before the area becomes AVAILABLE. 0 = no Reputation gate.")]
+            public int requiredReputation;
         }
 
         [SerializeField] private BuildingRegistry buildingRegistry;
@@ -105,8 +107,25 @@ namespace ResortEmpire.Core
 
         public bool IsEligible(AreaType type)
         {
+            return IsWaveEligible(type) && IsReputationEligible(type);
+        }
+
+        public bool IsWaveEligible(AreaType type)
+        {
             return GameState.Instance != null
                 && GameState.Instance.CompletedWaves >= RequiredWave(type);
+        }
+
+        public bool IsReputationEligible(AreaType type)
+        {
+            return GameState.Instance != null
+                && GameState.Instance.HasReputation(GetRequiredReputation(type));
+        }
+
+        public int GetRequiredReputation(AreaType type)
+        {
+            Area a = Find(type);
+            return a != null ? Mathf.Max(0, a.requiredReputation) : 0;
         }
 
         public static int GetCost(AreaType type)

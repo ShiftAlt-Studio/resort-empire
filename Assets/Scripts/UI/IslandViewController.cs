@@ -17,6 +17,7 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text energyText;
         [SerializeField] private TMP_Text materialsText;
         [SerializeField] private TMP_Text gemsText;
+        [SerializeField] private TMP_Text reputationText;
 
         [Header("AWAITING_WAVE Elements")]
         [SerializeField] private Button startWaveButton;
@@ -38,6 +39,7 @@ namespace ResortEmpire.UI
                 UpdateHUD(GameState.Instance.ResortValue, GameState.Instance.Coins, GameState.Instance.Energy);
                 HandleMaterialsChanged(GameState.Instance.Materials);
                 HandleGemsChanged(GameState.Instance.Gems);
+                HandleReputationChanged(GameState.Instance.Reputation);
                 SetResortState(GameState.Instance.CurrentState);
 
                 GameState.Instance.CoinsChanged += HandleCoinsChanged;
@@ -45,6 +47,7 @@ namespace ResortEmpire.UI
                 GameState.Instance.ResortValueChanged += HandleResortValueChanged;
                 GameState.Instance.MaterialsChanged += HandleMaterialsChanged;
                 GameState.Instance.GemsChanged += HandleGemsChanged;
+                GameState.Instance.ReputationChanged += HandleReputationChanged;
                 GameState.Instance.OnStateChanged += SetResortState;
             }
             else
@@ -52,6 +55,7 @@ namespace ResortEmpire.UI
                 UpdateHUD(700, 1000, 45);
                 HandleMaterialsChanged(0);
                 HandleGemsChanged(0);
+                HandleReputationChanged(0);
                 SetResortState(currentState);
             }
         }
@@ -68,6 +72,7 @@ namespace ResortEmpire.UI
                 GameState.Instance.ResortValueChanged -= HandleResortValueChanged;
                 GameState.Instance.MaterialsChanged -= HandleMaterialsChanged;
                 GameState.Instance.GemsChanged -= HandleGemsChanged;
+                GameState.Instance.ReputationChanged -= HandleReputationChanged;
                 GameState.Instance.OnStateChanged -= SetResortState;
             }
         }
@@ -95,6 +100,11 @@ namespace ResortEmpire.UI
          private void HandleGemsChanged(int gems)
         {
             if (gemsText != null) gemsText.text = $"{gems:N0}";
+        }
+
+        private void HandleReputationChanged(int reputation)
+        {
+            if (reputationText != null) reputationText.text = $"{reputation:N0}";
         }
 
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)

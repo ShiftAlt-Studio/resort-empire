@@ -20,6 +20,7 @@ namespace ResortEmpire.Core
         public int resortValue = 700;
         public int materials = 0;
         public int gems = 0;
+        public int reputation = 0;
         public bool firstPerfectStayRewarded = false;
         public int availableWorkers = 2;
 
@@ -77,6 +78,7 @@ namespace ResortEmpire.Core
                 GameState.Instance.ResortValueChanged += OnAnyIntChanged;
                 GameState.Instance.MaterialsChanged += OnAnyIntChanged;
                 GameState.Instance.GemsChanged += OnAnyIntChanged;
+                GameState.Instance.ReputationChanged += OnAnyIntChanged;
                 GameState.Instance.NeedUnlocked += OnNeedUnlocked;
                 GameState.Instance.OnStateChanged += OnStateChanged;
             }
@@ -102,6 +104,7 @@ namespace ResortEmpire.Core
                 GameState.Instance.ResortValueChanged -= OnAnyIntChanged;
                 GameState.Instance.MaterialsChanged -= OnAnyIntChanged;
                 GameState.Instance.GemsChanged -= OnAnyIntChanged;
+                GameState.Instance.ReputationChanged -= OnAnyIntChanged;
                 GameState.Instance.NeedUnlocked -= OnNeedUnlocked;
                 GameState.Instance.OnStateChanged -= OnStateChanged;
             }
@@ -142,6 +145,7 @@ namespace ResortEmpire.Core
                 resortValue = GameState.Instance.ResortValue,
                 materials = GameState.Instance.Materials,
                 gems = GameState.Instance.Gems,
+                reputation = GameState.Instance.Reputation,
                 firstPerfectStayRewarded = GameState.Instance.FirstPerfectStayRewarded,
                 availableWorkers = GameState.Instance.AvailableWorkers,
                 unlockedNeeds = GameState.Instance.GetUnlockedNeedsSnapshot(),
@@ -186,6 +190,7 @@ namespace ResortEmpire.Core
                 GameState.Instance.RestoreUnlockedNeeds(data.unlockedNeeds);
                 GameState.Instance.RestoreMaterials(data.materials);
                 GameState.Instance.RestoreGems(data.gems, data.firstPerfectStayRewarded);
+                GameState.Instance.RestoreReputation(data.reputation);
 
                 if (data.buildingLevels != null)
                 {
@@ -217,7 +222,7 @@ namespace ResortEmpire.Core
                 }
 
 
-                Debug.Log($"[PersistentProgressService] Loaded progress: Wave {data.waveNumber}, Coins {data.coins}, Energy {data.energy}, ResortValue {data.resortValue}, Materials {data.materials}, Gems {data.gems}, Workers {data.availableWorkers}.");
+                Debug.Log($"[PersistentProgressService] Loaded progress: Wave {data.waveNumber}, Coins {data.coins}, Energy {data.energy}, ResortValue {data.resortValue}, Materials {data.materials}, Gems {data.gems}, Reputation {data.reputation}, Workers {data.availableWorkers}.");
             }
             finally
             {

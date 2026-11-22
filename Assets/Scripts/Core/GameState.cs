@@ -13,6 +13,8 @@ namespace ResortEmpire.Core
         [SerializeField] private int startingEnergy = 45;
         [SerializeField] private int startingResortValue = 700;
         [SerializeField] private int startingMaterials = 0;
+        [SerializeField] private int startingGems = 0;
+        [SerializeField] private int firstPerfectStayGems = 10;
 
         public ResortState CurrentState { get; private set; }
         public ResortState PreviousState { get; private set; }
@@ -22,6 +24,8 @@ namespace ResortEmpire.Core
         public int Energy { get; private set; }
         public int ResortValue { get; private set; }
         public int Materials { get; private set; }
+        public int Gems { get; private set; }
+        public bool FirstPerfectStayRewarded { get; private set; }
 
         public bool IsResumingFromPause { get; private set; }
         public int CompletedWaves
@@ -39,6 +43,7 @@ namespace ResortEmpire.Core
         public event Action<int> EnergyChanged;
         public event Action<int> ResortValueChanged;
         public event Action<int> MaterialsChanged;
+        public event Action<int> GemsChanged;
         public event Action<GuestNeedType> NeedUnlocked;
 
         private ResortState stateBeforePause = ResortState.AWAITING_WAVE;
@@ -66,6 +71,7 @@ namespace ResortEmpire.Core
             Energy = startingEnergy;
             ResortValue = startingResortValue;
             Materials = startingMaterials;
+            Gems = startingGems;
 
             Debug.Log($"GameState: {CurrentState}, workers: {AvailableWorkers}, coins: {Coins}, energy: {Energy}, resortValue: {ResortValue}");
         }
@@ -227,6 +233,45 @@ namespace ResortEmpire.Core
             Materials = Mathf.Max(0, amount);
             MaterialsChanged?.Invoke(Materials);
         }
+         public void AddGems(int amount)
+        {
+            if (amount <= 0) return;
+            Gems += amount;
+            Debug.Log($"[GameState] +{amount} Gems -> {Gems}");
+            GemsChanged?.Invoke(Gems);
+        }
+
+        public bool TrySpendGems(int amount)
+        {
+            if (amount < 0 || Gems < amount) return false;
+            Gems -= amount;
+            GemsChanged?.Invoke(Gems);
+            return true;
+        }
+
+        public void RestoreGems(int amount, bool firstPerfectStayRewarded)
+        {
+            Gems = Mathf.Max(0, amount);
+            FirstPerfectStayRewarded = firstPerfectStayRewarded;
+            GemsChanged?.Invoke(Gems);
+        }
+
+        public int GrantFirstPerfectStayGems()
+        {
+            if (FirstPerfectStayRewarded) return 0;
+            FirstPerfectStayRewarded = true;
+            AddGems(firstPerfectStayGems);
+            return firstPerfectStayGems;
+        }
+        
+        [ContextMenu("Debug/Grant First Perfect Stay Gems")]
+        private void DebugFirstPerfectStay() => Debug.Log($"First Perfect Stay: +{GrantFirstPerfectStayGems()} Gems");
+        
+        [ContextMenu("Debug/Spend All Energy")]
+        private void DebugSpendAllEnergy() => TrySpendEnergy(Energy);
+
+        [ContextMenu("Debug/Add 5 Gems")]
+        private void DebugAddGems() => AddGems(5);
 
         [ContextMenu("Debug/Add 5 Materials")]
         private void DebugAddMaterials() => AddMaterials(5);

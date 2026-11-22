@@ -148,5 +148,7 @@ namespace ResortEmpire.Core
             bool unlocked = GameState.Instance != null && GameState.Instance.IsNeedUnlocked(need);
             return unlocked ? VipReadiness.Good : VipReadiness.Risky;
         }
+        [ContextMenu("Debug/Spawn VIP Offer")]
+        private void DebugSpawnOffer() { Current = null; CreateOffer(); }
     }
 }

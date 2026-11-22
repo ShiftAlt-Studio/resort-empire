@@ -13,7 +13,7 @@ namespace ResortEmpire.UI
         [SerializeField] private BuildingRegistry buildingRegistry;
         [SerializeField] private WaveSatisfaction waveSatisfaction;
 
-        [Header("Опциональные ссылки на UI (если пустые — создаются автоматически)")]
+        [Header("Optional UI references (created automatically if empty)")]
         [SerializeField] private GameObject panelRoot;
         [SerializeField] private TMP_Text titleText;
         [SerializeField] private TMP_Text ratingText;
@@ -24,13 +24,14 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text coinsRewardText;
         [SerializeField] private TMP_Text energyRewardText;
         [SerializeField] private TMP_Text resortValueRewardText;
+        [SerializeField] private TMP_Text materialsRewardText;
         [SerializeField] private Button claimRewardsButton;
 
-        [Header("Шрифты (отдельно для заголовков и для текста карточек)")]
+        [Header("Fonts (separate for headers and card text)")]
         [SerializeField] private TMP_FontAsset titleFontAsset;
         [SerializeField] private TMP_FontAsset bodyFontAsset;
 
-        [Header("Готовые ассеты из проекта (Figma / Sprites)")]
+        [Header("Project assets (Figma / Sprites)")]
         [SerializeField] private Sprite cardSprite;
         [SerializeField] private Sprite buttonSprite;
         [SerializeField] private bool tintButtonWithOrange = true;
@@ -40,8 +41,9 @@ namespace ResortEmpire.UI
         [SerializeField] private Sprite energySprite;
         [SerializeField] private Sprite starSprite;
         [SerializeField] private Sprite filledStarSprite;
+        [SerializeField] private Sprite materialsSprite;
 
-        [Header("Цвета иконок")]
+        [Header("Icon colors")]
         [SerializeField] private Color filledStarColor = new Color(0.98f, 0.78f, 0.10f, 1f);
         [SerializeField] private Color checkIconColor = new Color(0.10f, 0.68f, 0.36f, 1f);
         [SerializeField] private Color alertIconColor = new Color(0.96f, 0.65f, 0.08f, 1f);
@@ -60,6 +62,7 @@ namespace ResortEmpire.UI
         private Image coinIconImg;
         private Image energyIconImg;
         private Image resortValueIconImg;
+        private Image materialsIconImg;
 
         private static readonly GuestNeedType[] AllNeeds =
             (GuestNeedType[])System.Enum.GetValues(typeof(GuestNeedType));
@@ -147,6 +150,16 @@ namespace ResortEmpire.UI
 
             if (resortValueRewardText != null)
                 resortValueRewardText.text = $"+{summary.ResortValueGranted} Resort Value";
+
+
+            bool hasMaterials = summary.MaterialsGranted > 0;
+            if (materialsRewardText != null)
+            {
+                materialsRewardText.text = $"+{summary.MaterialsGranted} Materials";
+                materialsRewardText.gameObject.SetActive(hasMaterials);
+            }
+            if (materialsIconImg != null)
+                materialsIconImg.gameObject.SetActive(hasMaterials && materialsIconImg.sprite != null);
 
             if (panelRoot != null)
                 panelRoot.SetActive(true);
@@ -291,9 +304,9 @@ namespace ResortEmpire.UI
             Color greenText = new Color(0.08f, 0.65f, 0.34f, 1f);
             Color blueText = new Color(0.08f, 0.52f, 0.88f, 1f);
             Color goldText = new Color(0.92f, 0.65f, 0.08f, 1f);
+            Color materialsText = new Color(0.71f, 0.33f, 0.04f, 1f);
             Color orangeCta = new Color(0.98f, 0.45f, 0.22f, 1f);
 
-            // Затемнённый фон поверх острова
             panelRoot = new GameObject("WaveCompleteOverlay", typeof(RectTransform), typeof(Image));
             panelRoot.transform.SetParent(canvas.transform, false);
             RectTransform rootRt = panelRoot.GetComponent<RectTransform>();
@@ -303,13 +316,9 @@ namespace ResortEmpire.UI
             rootRt.offsetMax = Vector2.zero;
             panelRoot.GetComponent<Image>().color = new Color(0.04f, 0.14f, 0.20f, 0.48f);
 
-            // Заголовок и 5 звёзд по центру сверху
             titleText = CreateLabel(panelRoot.transform, "Title", "WAVE COMPLETE!", 52, new Vector2(0f, 365f), new Vector2(800f, 68f), Color.white, headerFont, FontStyles.Bold);
             CreateStarsRow(panelRoot.transform, new Vector2(0f, 300f));
 
-            // =========================================================================
-            // ЛЕВАЯ КАРТОЧКА: PERFORMANCE (560 x 410), единая левая линия x = -240
-            // =========================================================================
             GameObject perfCard = CreateCard(panelRoot.transform, "PerformanceCard", new Vector2(-340f, 20f), new Vector2(560f, 410f), cardBg, brownOutline, cardSprite, true);
 
             CreateLabel(perfCard.transform, "PerfHeader", "PERFORMANCE", 32, new Vector2(0f, 145f), new Vector2(480f, 46f), brownOutline, headerFont, FontStyles.Bold, TextAlignmentOptions.Left);
@@ -326,23 +335,22 @@ namespace ResortEmpire.UI
             alertIconImg = CreateRowIcon(perfCard.transform, "AlertIcon", alertSprite, new Vector2(-221f, -135f), new Vector2(38f, 38f), alertIconColor);
             bottleneckHintText = CreateLabel(perfCard.transform, "BottleneckHint", "Food capacity needs improvement", 24, new Vector2(25f, -135f), new Vector2(430f, 60f), new Color(0.82f, 0.45f, 0.08f), bodyFont, FontStyles.Normal, TextAlignmentOptions.Left);
 
-            // =========================================================================
-            // ПРАВАЯ КАРТОЧКА: REWARDS EARNED (540 x 340), единая левая линия x = -225
-            // =========================================================================
-            GameObject rewardsCard = CreateCard(panelRoot.transform, "RewardsCard", new Vector2(340f, 20f), new Vector2(540f, 340f), cardBg, brownOutline, cardSprite, true);
+            GameObject rewardsCard = CreateCard(panelRoot.transform, "RewardsCard", new Vector2(340f, 20f), new Vector2(540f, 410f), cardBg, brownOutline, cardSprite, true);
 
-            CreateLabel(rewardsCard.transform, "RewardsHeader", "REWARDS EARNED", 32, new Vector2(0f, 115f), new Vector2(450f, 46f), brownOutline, headerFont, FontStyles.Bold, TextAlignmentOptions.Left);
+            CreateLabel(rewardsCard.transform, "RewardsHeader", "REWARDS EARNED", 32, new Vector2(0f, 145f), new Vector2(450f, 46f), brownOutline, headerFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            coinIconImg = CreateRowIcon(rewardsCard.transform, "CoinIcon", coinSprite, new Vector2(-203f, 32f), new Vector2(44f, 44f), coinIconColor);
-            coinsRewardText = CreateLabel(rewardsCard.transform, "CoinsReward", "+120 Coins", 31, new Vector2(30f, 32f), new Vector2(395f, 48f), greenText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
+            coinIconImg = CreateRowIcon(rewardsCard.transform, "CoinIcon", coinSprite, new Vector2(-203f, 67f), new Vector2(44f, 44f), coinIconColor);
+            coinsRewardText = CreateLabel(rewardsCard.transform, "CoinsReward", "+120 Coins", 31, new Vector2(30f, 67f), new Vector2(395f, 48f), greenText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            energyIconImg = CreateRowIcon(rewardsCard.transform, "EnergyIcon", energySprite, new Vector2(-203f, -38f), new Vector2(44f, 44f), energyIconColor);
-            energyRewardText = CreateLabel(rewardsCard.transform, "EnergyReward", "+5 Energy", 31, new Vector2(30f, -38f), new Vector2(395f, 48f), blueText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
+            energyIconImg = CreateRowIcon(rewardsCard.transform, "EnergyIcon", energySprite, new Vector2(-203f, -3f), new Vector2(44f, 44f), energyIconColor);
+            energyRewardText = CreateLabel(rewardsCard.transform, "EnergyReward", "+5 Energy", 31, new Vector2(30f, -3f), new Vector2(395f, 48f), blueText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            resortValueIconImg = CreateRowIcon(rewardsCard.transform, "ResortValueIcon", starSprite, new Vector2(-203f, -108f), new Vector2(44f, 44f), resortValueIconColor);
-            resortValueRewardText = CreateLabel(rewardsCard.transform, "ResortValueReward", "+15 Resort Value", 31, new Vector2(30f, -108f), new Vector2(395f, 48f), goldText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
+            resortValueIconImg = CreateRowIcon(rewardsCard.transform, "ResortValueIcon", starSprite, new Vector2(-203f, -73f), new Vector2(44f, 44f), resortValueIconColor);
+            resortValueRewardText = CreateLabel(rewardsCard.transform, "ResortValueReward", "+15 Resort Value", 31, new Vector2(30f, -73f), new Vector2(395f, 48f), goldText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
 
-            // Кнопка CLAIM REWARDS внизу по центру
+             materialsIconImg = CreateRowIcon(rewardsCard.transform, "MaterialsIcon", materialsSprite, new Vector2(-203f, -143f), new Vector2(44f, 44f), materialsText);
+            materialsRewardText = CreateLabel(rewardsCard.transform, "MaterialsReward", "+1 Materials", 31, new Vector2(30f, -143f), new Vector2(395f, 48f), materialsText, bodyFont, FontStyles.Bold, TextAlignmentOptions.Left);
+
             GameObject btnObj = new GameObject("ClaimRewardsButton", typeof(RectTransform), typeof(Image), typeof(Button), typeof(Outline));
             btnObj.transform.SetParent(panelRoot.transform, false);
             RectTransform btnRt = btnObj.GetComponent<RectTransform>();

@@ -8,15 +8,16 @@ namespace ResortEmpire.UI
 {
     public class IslandViewController : MonoBehaviour
     {
-        [Header("Состояние курорта")]
+        [Header("Resort State")]
         [SerializeField] private ResortState currentState = ResortState.AWAITING_WAVE;
 
-        [Header("HUD Тексты")]
+        [Header("HUD Texts")]
         [SerializeField] private TMP_Text resortValueText;
         [SerializeField] private TMP_Text coinsText;
         [SerializeField] private TMP_Text energyText;
+        [SerializeField] private TMP_Text materialsText;
 
-        [Header("AWAITING_WAVE элементы")]
+        [Header("AWAITING_WAVE Elements")]
         [SerializeField] private Button startWaveButton;
         [SerializeField] private GameObject readyForGuestsBadge;
         [SerializeField] private TMP_Text readyForGuestsText;
@@ -34,16 +35,19 @@ namespace ResortEmpire.UI
             if (GameState.Instance != null)
             {
                 UpdateHUD(GameState.Instance.ResortValue, GameState.Instance.Coins, GameState.Instance.Energy);
+                HandleMaterialsChanged(GameState.Instance.Materials);
                 SetResortState(GameState.Instance.CurrentState);
 
                 GameState.Instance.CoinsChanged += HandleCoinsChanged;
                 GameState.Instance.EnergyChanged += HandleEnergyChanged;
                 GameState.Instance.ResortValueChanged += HandleResortValueChanged;
+                GameState.Instance.MaterialsChanged += HandleMaterialsChanged;
                 GameState.Instance.OnStateChanged += SetResortState;
             }
             else
             {
                 UpdateHUD(700, 1000, 45);
+                HandleMaterialsChanged(0);
                 SetResortState(currentState);
             }
         }
@@ -58,6 +62,7 @@ namespace ResortEmpire.UI
                 GameState.Instance.CoinsChanged -= HandleCoinsChanged;
                 GameState.Instance.EnergyChanged -= HandleEnergyChanged;
                 GameState.Instance.ResortValueChanged -= HandleResortValueChanged;
+                GameState.Instance.MaterialsChanged -= HandleMaterialsChanged;
                 GameState.Instance.OnStateChanged -= SetResortState;
             }
         }
@@ -75,6 +80,11 @@ namespace ResortEmpire.UI
         private void HandleResortValueChanged(int resortVal)
         {
             if (resortValueText != null) resortValueText.text = $"Resort Value: {resortVal}";
+        }
+
+        private void HandleMaterialsChanged(int materials)
+        {
+            if (materialsText != null) materialsText.text = $"{materials:N0}";
         }
 
         public void UpdateHUD(int resortVal, int coinsVal, int energyVal)

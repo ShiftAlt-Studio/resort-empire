@@ -12,6 +12,7 @@ namespace ResortEmpire.Core
         [SerializeField] private int startingCoins = 1000;
         [SerializeField] private int startingEnergy = 45;
         [SerializeField] private int startingResortValue = 700;
+        [SerializeField] private int startingMaterials = 0;
 
         public ResortState CurrentState { get; private set; }
         public ResortState PreviousState { get; private set; }
@@ -20,6 +21,7 @@ namespace ResortEmpire.Core
         public int Coins { get; private set; }
         public int Energy { get; private set; }
         public int ResortValue { get; private set; }
+        public int Materials { get; private set; }
 
         public bool IsResumingFromPause { get; private set; }
         public int CompletedWaves
@@ -36,6 +38,7 @@ namespace ResortEmpire.Core
         public event Action<int> CoinsChanged;
         public event Action<int> EnergyChanged;
         public event Action<int> ResortValueChanged;
+        public event Action<int> MaterialsChanged;
         public event Action<GuestNeedType> NeedUnlocked;
 
         private ResortState stateBeforePause = ResortState.AWAITING_WAVE;
@@ -62,6 +65,7 @@ namespace ResortEmpire.Core
             Coins = startingCoins;
             Energy = startingEnergy;
             ResortValue = startingResortValue;
+            Materials = startingMaterials;
 
             Debug.Log($"GameState: {CurrentState}, workers: {AvailableWorkers}, coins: {Coins}, energy: {Energy}, resortValue: {ResortValue}");
         }
@@ -201,6 +205,31 @@ namespace ResortEmpire.Core
             EnergyChanged?.Invoke(Energy);
             return true;
         }
+
+        public void AddMaterials(int amount)
+        {
+            if (amount <= 0) return;
+            Materials += amount;
+            Debug.Log($"[GameState] +{amount} Materials -> {Materials}");
+            MaterialsChanged?.Invoke(Materials);
+        }
+
+        public bool TrySpendMaterials(int amount)
+        {
+            if (amount < 0 || Materials < amount) return false;
+            Materials -= amount;
+            MaterialsChanged?.Invoke(Materials);
+            return true;
+        }
+
+        public void RestoreMaterials(int amount)
+        {
+            Materials = Mathf.Max(0, amount);
+            MaterialsChanged?.Invoke(Materials);
+        }
+
+        [ContextMenu("Debug/Add 5 Materials")]
+        private void DebugAddMaterials() => AddMaterials(5);
 
         public void AddResortValue(int amount)
         {

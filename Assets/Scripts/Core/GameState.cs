@@ -14,6 +14,7 @@ namespace ResortEmpire.Core
         [SerializeField] private int startingResortValue = 700;
         [SerializeField] private int startingMaterials = 0;
         [SerializeField] private int startingGems = 0;
+        [SerializeField] private int startingReputation = 0;
         [SerializeField] private int firstPerfectStayGems = 10;
 
         public ResortState CurrentState { get; private set; }
@@ -25,6 +26,7 @@ namespace ResortEmpire.Core
         public int ResortValue { get; private set; }
         public int Materials { get; private set; }
         public int Gems { get; private set; }
+        public int Reputation { get; private set; }
         public bool FirstPerfectStayRewarded { get; private set; }
 
         public bool IsResumingFromPause { get; private set; }
@@ -44,6 +46,7 @@ namespace ResortEmpire.Core
         public event Action<int> ResortValueChanged;
         public event Action<int> MaterialsChanged;
         public event Action<int> GemsChanged;
+        public event Action<int> ReputationChanged;
         public event Action<GuestNeedType> NeedUnlocked;
 
         private ResortState stateBeforePause = ResortState.AWAITING_WAVE;
@@ -72,6 +75,7 @@ namespace ResortEmpire.Core
             ResortValue = startingResortValue;
             Materials = startingMaterials;
             Gems = startingGems;
+            Reputation = startingReputation;
 
             Debug.Log($"GameState: {CurrentState}, workers: {AvailableWorkers}, coins: {Coins}, energy: {Energy}, resortValue: {ResortValue}");
         }
@@ -263,6 +267,25 @@ namespace ResortEmpire.Core
             AddGems(firstPerfectStayGems);
             return firstPerfectStayGems;
         }
+
+         public void AddReputation(int amount)
+        {
+            if (amount <= 0) return;
+            Reputation += amount;
+            Debug.Log($"[GameState] +{amount} Reputation -> {Reputation}");
+            ReputationChanged?.Invoke(Reputation);
+        }
+
+        public bool HasReputation(int required) => Reputation >= required;
+
+        public void RestoreReputation(int amount)
+        {
+            Reputation = Mathf.Max(0, amount);
+            ReputationChanged?.Invoke(Reputation);
+        }
+
+        [ContextMenu("Debug/Add 10 Reputation")]
+        private void DebugAddReputation() => AddReputation(10);
         
         [ContextMenu("Debug/Grant First Perfect Stay Gems")]
         private void DebugFirstPerfectStay() => Debug.Log($"First Perfect Stay: +{GrantFirstPerfectStayGems()} Gems");

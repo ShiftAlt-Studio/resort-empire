@@ -39,6 +39,7 @@ namespace ResortEmpire.UI
             if (GameState.Instance != null)
             {
                 GameState.Instance.CoinsChanged += HandleCoinsChanged;
+                GameState.Instance.ReputationChanged += HandleReputationChanged;
                 GameState.Instance.OnStateChanged += HandleStateChanged;
             }
 
@@ -53,6 +54,7 @@ namespace ResortEmpire.UI
             if (GameState.Instance != null)
             {
                 GameState.Instance.CoinsChanged -= HandleCoinsChanged;
+                GameState.Instance.ReputationChanged -= HandleReputationChanged;
                 GameState.Instance.OnStateChanged -= HandleStateChanged;
             }
         }
@@ -89,8 +91,7 @@ namespace ResortEmpire.UI
             {
                 case AreaState.Locked:
                     view.Show(info.title, info.line1, info.line2, info.image, cost,
-                        AreaUnlockViewState.Locked, 0,
-                        $"Complete Wave {AreaActivationService.RequiredWave(current)}");
+                        AreaUnlockViewState.Locked, 0, GetLockedHint(current));
                     break;
 
                 case AreaState.NotAffordable:
@@ -129,6 +130,21 @@ namespace ResortEmpire.UI
         {
             if (isOpen && !service.IsPurchaseWindowOpen)
                 Close();
+        }
+        
+        private string GetLockedHint(AreaType type)
+        {
+            if (!service.IsWaveEligible(type))
+                return $"Complete Wave {AreaActivationService.RequiredWave(type)}";
+
+            int required = service.GetRequiredReputation(type);
+            int have = GameState.Instance != null ? GameState.Instance.Reputation : 0;
+            return $"Reach {required} Reputation ({have}/{required})";
+        }
+
+        private void HandleReputationChanged(int reputation)
+        {
+            if (isOpen) Refresh();
         }
 
         private AreaInfo Find(AreaType type)

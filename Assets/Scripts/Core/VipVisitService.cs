@@ -223,22 +223,5 @@ namespace ResortEmpire.Core
             if (offerService != null)
                 offerService.FinishVisit();
         }
-
-        [ContextMenu("Debug/Serve All")]
-        private void DebugServeAll() => Debug.Log($"Serve All started: {ServeAll()}");
-
-        [ContextMenu("Debug/Speed Up All")]
-        private void DebugSpeedUpAll()
-        {
-            for (int i = 0; i < requests.Count; i++) SpeedUp(i);
-        }
-
-        [ContextMenu("Debug/Log Requests")]
-        private void DebugLog()
-        {
-            foreach (VipRequest r in requests)
-                Debug.Log($"{r.Definition.Name}: {r.State}, cap {r.QualityCap}* {r.CapReason}, {r.RemainingSeconds:0}s");
-            Debug.Log($"Satisfaction {SatisfactionPercent:0}%");
-        }
     }
 }

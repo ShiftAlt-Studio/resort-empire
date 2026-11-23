@@ -48,7 +48,7 @@ namespace ResortEmpire.Core
                 workerAllocation = FindAnyObjectByType<WorkerAllocation>();
 
             if (speedUpService == null)
-                speedUpService = FindAnyObjectByType<SpeedUpService>();    
+                speedUpService = FindAnyObjectByType<SpeedUpService>();
 
             RefreshSeats();
 
@@ -135,7 +135,9 @@ namespace ResortEmpire.Core
                 bool staffed = workerAllocation != null && workerAllocation.IsStaffed(need);
                 float utilization = staffed ? staffedUtilization : emptyUtilization;
                 float boost = speedUpService != null ? speedUpService.GetMultiplier(need) : 1f;
-                float step = (utilization / safeServiceTime) * boost * deltaTime;
+                Building bld = buildingRegistry != null ? buildingRegistry.GetBuildingForNeed(need) : null;
+                float managerBoost = bld != null ? bld.ServiceSpeedMultiplier : 1f;
+                float step = (utilization / safeServiceTime) * boost * managerBoost * deltaTime;
 
                 int completedCount = 0;
                 for (int s = seats.Count - 1; s >= 0; s--)

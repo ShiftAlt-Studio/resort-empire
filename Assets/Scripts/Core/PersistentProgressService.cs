@@ -28,6 +28,7 @@ namespace ResortEmpire.Core
         public List<GuestNeedType> unlockedNeeds = new List<GuestNeedType>();
         public List<SavedBuildingLevel> buildingLevels = new List<SavedBuildingLevel>();
         public bool[] staffedNeeds = Array.Empty<bool>();
+        public int[] workerCounts;
     }
 
 
@@ -154,7 +155,10 @@ namespace ResortEmpire.Core
                     : new List<AreaType>(),
                 staffedNeeds = workerAllocation != null
                     ? workerAllocation.GetStaffedSnapshot()
-                    : Array.Empty<bool>()
+                    : Array.Empty<bool>(),
+                workerCounts = workerAllocation != null
+                    ? workerAllocation.GetWorkerCountsSnapshot()
+                    : Array.Empty<int>()
             };
 
             foreach (Building b in CollectAllBuildings())
@@ -204,8 +208,13 @@ namespace ResortEmpire.Core
                 }
 
                 GameState.Instance.SetWorkers(data.availableWorkers);
-                if (workerAllocation != null && data.staffedNeeds != null)
-                    workerAllocation.RestoreStaffedSnapshot(data.staffedNeeds);
+                if (workerAllocation != null)
+                {
+                    if (data.workerCounts != null && data.workerCounts.Length > 0)
+                        workerAllocation.RestoreWorkerCountsSnapshot(data.workerCounts);
+                    else if (data.staffedNeeds != null)
+                        workerAllocation.RestoreStaffedSnapshot(data.staffedNeeds);
+                }
 
 
                 if (GameState.Instance.CurrentState != ResortState.WAVE_INCOMING

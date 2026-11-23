@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 namespace ResortEmpire.UI
@@ -6,6 +7,8 @@ namespace ResortEmpire.UI
     {
         [SerializeField] private Camera targetCamera;
         [SerializeField] private RectTransform panel;
+        [SerializeField] private WavePanelSlide panelSlide;
+
         [SerializeField] private float moveSpeed = 6f;
         [SerializeField] private float zoomOutFactor = 1.3f;
         [SerializeField] private float perspectiveShift = 5f;
@@ -17,23 +20,35 @@ namespace ResortEmpire.UI
 
         private void Awake()
         {
-            if (targetCamera == null) targetCamera = GetComponent<Camera>();
+            if (targetCamera == null)
+                targetCamera = GetComponent<Camera>();
         }
 
         private void LateUpdate()
         {
-            if (targetCamera == null || panel == null) return;
+            if (targetCamera == null || panel == null)
+                return;
 
-            bool panelShown = panel.gameObject.activeInHierarchy;
-            float t = 1f - Mathf.Exp(-moveSpeed * Time.unscaledDeltaTime);
+            bool panelShown = panel.gameObject.activeInHierarchy
+                && (panelSlide == null || panelSlide.IsOpen);
+
+            float t = 1f - Mathf.Exp(
+                -moveSpeed * Time.unscaledDeltaTime);
 
             if (targetCamera.orthographic)
             {
-                float baseSize = targetCamera.orthographicSize - appliedZoom;
-                float targetZoom = panelShown ? baseSize * (zoomOutFactor - 1f) : 0f;
-                currentZoom = Mathf.Lerp(currentZoom, targetZoom, t);
+                float baseSize =
+                    targetCamera.orthographicSize - appliedZoom;
+
+                float targetZoom = panelShown
+                    ? baseSize * (zoomOutFactor - 1f)
+                    : 0f;
+
+                currentZoom = Mathf.Lerp(
+                    currentZoom, targetZoom, t);
 
                 float zoomDelta = currentZoom - appliedZoom;
+
                 if (Mathf.Abs(zoomDelta) > 0.0001f)
                 {
                     targetCamera.orthographicSize += zoomDelta;
@@ -41,13 +56,19 @@ namespace ResortEmpire.UI
                 }
             }
 
-            float targetShift = panelShown ? CalculateShift() : 0f;
-            currentShift = Mathf.Lerp(currentShift, targetShift, t);
+            float targetShift =
+                panelShown ? CalculateShift() : 0f;
+
+            currentShift = Mathf.Lerp(
+                currentShift, targetShift, t);
 
             float shiftDelta = currentShift - appliedShift;
+
             if (Mathf.Abs(shiftDelta) > 0.0001f)
             {
-                targetCamera.transform.position += targetCamera.transform.right * shiftDelta;
+                targetCamera.transform.position +=
+                    targetCamera.transform.right * shiftDelta;
+
                 appliedShift = currentShift;
             }
         }
@@ -55,14 +76,23 @@ namespace ResortEmpire.UI
         private float CalculateShift()
         {
             Canvas canvas = panel.GetComponentInParent<Canvas>();
-            if (canvas == null) return 0f;
 
-            RectTransform canvasRect = canvas.rootCanvas.transform as RectTransform;
-            float panelFraction = panel.rect.width / canvasRect.rect.width;
+            if (canvas == null)
+                return 0f;
 
-            if (!targetCamera.orthographic) return perspectiveShift;
+            RectTransform canvasRect =
+                canvas.rootCanvas.transform as RectTransform;
 
-            float worldWidth = 2f * targetCamera.orthographicSize * targetCamera.aspect;
+            float panelFraction =
+                panel.rect.width / canvasRect.rect.width;
+
+            if (!targetCamera.orthographic)
+                return perspectiveShift;
+
+            float worldWidth =
+                2f * targetCamera.orthographicSize
+                * targetCamera.aspect;
+
             return panelFraction * worldWidth * 0.5f;
         }
     }

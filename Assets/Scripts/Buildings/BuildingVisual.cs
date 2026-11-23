@@ -12,7 +12,9 @@ public class BuildingVisual : MonoBehaviour
     [SerializeField] private Sprite[] spritesByLevel = new Sprite[Building.MaxLevel];
 
     [Tooltip("Size multiplier relative to Lv1: [0] = Lv1 (leave it at 1), [1] = Lv2, [2] = Lv3. If Lv2/Lv3 are too large, set them to 0.8, 0.7, etc.")]
-    [SerializeField] private float[] scaleByLevel = { 1f, 1f, 1f };
+    [SerializeField]
+    private float[] scaleByLevel =
+    { 1f, 1f, 1f, 1f, 1f };
 
     private Vector3 baseScale;
 

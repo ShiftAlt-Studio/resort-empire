@@ -33,14 +33,17 @@ namespace ResortEmpire.UI
         [SerializeField] private TMP_Text speedUpLabel;
 
         private GuestNeedType focusNeed;
+        private GuestNeedType? selectedSource;
 
         private void Awake()
         {
-            foreach (WorkerRow row in rows)
-            {
-                WorkerRow r = row;
-                r.button.onClick.AddListener(() => OnRowClicked(r));
-            }
+            if (rows != null)
+                foreach (WorkerRow row in rows)
+                {
+                    WorkerRow r = row;
+                    if (r != null && r.button != null)
+                        r.button.onClick.AddListener(() => OnRowClicked(r));
+                }
             if (closeButton != null)
                 closeButton.onClick.AddListener(Close);
             if (speedUpButton != null)
@@ -49,7 +52,7 @@ namespace ResortEmpire.UI
 
         private void OnEnable()
         {
-            allocation.WorkerMoved += HandleWorkerMoved;
+            if (allocation != null) allocation.WorkerMoved += HandleWorkerMoved;
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged += HandleStateChanged;
             if (speedUpService != null)
@@ -59,7 +62,7 @@ namespace ResortEmpire.UI
 
         private void OnDisable()
         {
-            allocation.WorkerMoved -= HandleWorkerMoved;
+            if (allocation != null) allocation.WorkerMoved -= HandleWorkerMoved;
             if (GameState.Instance != null)
                 GameState.Instance.OnStateChanged -= HandleStateChanged;
             if (speedUpService != null)
@@ -68,7 +71,9 @@ namespace ResortEmpire.UI
 
         public void Open(Building focus)
         {
+            if (focus == null) return;
             focusNeed = focus.ServedNeed;
+            selectedSource = null;
             if (titleText != null) titleText.text = $"WORKERS - {focus.Type.ToString().ToUpper()}";
             Refresh();
             gameObject.SetActive(true);
@@ -78,35 +83,72 @@ namespace ResortEmpire.UI
 
         private void Refresh()
         {
+            if (allocation == null || buildingRegistry == null || rows == null) return;
+
             if (statusText != null)
             {
-                statusText.text = allocation.IsStaffed(focusNeed)
-                    ? "Worker is here. A long queue means the building is too small: upgrade after the wave."
-                    : "No Worker here. Move one: free and instant.";
+                if (selectedSource.HasValue)
+                {
+                    Building source = buildingRegistry.GetBuildingForNeed(selectedSource.Value);
+                    string sourceName = source != null ? source.Type.ToString() : selectedSource.Value.ToString();
+                    statusText.text = $"Moving 1 Worker from {sourceName}. Select a building with a free slot, or tap {sourceName} again to cancel.";
+                }
+                else
+                {
+                    statusText.text = "Select a building with Workers (TAKE WORKER), then select a destination with a free slot (SEND HERE).";
+                }
             }
 
             foreach (WorkerRow row in rows)
             {
+                if (row == null) continue;
                 Building b = buildingRegistry.GetBuildingForNeed(row.need);
                 bool exists = b != null;
-                GameObject root = row.card != null ? row.card : row.button.gameObject;
-                root.SetActive(exists);
+                GameObject root = row.card != null ? row.card : (row.button != null ? row.button.gameObject : null);
+                if (root != null) root.SetActive(exists);
                 if (!exists) continue;
 
-                bool staffed = allocation.IsStaffed(row.need);
+                int count = allocation.GetWorkerCount(row.need);
+                int free = allocation.GetFreeSlots(row.need);
                 bool isFocus = row.need == focusNeed;
-                if (row.focusMarker != null) row.focusMarker.SetActive(isFocus);
+                bool isSource = selectedSource.HasValue && selectedSource.Value == row.need;
+                bool selectingDestination = selectedSource.HasValue && !isSource;
+
+                if (row.focusMarker != null) row.focusMarker.SetActive(isSource || (isFocus && !selectedSource.HasValue));
                 if (row.label != null)
                 {
-                    row.label.text = (isFocus && row.focusMarker == null) ? $"> {b.Type}" : b.Type.ToString();
+                    string prefix = isSource ? "> " : (isFocus && row.focusMarker == null ? "> " : "");
+                    row.label.text = $"{prefix}{b.Type}";
                 }
-                if (row.workerIcon != null) row.workerIcon.SetActive(staffed);
-                if (row.emptyBadge != null) row.emptyBadge.SetActive(!staffed);
+                if (row.workerIcon != null)
+                {
+                    row.workerIcon.SetActive(count > 0);
+                    TMP_Text workerBadgeText = row.workerIcon.GetComponentInChildren<TMP_Text>(true);
+                    if (workerBadgeText != null)
+                        workerBadgeText.text = $"WORKERS {count}/{b.WorkerSlots}";
+                }
+                if (row.emptyBadge != null)
+                {
+                    row.emptyBadge.SetActive(count == 0);
+                    TMP_Text emptyBadgeText = row.emptyBadge.GetComponentInChildren<TMP_Text>(true);
+                    if (emptyBadgeText != null)
+                        emptyBadgeText.text = $"EMPTY {count}/{b.WorkerSlots}";
+                }
+                if (row.fade != null) row.fade.alpha = (count > 0 || (selectingDestination && free > 0)) ? 1f : 0.6f;
 
-                if (row.fade != null) row.fade.alpha = staffed ? 1f : 0.6f;
-
-                if (row.card != null) row.button.gameObject.SetActive(staffed);
-                else row.button.interactable = staffed;
+                if (row.button != null)
+                {
+                    bool enabled = selectedSource.HasValue ? (isSource || free > 0 || count > 0) : count > 0;
+                    row.button.gameObject.SetActive(true);
+                    row.button.interactable = enabled;
+                    TMP_Text buttonLabel = row.button.GetComponentInChildren<TMP_Text>(true);
+                    if (buttonLabel != null)
+                    {
+                        buttonLabel.text = isSource ? "CANCEL" :
+                            selectingDestination && free > 0 ? "SEND HERE" :
+                            count > 0 ? "TAKE WORKER" : "FULL";
+                    }
+                }
             }
             RefreshSpeedUp();
         }
@@ -161,9 +203,39 @@ namespace ResortEmpire.UI
 
         private void OnRowClicked(WorkerRow row)
         {
-            MoveResult result = allocation.TryMoveWorkerFrom(row.need);
+            if (row == null || allocation == null || buildingRegistry == null) return;
+            if (buildingRegistry.GetBuildingForNeed(row.need) == null) return;
+
+            if (!selectedSource.HasValue)
+            {
+                if (allocation.GetWorkerCount(row.need) <= 0) return;
+                selectedSource = row.need;
+                Refresh();
+                return;
+            }
+
+            GuestNeedType from = selectedSource.Value;
+            if (row.need == from)
+            {
+                selectedSource = null;
+                Refresh();
+                return;
+            }
+
+            if (allocation.GetFreeSlots(row.need) <= 0)
+            {
+                if (allocation.GetWorkerCount(row.need) > 0)
+                    selectedSource = row.need;
+                Refresh();
+                return;
+            }
+
+            MoveResult result = allocation.TryMoveWorker(from, row.need);
             if (result != MoveResult.Success)
                 Debug.Log($"[WorkerAllocationPanel] Move refused: {result}");
+            else
+                selectedSource = null;
+            Refresh();
         }
 
         private void HandleWorkerMoved(GuestNeedType from, GuestNeedType to) => Refresh();

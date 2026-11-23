@@ -7,6 +7,7 @@ namespace ResortEmpire.Core
     public class WaveSatisfaction : MonoBehaviour
     {
         [SerializeField] private NeedAggregator needAggregator;
+        [SerializeField] private BuildingRegistry buildingRegistry;
         [Header("GDD §4.4 (TUNING)")]
         [SerializeField] private float patienceGrace = 10f;
         [SerializeField] private float patienceFloorAfter = 30f;
@@ -33,6 +34,9 @@ namespace ResortEmpire.Core
         {
             if (needAggregator == null)
                 needAggregator = FindAnyObjectByType<NeedAggregator>();
+
+            if (buildingRegistry == null)
+                buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
 
             if (needAggregator != null)
                 needAggregator.UnitSeated += HandleUnitSeated;
@@ -73,12 +77,16 @@ namespace ResortEmpire.Core
                 Finish();
             }
         }
-        
+
         private void HandleUnitSeated(GuestNeedType need, float waitSeconds)
         {
             if (!tracking) return;
             float weight = need == GuestNeedType.OceanView ? oceanViewWeight : 1f;
-            weightedSum += Contribution(waitSeconds) * weight;
+            float contribution = Contribution(waitSeconds);
+            Building building = buildingRegistry != null ? buildingRegistry.GetBuildingForNeed(need) : null;
+            float qualityBonus = building != null ? building.BaseQuality / 100f : 0f;
+            contribution = Mathf.Clamp01(contribution + qualityBonus);
+            weightedSum += contribution * weight;
             weightTotal += weight;
         }
 

@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: 4f7a8aaa2d9197145928097378e11dfc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7780974139444265068
+    second: Colorful Hotel, Food, and Drinks Icons_0
+  - first:
+      213: 8686547583895397055
+    second: Colorful Hotel, Food, and Drinks Icons_1
+  - first:
+      213: 6471196615098507028
+    second: Colorful Hotel, Food, and Drinks Icons_2
+  - first:
+      213: 7610819991354662536
+    second: Colorful Hotel, Food, and Drinks Icons_3
+  - first:
+      213: 7822055654195464726
+    second: Colorful Hotel, Food, and Drinks Icons_4
+  - first:
+      213: 3804852055322640914
+    second: Colorful Hotel, Food, and Drinks Icons_5
+  - first:
+      213: 3362626185233875606
+    second: Colorful Hotel, Food, and Drinks Icons_6
+  - first:
+      213: 8725354210253514947
+    second: Colorful Hotel, Food, and Drinks Icons_7
+  - first:
+      213: 2510357259706236306
+    second: Colorful Hotel, Food, and Drinks Icons_8
+  - first:
+      213: 1396273174442197306
+    second: Colorful Hotel, Food, and Drinks Icons_9
+  - first:
+      213: 5718941815290626617
+    second: Colorful Hotel, Food, and Drinks Icons_10
+  - first:
+      213: 3632738652923162662
+    second: Colorful Hotel, Food, and Drinks Icons_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 19
+        width: 671
+        height: 667
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f7cebde3d640490800000000000000
+      internalID: -7780974139444265068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 34
+        width: 691
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb2ec961101dc8870800000000000000
+      internalID: 8686547583895397055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_2
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 637
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f18aa190f4ec950800000000000000
+      internalID: 6471196615098507028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_3
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 55
+        width: 577
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ed22255701f9960800000000000000
+      internalID: 7610819991354662536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_4
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 655
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a08a9ac268d8c60800000000000000
+      internalID: 7822055654195464726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_5
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 632
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212cb6c09cc8dc430800000000000000
+      internalID: 3804852055322640914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_6
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 639
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692ca4313b27aae20800000000000000
+      internalID: 3362626185233875606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_7
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 613
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8ae91ec6fa61970800000000000000
+      internalID: 8725354210253514947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_8
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 586
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29dfc1490a496d220800000000000000
+      internalID: 2510357259706236306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_10
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 280
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932868fd743cd5f40800000000000000
+      internalID: 5718941815290626617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colorful Hotel, Food, and Drinks Icons_11
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 168
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620f059ce841a6230800000000000000
+      internalID: 3632738652923162662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bcc98d532a265dd418935f9d2d4cdf73
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Colorful Hotel, Food, and Drinks Icons_0: -7780974139444265068
+      Colorful Hotel, Food, and Drinks Icons_1: 8686547583895397055
+      Colorful Hotel, Food, and Drinks Icons_10: 5718941815290626617
+      Colorful Hotel, Food, and Drinks Icons_11: 3632738652923162662
+      Colorful Hotel, Food, and Drinks Icons_2: 6471196615098507028
+      Colorful Hotel, Food, and Drinks Icons_3: 7610819991354662536
+      Colorful Hotel, Food, and Drinks Icons_4: 7822055654195464726
+      Colorful Hotel, Food, and Drinks Icons_5: 3804852055322640914
+      Colorful Hotel, Food, and Drinks Icons_6: 3362626185233875606
+      Colorful Hotel, Food, and Drinks Icons_7: 8725354210253514947
+      Colorful Hotel, Food, and Drinks Icons_8: 2510357259706236306
+      Colorful Hotel, Food, and Drinks Icons_9: 1396273174442197306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

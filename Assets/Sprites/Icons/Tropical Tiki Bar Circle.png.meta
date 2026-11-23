@@ -1,0 +1,652 @@
+fileFormatVersion: 2
+guid: 61300bbdc30692b4bbb10195e7289cb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6471337687164405030
+    second: Tropical Tiki Bar Circle_0
+  - first:
+      213: 4288926940603405315
+    second: Tropical Tiki Bar Circle_1
+  - first:
+      213: -944312365701628748
+    second: Tropical Tiki Bar Circle_2
+  - first:
+      213: -177076536697324186
+    second: Tropical Tiki Bar Circle_3
+  - first:
+      213: 8610714436880387490
+    second: Tropical Tiki Bar Circle_4
+  - first:
+      213: -7447617091055681696
+    second: Tropical Tiki Bar Circle_5
+  - first:
+      213: -5050581264042719320
+    second: Tropical Tiki Bar Circle_6
+  - first:
+      213: 1829221745740570327
+    second: Tropical Tiki Bar Circle_7
+  - first:
+      213: 3396498290117943675
+    second: Tropical Tiki Bar Circle_8
+  - first:
+      213: -8827453705728717140
+    second: Tropical Tiki Bar Circle_9
+  - first:
+      213: -2337879785359892598
+    second: Tropical Tiki Bar Circle_10
+  - first:
+      213: 7208454996837383004
+    second: Tropical Tiki Bar Circle_11
+  - first:
+      213: 6272011603905611455
+    second: Tropical Tiki Bar Circle_12
+  - first:
+      213: 4575833450349655834
+    second: Tropical Tiki Bar Circle_13
+  - first:
+      213: 7568622740635396323
+    second: Tropical Tiki Bar Circle_14
+  - first:
+      213: -9070744663392937004
+    second: Tropical Tiki Bar Circle_15
+  - first:
+      213: -3683400152163830704
+    second: Tropical Tiki Bar Circle_16
+  - first:
+      213: 7261112474248659817
+    second: Tropical Tiki Bar Circle_17
+  - first:
+      213: -5608376790848387492
+    second: Tropical Tiki Bar Circle_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_0
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1219
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6254801075fcec950800000000000000
+      internalID: 6471337687164405030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_1
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1225
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304d44a2454558b30800000000000000
+      internalID: 4288926940603405315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_2
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1245
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc785518e025e2f0800000000000000
+      internalID: -944312365701628748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_3
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1239
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d791cf3d5ea8df0800000000000000
+      internalID: -177076536697324186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1199
+        height: 1226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad4598a8276f7770800000000000000
+      internalID: 8610714436880387490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_5
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1209
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f7f7007bfb4a890800000000000000
+      internalID: -7447617091055681696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_6
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1211
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a78d77791bb8e9b0800000000000000
+      internalID: -5050581264042719320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_7
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1197
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de59427c73b26910800000000000000
+      internalID: 1829221745740570327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_8
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 928
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71a3be0339c22f20800000000000000
+      internalID: 3396498290117943675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_9
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 68
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae85dedf959e7580800000000000000
+      internalID: -8827453705728717140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 42
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f9e0ac8be2e8fd0800000000000000
+      internalID: -2337879785359892598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_11
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 33
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5bb1e9a0a3990460800000000000000
+      internalID: 7208454996837383004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_12
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 55
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb60cedb259aa0750800000000000000
+      internalID: 6272011603905611455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 38
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17f07f7740a08f30800000000000000
+      internalID: 4575833450349655834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_14
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 28
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e824864846290960800000000000000
+      internalID: 7568622740635396323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_15
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 31
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db913a99cd3e1280800000000000000
+      internalID: -9070744663392937004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_16
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 35
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054b7acb31fe1ecc0800000000000000
+      internalID: -3683400152163830704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_17
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 59
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963cfb50357a4c460800000000000000
+      internalID: 7261112474248659817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tropical Tiki Bar Circle_18
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 17
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56cfeee50b0b22b0800000000000000
+      internalID: -5608376790848387492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tropical Tiki Bar Circle_0: 6471337687164405030
+      Tropical Tiki Bar Circle_1: 4288926940603405315
+      Tropical Tiki Bar Circle_10: -2337879785359892598
+      Tropical Tiki Bar Circle_11: 7208454996837383004
+      Tropical Tiki Bar Circle_12: 6272011603905611455
+      Tropical Tiki Bar Circle_13: 4575833450349655834
+      Tropical Tiki Bar Circle_14: 7568622740635396323
+      Tropical Tiki Bar Circle_15: -9070744663392937004
+      Tropical Tiki Bar Circle_16: -3683400152163830704
+      Tropical Tiki Bar Circle_17: 7261112474248659817
+      Tropical Tiki Bar Circle_18: -5608376790848387492
+      Tropical Tiki Bar Circle_2: -944312365701628748
+      Tropical Tiki Bar Circle_3: -177076536697324186
+      Tropical Tiki Bar Circle_4: 8610714436880387490
+      Tropical Tiki Bar Circle_5: -7447617091055681696
+      Tropical Tiki Bar Circle_6: -5050581264042719320
+      Tropical Tiki Bar Circle_7: 1829221745740570327
+      Tropical Tiki Bar Circle_8: 3396498290117943675
+      Tropical Tiki Bar Circle_9: -8827453705728717140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

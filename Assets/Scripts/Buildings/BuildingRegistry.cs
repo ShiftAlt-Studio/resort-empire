@@ -9,8 +9,9 @@ public class BuildingRegistry : MonoBehaviour
 
     public Building GetBuildingForNeed(GuestNeedType need)
     {
-        return buildings.Find(b => b.ServedNeed == need);
+        return buildings.Find(b => b != null && b.Type != BuildingType.Spa && b.ServedNeed == need);
     }
+
 
     public Building GetBuildingByType(BuildingType type)
     {

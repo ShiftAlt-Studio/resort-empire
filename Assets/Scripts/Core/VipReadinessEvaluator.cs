@@ -80,7 +80,8 @@ namespace ResortEmpire.Core
                 case VipBuildingRequirement.Bungalows:
                     return areaService != null && areaService.IsActivated(AreaType.Bungalows);
                 case VipBuildingRequirement.Spa:
-                    return SpaBuilt != null && SpaBuilt();
+                    return areaService != null &&
+                           areaService.IsActivated(AreaType.Spa);
                 default:
                     return true;
             }

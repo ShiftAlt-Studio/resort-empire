@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 4acc8af76a7989b4c8e571e70824e732
+guid: f4583df31578da4498f671b3c51b4a0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3758304416805708573
-    second: bld_bungalows_lv3_0
-  - first:
-      213: 2149507568934512900
-    second: bld_bungalows_lv3_1
+      213: -4960733803062160221
+    second: pool_lvl5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +50,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.4668, y: 0.3731}
+  spritePivot: {x: 0.4462, y: 0.3169}
   spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -144,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bld_bungalows_lv3_0
+      name: pool_lvl5_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 300
-        width: 37
-        height: 34
+        x: 0
+        y: 0
+        width: 1373
+        height: 1145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,30 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d136c7964fd282430800000000000000
-      internalID: 3758304416805708573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bld_bungalows_lv3_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 844
-        height: 489
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 409ea50deb594dd10800000000000000
-      internalID: 2149507568934512900
+      spriteID: 3a41533a3eee72bb0800000000000000
+      internalID: -4960733803062160221
       vertices: []
       indices: 
       edges: []
@@ -201,8 +176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bld_bungalows_lv3_0: 3758304416805708573
-      bld_bungalows_lv3_1: 2149507568934512900
+      pool_lvl5_0: -4960733803062160221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

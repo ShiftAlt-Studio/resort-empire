@@ -7,7 +7,8 @@ namespace ResortEmpire.Core
     public enum AreaType
     {
         Pool,
-        Bungalows
+        Bungalows,
+        Spa
     }
 
     public enum AreaState
@@ -45,6 +46,8 @@ namespace ResortEmpire.Core
         [SerializeField] private WorkerAllocation workerAllocation;
         [SerializeField] private Area[] areas;
 
+        private bool spaUnlocked;
+
         public event Action<AreaType> AreaActivated;
 
         private void Start()
@@ -58,7 +61,8 @@ namespace ResortEmpire.Core
         public bool IsActivated(AreaType type)
         {
             Area a = Find(type);
-            return a != null && GameState.Instance != null && GameState.Instance.IsNeedUnlocked(a.need);
+            return a != null && GameState.Instance != null &&
+                (type == AreaType.Spa ? spaUnlocked : GameState.Instance.IsNeedUnlocked(a.need));
         }
 
         public List<AreaType> GetUnlockedAreasSnapshot()
@@ -68,7 +72,7 @@ namespace ResortEmpire.Core
 
             foreach (Area a in areas)
             {
-                if (GameState.Instance.IsNeedUnlocked(a.need))
+                if (IsActivated(a.type))
                     list.Add(a.type);
             }
             return list;
@@ -84,7 +88,10 @@ namespace ResortEmpire.Core
                 Area a = Find(type);
                 if (a == null) continue;
 
-                GameState.Instance.UnlockNeed(a.need);
+                if (type == AreaType.Spa)
+                    spaUnlocked = true;
+                else
+                    GameState.Instance.UnlockNeed(a.need);
                 if (a.siteObject != null) a.siteObject.SetActive(false);
                 if (a.building != null)
                 {
@@ -101,6 +108,7 @@ namespace ResortEmpire.Core
             {
                 case AreaType.Pool: return 3;
                 case AreaType.Bungalows: return 6;
+                case AreaType.Spa: return 0;
                 default: return int.MaxValue;
             }
         }
@@ -125,7 +133,7 @@ namespace ResortEmpire.Core
         public int GetRequiredReputation(AreaType type)
         {
             Area a = Find(type);
-            return a != null ? Mathf.Max(0, a.requiredReputation) : 0;
+            return a != null ? Mathf.Max(type == AreaType.Spa ? 1 : 0, a.requiredReputation) : 0;
         }
 
         public static int GetCost(AreaType type)
@@ -134,6 +142,7 @@ namespace ResortEmpire.Core
             {
                 case AreaType.Pool: return 1200;
                 case AreaType.Bungalows: return 2500;
+                case AreaType.Spa: return 4000;
                 default: return int.MaxValue;
             }
         }
@@ -194,13 +203,26 @@ namespace ResortEmpire.Core
                 return false;
             }
 
-            if (GameState.Instance == null || GameState.Instance.IsNeedUnlocked(a.need))
+            if (GameState.Instance == null || IsActivated(type))
                 return false;
+
+            if (buildingRegistry == null) buildingRegistry = FindAnyObjectByType<BuildingRegistry>();
+            if (buildingRegistry == null) return false;
+            if (type == AreaType.Spa && a.building.Type != BuildingType.Spa) return false;
+            if (type != AreaType.Spa && workerAllocation == null)
+                workerAllocation = FindAnyObjectByType<WorkerAllocation>();
+            if (type != AreaType.Spa && workerAllocation == null) return false;
 
             if (a.siteObject != null) a.siteObject.SetActive(false);
             a.building.gameObject.SetActive(true);
 
             buildingRegistry.Register(a.building);
+            if (type == AreaType.Spa)
+            {
+                spaUnlocked = true;
+                AreaActivated?.Invoke(type);
+                return true;
+            }
             GameState.Instance.UnlockNeed(a.need);
             workerAllocation.GrantWorkerForUnlockedNeed(a.need);
 

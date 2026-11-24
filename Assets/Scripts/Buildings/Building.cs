@@ -34,9 +34,11 @@ public class Building : MonoBehaviour
     public int Level => level;
     public bool IsMaxLevel => level >= MaxLevel;
 
-    public int WorkerSlots => workerSlotsByLevel != null && workerSlotsByLevel.Length >= level
-        ? Mathf.Max(1, workerSlotsByLevel[level - 1])
-        : (level >= 5 ? 3 : level >= 4 ? 2 : 1);
+    public int WorkerSlots => buildingType == BuildingType.Spa
+        ? 0
+        : workerSlotsByLevel != null && workerSlotsByLevel.Length >= level
+            ? Mathf.Max(1, workerSlotsByLevel[level - 1])
+            : (level >= 5 ? 3 : level >= 4 ? 2 : 1);
 
     public int BaseQuality => baseQualityByLevel != null && baseQualityByLevel.Length >= level
         ? Mathf.Max(0, baseQualityByLevel[level - 1])

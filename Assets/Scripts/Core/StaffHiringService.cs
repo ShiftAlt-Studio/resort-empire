@@ -113,11 +113,16 @@ namespace ResortEmpire.Core
         }
 
         public bool CanHireManager(Building building) =>
-            building != null && !building.HasManager && IsBetweenWaves && CanAfford(managerCost);
+            building != null &&
+            building.Type != BuildingType.Spa &&
+            !building.HasManager &&
+            IsBetweenWaves &&
+            CanAfford(managerCost);
 
         public HireResult TryHireManager(Building building)
         {
-            if (building == null) return HireResult.NoBuilding;
+            if (building == null || building.Type == BuildingType.Spa)
+                return HireResult.NoBuilding;
             if (!IsBetweenWaves) return HireResult.WrongPhase;
             if (building.HasManager) return HireResult.AlreadyHasManager;
             if (!TrySpend(managerCost)) return HireResult.NotEnoughCoins;

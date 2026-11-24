@@ -4,5 +4,6 @@ public enum BuildingType
     Restaurant,
     BeachBar,
     Pool,
-    Bungalows
+    Bungalows,
+    Spa
 }

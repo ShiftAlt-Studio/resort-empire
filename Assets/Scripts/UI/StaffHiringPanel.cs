@@ -93,6 +93,9 @@ namespace ResortEmpire.UI
 
         public void OpenFor(Building building)
         {
+            if (building == null || building.Type == BuildingType.Spa)
+                return;
+
             selected = building;
             if (gameObject.activeSelf) Rebuild();
             else gameObject.SetActive(true);
@@ -158,7 +161,8 @@ namespace ResortEmpire.UI
 
             List<Building> buildings = new List<Building>();
             foreach (Building building in buildingRegistry.AllBuildings)
-                if (building != null) buildings.Add(building);
+                if (building != null && building.Type != BuildingType.Spa)
+                    buildings.Add(building);
 
             List<SpecialistType> specialistTypes = new List<SpecialistType>();
             if (specialists != null)

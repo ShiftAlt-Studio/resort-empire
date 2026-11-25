@@ -17,6 +17,8 @@ namespace ResortEmpire.Core
         [SerializeField] private float serviceTime = 12f;
         [SerializeField] private float staffedUtilization = 1.0f;
         [SerializeField] private float emptyUtilization = 0.33f;
+        [SerializeField] private float secondWorkerBonus = 0.5f;
+        [SerializeField] private float thirdWorkerBonus = 0.25f;
 
         private static readonly GuestNeedType[] AllNeeds =
             (GuestNeedType[])Enum.GetValues(typeof(GuestNeedType));
@@ -132,8 +134,20 @@ namespace ResortEmpire.Core
                 if (seats.Count == 0)
                     continue;
 
-                bool staffed = workerAllocation != null && workerAllocation.IsStaffed(need);
-                float utilization = staffed ? staffedUtilization : emptyUtilization;
+                int workerCount = workerAllocation != null
+                    ? workerAllocation.GetWorkerCount(need)
+                    : 0;
+
+                float utilization = workerCount > 0
+                    ? staffedUtilization
+                    : emptyUtilization;
+
+                if (workerCount >= 2)
+                    utilization += secondWorkerBonus;
+
+                if (workerCount >= 3)
+                    utilization += thirdWorkerBonus;
+
                 float boost = speedUpService != null ? speedUpService.GetMultiplier(need) : 1f;
                 Building bld = buildingRegistry != null ? buildingRegistry.GetBuildingForNeed(need) : null;
                 float managerBoost = bld != null ? bld.ServiceSpeedMultiplier : 1f;

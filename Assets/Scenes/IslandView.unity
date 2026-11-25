@@ -8456,6 +8456,8 @@ MonoBehaviour:
   serviceTime: 11
   staffedUtilization: 1
   emptyUtilization: 0.33
+  secondWorkerBonus: 0.5
+  thirdWorkerBonus: 0.25
 --- !u!1 &391785283
 GameObject:
   m_ObjectHideFlags: 0

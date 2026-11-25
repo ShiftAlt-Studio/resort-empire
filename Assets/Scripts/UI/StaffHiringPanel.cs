@@ -198,7 +198,7 @@ namespace ResortEmpire.UI
                     AddRow(
                         SpecialistTable.GetDisplayName(type),
                         hired ? "Hired" : "VIP specialist",
-                        hired ? "Hired" : $"Hire  {specialists.GetCost(type)}",
+                        hired ? "Hired" : $"Hire <sprite name=\"coin\"> {specialists.GetCost(type):N0}",
                         canHire,
                         () => Report(specialists.TryHire(type)),
                         GetSpecialistIcon(type));
@@ -251,7 +251,7 @@ namespace ResortEmpire.UI
 
             string workerSubtitle = $"Workers: {workerCount}/{building.WorkerSlots}";
             string workerButton = !buildingSlotFree ? "Full"
-                : (slotFree ? $"Hire  {hiring.WorkerCost}" : "Max");
+                : (slotFree ? $"Hire <sprite name=\"coin\"> {hiring.WorkerCost:N0}" : "Max");
 
             AddRow(
                 "Worker",
@@ -264,7 +264,7 @@ namespace ResortEmpire.UI
             AddRow(
                 "Manager",
                 building.HasManager ? "Hired" : "Faster service",
-                building.HasManager ? "Hired" : $"Hire  {hiring.ManagerCost}",
+                building.HasManager ? "Hired" : $"Hire <sprite name=\"coin\"> {hiring.ManagerCost:N0}",
                 hiring.CanHireManager(building),
                 () => Report(hiring.TryHireManager(building)),
                 managerIcon);

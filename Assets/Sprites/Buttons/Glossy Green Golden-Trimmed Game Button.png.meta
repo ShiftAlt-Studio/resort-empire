@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6596f8f597f09504c845f7f8305cc97b
+guid: 36baab3e92dd25e4aa85f515d1872722
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4264723196119513546
-    second: Glossy Green Hire Button_0
+      213: -405028521817486662
+    second: Glossy Green Golden-Trimmed Game Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glossy Green Hire Button_0
+      name: Glossy Green Golden-Trimmed Game Button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2159
-        height: 724
+        width: 2170
+        height: 725
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac97212c6275f2b30800000000000000
-      internalID: 4264723196119513546
+      spriteID: abaca2194bc016af0800000000000000
+      internalID: -405028521817486662
       vertices: []
       indices: 
       edges: []
@@ -166,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -176,7 +176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glossy Green Hire Button_0: 4264723196119513546
+      Glossy Green Golden-Trimmed Game Button_0: -405028521817486662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

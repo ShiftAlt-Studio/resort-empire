@@ -18266,6 +18266,7 @@ GameObject:
   - component: {fileID: 858441119}
   - component: {fileID: 858441120}
   - component: {fileID: 858441121}
+  - component: {fileID: 858441122}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -18366,6 +18367,41 @@ MonoBehaviour:
   energyIconColor: {r: 0.08, g: 0.56, b: 0.92, a: 1}
   resortValueIconColor: {r: 0.96, g: 0.72, b: 0.1, a: 1}
   rewardFlyAnimation: {fileID: 1655443529}
+--- !u!114 &858441122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858441118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e693deedc9bdcaa409c1645ac1a6a5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.UI.VipCompletePanel
+  vipRewardService: {fileID: 1777466698}
+  rewardFlyAnimation: {fileID: 1655443529}
+  titleFontAsset: {fileID: 11400000, guid: 979e9fe3d9c19894b97f776a5a37253b, type: 2}
+  bodyFontAsset: {fileID: 11400000, guid: 4f83db203dac48540bc162e2830d0e41, type: 2}
+  cardSprite: {fileID: -2002116206892036541, guid: 7cef609061ffb0a4dbae00b9e1bc4357, type: 3}
+  pillSprite: {fileID: 3406204257168386225, guid: 2a897df669dbdac4db84fb5b5d684521, type: 3}
+  starFilledSprite: {fileID: 7809497162449050188, guid: aed98fed2bb89a0458ce9ffb1d76770f, type: 3}
+  starOutlineSprite: {fileID: 4815476061570213978, guid: 18fff3bb4ad6fe54eb32d7ca4bb67da3, type: 3}
+  checkSprite: {fileID: 5371412345509669250, guid: 5864ac4442f497a4eab7645644c9c6a8, type: 3}
+  alertSprite: {fileID: 3582883687579014760, guid: 54bb9c4cd55fb90439886d3166bd10e6, type: 3}
+  reputationSprite: {fileID: 5540177212704617353, guid: e9a34b3e56a98e845acb0c5a69cbd98f, type: 3}
+  coinSprite: {fileID: 7346423642426575543, guid: 4c21b18c50c5dca478aa4c5a37d60c9b, type: 3}
+  energySprite: {fileID: -2983090718515566234, guid: c433f911ae0f1634c9df29501cbc347a, type: 3}
+  giftSprite: {fileID: -3263582312909929260, guid: fb4b514edea17584080a037cac18ce94, type: 3}
+  claimButtonIconSprite: {fileID: 21300000, guid: f88f350687f9636458ae2d759296990b, type: 3}
+  purpleAccent: {r: 0.49, g: 0.23, b: 0.93, a: 1}
+  filledStarColor: {r: 1, g: 0.77, b: 0.19, a: 1}
+  reputationColor: {r: 0.76, g: 0.25, b: 0.05, a: 1}
+  coinsColor: {r: 0.08, g: 0.65, b: 0.34, a: 1}
+  energyColor: {r: 0.02, g: 0.56, b: 0.85, a: 1}
+  resortValueColor: {r: 0.95, g: 0.65, b: 0.08, a: 1}
+  bonusPinkColor: {r: 0.86, g: 0.15, b: 0.47, a: 1}
+  showConfetti: 1
 --- !u!1 &858445007
 GameObject:
   m_ObjectHideFlags: 0
@@ -35729,6 +35765,7 @@ GameObject:
   - component: {fileID: 1777466694}
   - component: {fileID: 1777466696}
   - component: {fileID: 1777466697}
+  - component: {fileID: 1777466698}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -35870,6 +35907,19 @@ MonoBehaviour:
   workerCostStep: 200
   workerCapRatio: 0.8
   managerCost: 800
+--- !u!114 &1777466698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777466689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf7a4c68b72690468a9587813d06478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResortEmpire.Core.VipRewardService
+  visitService: {fileID: 2001371391}
 --- !u!1 &1784245210
 GameObject:
   m_ObjectHideFlags: 0
